@@ -7,20 +7,27 @@
 //============================================================================
 
 #include <iostream>
+#include <vector>
 
-#include "HuffmanCoder/HTree.h"
+#include "AdaptiveHuffmanCoder/Tree.h"
 
 int main() {
-	using namespace HuffmanCoder;
 	using namespace std;
 
-	HTree t;
+//	vector< int * > ints;
+//
+//	ints.push_back(new int(1));
+//
+//	cout << ints.size() << endl;
 
-	t.addData(10);
-	t.addData(12);
-	t.addData(100);
-	t.addData(10);
-	t.addData(-100.99);
+	HTree<float> t(255);
+
+	t.encode(1);
+	t.encode(2);
+	t.encode(3);
+	t.encode(3);
+	t.encode(4);
+//	t.encode(3);
 
 	t.print();
 
