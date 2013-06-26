@@ -32,8 +32,15 @@ struct Node {
 template<class T>
 class HTree {
 public:
-	HTree(int max) :
-			maxNodes(max), root(NULL) {
+	HTree() :
+			root(NULL) {
+	}
+
+	HTree(std::vector<T> start) :
+			root(NULL) {
+		if (start.size() > 0) {
+			firstFoundValues = start;
+		}
 	}
 
 	void print() {
@@ -59,7 +66,77 @@ public:
 		}
 	}
 
-	void encode(T data) {
+	std::vector<T> decode(std::vector<int> & values) {
+		using namespace std;
+
+		Node<T> * tmp = root;
+
+		vector<T> output;
+
+		// if root is null
+		if (tmp == NULL) {
+			cout << "root was null\n";
+			cout << "looking at value: " << values.at(0) << endl;
+
+			root = new Node<T>(NULL);
+			root->right = new Node<T>(new T(firstFoundValues.at(0)), root);
+			++root->right->weight;
+
+			update(root);
+			output.push_back(values.at(0));
+
+			firstFoundValues.erase(firstFoundValues.begin());
+			values.erase(values.begin()); // first value always placed first
+		}
+
+		tmp = root;
+
+		print();
+
+		while (values.size() > 0) {
+			cout << "looking at value: " << values.at(0) << " with "
+					<< values.size()-1 << " Values left" << endl;
+
+			Node<T> * lookAt = NULL;
+
+			if (values.at(0) == 0) {
+				cout << "LEFT" << endl;
+				lookAt = tmp->left;
+			} else {
+				cout << "Right" << endl;
+				lookAt = tmp->right;
+			}
+
+			if (lookAt == NULL){ // value not found.. add it
+				cout << "value not found. Adding it" << endl;
+
+				tmp->left = new Node<T>(NULL, tmp);
+				tmp->left->right = new Node<T>(new T(firstFoundValues.at(0)), tmp->left);
+				++tmp->left->right->weight;
+				update(tmp->left);
+
+				tmp = root;
+				output.push_back(firstFoundValues.at(0));
+				firstFoundValues.erase(firstFoundValues.begin());
+				values.erase(values.begin());
+			}
+			else if (lookAt->data != NULL){
+				cout << "found a value, adding it\n";
+				output.push_back(*lookAt->data);
+				update(lookAt);
+				tmp = root;
+			}
+			else {
+				tmp = lookAt;
+			}
+
+			values.erase(values.begin());
+		}
+
+		return output;
+	}
+
+	std::vector<int> encode(T data) {
 		using namespace std;
 		if (root == NULL) {
 //			cout << "root was null, adding " << data << endl;
@@ -68,10 +145,17 @@ public:
 			++root->right->weight;
 
 			update(root);
-			return;
+			vector<int> o;
+			o.push_back(1);
+
+			firstFoundValues.push_back(data);
+
+			return o;
 		}
 
 		Node<T> * n = findNode(root, data);
+
+		vector<int> code;
 
 		if (n == NULL) { // element not found
 //			cout << "element not found adding " << data << endl;
@@ -81,33 +165,75 @@ public:
 			n->left->right = new Node<T>(new T(data), n->left);
 			++n->left->right->weight;
 
+			code = getCode(n->left->right);
 			update(n->left);
+
+			firstFoundValues.push_back(data);
 		} else { // element exists
+			code = getCode(n);
 			update(n);
 		}
+		return code;
+	}
+
+	std::vector<int> getCode(Node<T> * n) {
+		using namespace std;
+
+		vector<int> out;
+
+		Node<T> * par = n->parent;
+
+		while (par->parent != NULL) {
+			if (par->left == n)
+				out.push_back(0);
+			else
+				out.push_back(1);
+
+			n = par;
+			par = par->parent;
+		}
+		if (par->left == n) // root value
+			out.push_back(0);
+		else
+			out.push_back(1);
+
+		std::reverse(out.begin(), out.end());
+
+		return out;
 	}
 
 	void update(Node<T> * n) {
 		using namespace std;
 
-		Node<T> * tmp = getMostSig(root, n->weight);
+		if (n->data != NULL) {
+			Node<T> * tmp = getMostSig(root, n->weight);
 
-		if (tmp != n){
-			if (tmp->data != NULL){
+			if (tmp != n) {
 				exchangeNodes(n, tmp);
+			}
+		} else {
+			if (n->parent != NULL) {
+				Node<T> * par = n->parent;
+				if (par->left->weight >= par->right->weight) {
+					exchangeNodes(par->left, par->right);
+				}
 			}
 		}
 
 		++n->weight;
+
 		if (n->parent != NULL) // not root
 			update(n->parent);
 	}
 
+	std::vector<T> getFirstValueList() {
+		return firstFoundValues;
+	}
+
 private:
-	int maxNodes;
 	Node<T> * root;
 
-	std::vector<std::vector<Node<T> *> > blocks;
+	std::vector<T> firstFoundValues;
 
 	void exchangeNodes(Node<T> * n1, Node<T> * n2) {
 		if (n1->parent->left == n1) {

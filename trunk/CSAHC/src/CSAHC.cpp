@@ -8,11 +8,25 @@
 
 #include <iostream>
 #include <vector>
+#include <math.h>
+
 
 #include "AdaptiveHuffmanCoder/Tree.h"
 
+
+void printVec(std::vector<int> vec, std::vector<int> & out){
+	using namespace std;
+	for (vector<int>::iterator it = vec.begin(); it != vec.end(); ++it){
+		cout << (*it);
+		out.push_back((*it));
+	}
+	cout << endl;
+}
+
 int main() {
 	using namespace std;
+
+	std::vector<int> numbers;
 
 //	vector< int * > ints;
 //
@@ -20,16 +34,26 @@ int main() {
 //
 //	cout << ints.size() << endl;
 
-	HTree<float> t(255);
+	HTree<float> t;
+	rand();
 
-	t.encode(1);
-	t.encode(2);
-	t.encode(3);
-	t.encode(3);
-	t.encode(4);
-//	t.encode(3);
+	printVec(t.encode(1), numbers);
+	printVec(t.encode(2), numbers);
+	printVec(t.encode(3), numbers);
+	printVec(t.encode(4), numbers);
+	printVec(t.encode(3), numbers);
+	printVec(t.encode(5), numbers);
 
-	t.print();
+
+	std::vector<float> startingValues = t.getFirstValueList();
+
+	HTree<float> a(startingValues);
+
+
+	vector<float> ans = a.decode(numbers);
+
+	for (vector<float>::iterator it = ans.begin(); it != ans.end(); ++it)
+		cout << (*it) << endl;
 
 	return 0;
 }
