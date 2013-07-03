@@ -14,6 +14,9 @@
 #include <vector>
 #include <iostream>
 
+
+typedef unsigned char byte;
+
 /**
  * Node
  * templated
@@ -27,7 +30,7 @@ struct Node {
 	 * d the data for the node
 	 * par the parent node
 	 */
-	Node(T * d, Node * par = NULL, int w = 0) :
+	Node(T * d, Node * par = NULL, long w = 0) :
 			data(d), weight(w), parent(par), left(NULL), right(NULL) {
 	}
 
@@ -39,7 +42,7 @@ struct Node {
 	}
 
 	T * data; // data ascosiated to the node
-	int weight; // the number of times the value has been seen
+	long weight; // the number of times the value has been seen
 	Node<T> * parent; // the parent node
 	Node<T> * left; // left child node
 	Node<T> * right; // right child node
@@ -83,10 +86,10 @@ public:
 	/**
 	 * Prints the tree from a specific node
 	 */
-	void printFromNode(Node<T> * n, int depth) {
+	void printFromNode(Node<T> * n, long depth) {
 		using namespace std;
 
-		for (int i = 0; i < depth; ++i)
+		for (long i = 0; i < depth; ++i)
 			cout << "\t";
 
 		if (n != NULL) {
@@ -105,7 +108,7 @@ public:
 	/**
 	 * Decode the list of numbers
 	 */
-	std::vector<T> decode(std::vector<int> & values) {
+	std::vector<T> decode(std::vector<byte> & values, long numValues) {
 		using namespace std;
 
 		Node<T> * tmp = root; // set a temp node to root
@@ -130,12 +133,17 @@ public:
 		tmp = root; // reset the tmp value to root
 
 		while (values.size() > 0) { // while we still have values to read
+			if (output.size() == numValues)
+				return output;
 			Node<T> * lookAt = NULL; // create a temp child node
 
 			if (values.at(0) == 0) { // move to left child if placer is 0
 				lookAt = tmp->left;
-			} else {// move to right child if placer is 1
+			} else if (values.at(0) == 1) {// move to right child if placer is 1
 				lookAt = tmp->right;
+			}
+			else {
+				break;
 			}
 
 			if (lookAt == NULL){ // value not found.. add it
@@ -166,14 +174,14 @@ public:
 	/**
 	 * Encode a value
 	 */
-	std::vector<int> encode(T data) {
+	std::vector<byte> encode(T data) {
 		using namespace std;
 		if (root == NULL) { // if the tree is new (root is null)
 			root = new Node<T>(NULL); // set the root node
 			root->right = new Node<T>(new T(data), root, 1); // set the first value
 
 			update(root); // update the root node (for weight)
-			vector<int> o; // create the code
+			vector<byte> o; // create the code
 			o.push_back(1);
 
 			uniqueValueOrderedList.push_back(data); // new value was found, add it to our unique value list
@@ -183,7 +191,7 @@ public:
 
 		Node<T> * n = findNode(root, data); // look for the value in our tree
 
-		vector<int> code; // temp value for our code
+		vector<byte> code; // temp value for our code
 
 		if (n == NULL) { // element not found in tree
 			n = findNULLParent(root); // find the parent of the null child
@@ -205,10 +213,10 @@ public:
 	/**
 	 * Gets the code of the node
 	 */
-	std::vector<int> getCode(Node<T> * n) {
+	std::vector<byte> getCode(Node<T> * n) {
 		using namespace std;
 
-		vector<int> out; // the code temp value
+		vector<byte> out; // the code temp value
 
 		Node<T> * par = n->parent; // get the parent of the node
 
@@ -265,6 +273,10 @@ public:
 		return uniqueValueOrderedList;
 	}
 
+	long getNumberValues(){
+		return root->weight;
+	}
+
 private:
 	Node<T> * root; // the root nodes pointer
 
@@ -294,7 +306,7 @@ private:
 	/**
 	 * find the highest node with specified weight from node N
 	 */
-	Node<T> * getMostSig(Node<T> * n, int weight) {
+	Node<T> * getMostSig(Node<T> * n, long weight) {
 		using namespace std;
 
 		vector<Node<T> *> que; // que for breadth tree searching
