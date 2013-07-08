@@ -31,8 +31,8 @@ struct Node {
 	 * d the data for the node
 	 * par the parent node
 	 */
-	Node(T * d, Node * par = NULL, long w = 0) :
-			data(d), weight(w), parent(par), left(NULL), right(NULL) {
+	Node(T * d, Node * par = NULL, long w = 0, long h = 0) :
+			data(d), weight(w), height(h), parent(par), left(NULL), right(NULL) {
 	}
 
 	/**
@@ -44,6 +44,7 @@ struct Node {
 
 	T * data; // data ascosiated to the node
 	long weight; // the number of times the value has been seen
+	long height;
 	Node<T> * parent; // the parent node
 	Node<T> * left; // left child node
 	Node<T> * right; // right child node
@@ -61,7 +62,7 @@ public:
 	 * Sets the root to NULL only
 	 */
 	HTree() :
-			root(NULL) {
+			root(NULL), nullParent(NULL) {
 	}
 
 	/**
@@ -71,7 +72,7 @@ public:
 	 * and sets root to NULL
 	 */
 	HTree(std::vector<T> start) :
-			root(NULL) {
+			root(NULL), nullParent(NULL) {
 		if (start.size() > 0) {
 			uniqueValueOrderedList = start;
 		}
@@ -90,19 +91,23 @@ public:
 	void printFromNode(Node<T> * n, long depth) {
 		using namespace std;
 
-		for (long i = 0; i < depth; ++i)
-			cout << "\t";
+//		for (long i = 0; i < depth; ++i)
+//			cout << "\t";
 
 		if (n != NULL) {
-			if (n->data == NULL)
-				cout << "(joiner" << " - " << n->weight << ")\n";
-			else
-				cout << "(" << *(n->data) << " - " << n->weight << ")\n";
+
+			if (depth != n->height){
+				cout << "failed expected " << depth << " had " << n->height << endl;
+			}
+//			if (n->data == NULL)
+//				cout << "(joiner" << " - " << n->weight << ")\n";
+//			else
+//				cout << "(" << *(n->data) << " - " << n->weight << ")\n";
 
 			printFromNode(n->left, depth + 1);
 			printFromNode(n->right, depth + 1);
 		} else {
-			cout << "(NULL)\n";
+//			cout << "(NULL)\n";
 		}
 	}
 
@@ -118,8 +123,8 @@ public:
 
 		// if root is null
 		if (tmp == NULL) {
-			root = new Node<T>(NULL); // create the root node
-			root->right = new Node<T>(new T(uniqueValueOrderedList.at(0)), root, 1); // create the first data node with the first found value
+			root = new Node<T>(NULL, NULL, 0, 0); // create the root node
+			root->right = new Node<T>(new T(uniqueValueOrderedList.at(0)), root, root->height + 1); // create the first data node with the first found value
 
 
 			update(root); // update the root node (inc weight)
@@ -179,13 +184,15 @@ public:
 		using namespace std;
 		if (root == NULL) { // if the tree is new (root is null)
 			root = new Node<T>(NULL); // set the root node
-			root->right = new Node<T>(new T(data), root, 1); // set the first value
+			root->right = new Node<T>(new T(data), root, 1, 1); // set the first value
 
 			update(root); // update the root node (for weight)
 			vector<byte> o; // create the code
 			o.push_back(1);
 
 			uniqueValueOrderedList.push_back(data); // new value was found, add it to our unique value list
+
+			nullParent = root;
 
 			return o; // return our code for this value
 		}
@@ -195,13 +202,15 @@ public:
 		vector<byte> code; // temp value for our code
 
 		if (n == NULL) { // element not found in tree
-			n = findNULLParent(root); // find the parent of the null child
+			n = nullParent;//findNULLParent(root); // find the parent of the null child
 
-			n->left = new Node<T>(NULL, n); // create the new joiner
-			n->left->right = new Node<T>(new T(data), n->left, 1); // add the data leaf node
+			n->left = new Node<T>(NULL, n, 0, n->height + 1); // create the new joiner
+			n->left->right = new Node<T>(new T(data), n->left, 1, n->height + 2); // add the data leaf node
 
 			code = getCode(n->left->right); // get the code for the node
 			update(n->left); // update the tree from parent node
+
+			nullParent = n->left;
 
 			uniqueValueOrderedList.push_back(data); // new value found, add it to our unique value list
 		} else { // element exists in tre
@@ -254,21 +263,6 @@ public:
 			}
 		}
 
-//		if (n->data != NULL) { // if a leaf node
-//			Node<T> * tmp = getMostSig(root, n->weight); // find the highest value with same weight
-//
-//			if (tmp != n) { // if the highest node is not the same as the node we are in
-//				exchangeNodes(n, tmp); // exchange the node
-//			}
-//		} else { // not a leaf node
-//			if (n->parent != NULL) { // not the root node
-//				Node<T> * par = n->parent; // pointer to parent node
-//				if (par->left->weight >= par->right->weight) { // if left child has greater or = weight to right child
-//					exchangeNodes(par->left, par->right); // swap the two children
-//				}
-//			}
-//		}
-
 		++n->weight; // increase the weight of the node
 
 		if (n->parent != NULL) // not root
@@ -288,6 +282,8 @@ public:
 
 private:
 	Node<T> * root; // the root nodes pointer
+	Node<T> * nullParent;
+//	std::vector< std::vector<Node<T> * > > blockList;
 
 	std::vector<T> uniqueValueOrderedList; // the unique list
 
