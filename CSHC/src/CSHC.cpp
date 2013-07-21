@@ -63,7 +63,8 @@ void flushBuffer(std::vector<bit> & buffer, FILE * fp) {
 	}
 }
 
-void getDataFromFile(FILE * fp, int numValues, longVal fileSize, longVal currentPos, vector<float> & array) {
+void getDataFromFile(FILE * fp, int numValues, longVal fileSize,
+		longVal currentPos, vector<float> & array) {
 	long numToRead = long(min(longVal(numValues), fileSize - currentPos));
 
 	array.resize(numToRead);
@@ -83,10 +84,9 @@ void compressFile(const char * inputFileName, const char * outputFileName) {
 
 	double totTime = 0;
 	longVal numberToRead = 1024 * 1024 * 100 / sizeof(float);
-	while (currentPos < fileSize){
+	while (currentPos < fileSize) {
 		vector<float> numbers;
 		vector<bit> code;
-
 
 		getDataFromFile(input, numberToRead, fileSize, currentPos, numbers);
 		currentPos += numberToRead;
@@ -101,14 +101,15 @@ void compressFile(const char * inputFileName, const char * outputFileName) {
 		fwrite(&unique[0], sizeof(uniqueValue), numUnique, output);
 
 		Timer::tic();
-		for (long i = 0; i < int(numbers.size()); ++i){
+		for (long i = 0; i < int(numbers.size()); ++i) {
 			tree.getCode(numbers[i], code);
 
-			if (code.size() > 1024 * 1024 * 1024){
-				cout << "Had to write out the code early\n";
-				flushBuffer(code, output);
-				code.erase(code.begin(), code.begin() + (floor(code.size() / 8) * 8));
-			}
+//			if (code.size() > 1024 * 1024 * 1024) {
+//				cout << "Had to write out the code early\n";
+//				flushBuffer(code, output);
+//				code.erase(code.begin(),
+//						code.begin() + (floor(code.size() / 8) * 8));
+//			}
 		}
 
 		totTime += Timer::toc();
@@ -116,9 +117,16 @@ void compressFile(const char * inputFileName, const char * outputFileName) {
 		for (int i = 0; i < int(code.size() % 8); ++i)
 			code.push_back(0);
 
+		long numValsEnc = tree.getNumValuesEncoded();
+		long numchars = code.size() / 8;
+		cout << endl << numbers.size() << endl;
+		cout << numValsEnc << endl;
+		cout << code.size() << endl;
+		fwrite(&numValsEnc, sizeof(long), 1, output);
+		fwrite(&numchars, sizeof(long), 1, output);
 		flushBuffer(code, output);
-		char endll = '\n';
-		fwrite(&endll, sizeof(char), 1, output);
+		unsigned char endll = '\n';
+		fwrite(&endll, sizeof(unsigned char), 1, output);
 	}
 
 	fclose(input);
@@ -127,12 +135,78 @@ void compressFile(const char * inputFileName, const char * outputFileName) {
 	cout << "Done in: " << totTime << "\n";
 }
 
+void decompressFile(const char * inputFileName, const char * outputFileName) {
+	cout << "De-compressing ...";
+	std::flush(cout);
+	FILE * input = fopen(inputFileName, "r");
+	FILE * output = fopen(outputFileName, "w+");
+
+	bool first = true;
+
+//	while (fgetc(input) != EOF){
+	std::flush(cout);
+	long numUnique;
+	vector<uniqueValue> unique;
+	vector<float> vals;
+	vector<bit> code;
+	long numValsToDecode = 0;
+	long numChars = 0;
+
+	fread(&numUnique, sizeof(long), 1, input);
+	unique.resize(numUnique);
+	fread(&unique[0], sizeof(uniqueValue), numUnique, input);
+	fread(&numValsToDecode, sizeof(long), 1, input);
+	fread(&numChars, sizeof(long), 1, input);
+
+	HTree tree(unique);
+
+	unsigned char c;
+	fread(&c, sizeof(unsigned char), 1, input);
+	for (int z = 0 ; z < numChars; ++z){
+		for (long i = 0; i < 8; ++i) {
+			code.push_back(((c >> 7 - i) & 1));
+		}
+
+		fread(&c, sizeof(unsigned char), 1, input);
+	};
+
+	cout << code.size() << endl;
+
+	long cnt = 0;
+	for (int i = 0 ; i < numValsToDecode; ++i){
+		++cnt;
+		tree.getValue(code, vals);
+	}
+
+	cout << " finished reading from tree" << endl; flush(cout);
+
+	cout << vals.size() << "    ";
+	longVal numVals = 0;
+	if (first)
+		first = false;
+	else {
+		fseek(output, 0L, SEEK_SET);
+		fread(&numVals, sizeof(longVal), 1, output);
+	}
+	fseek(output, 0L, SEEK_SET);
+	numVals += vals.size();
+	fwrite(&numVals, sizeof(longVal), 1, output);
+	fseek(output, 0L, SEEK_END);
+	fwrite(&vals[0], sizeof(float), vals.size(), output);
+//	}
+
+	fclose(input);
+	fclose(output);
+}
+
 int main() {
-	longVal size = 1024 * 1024 * 1024;
+	longVal size = 1024 * 1024 * 10;
 	size /= sizeof(float);
-	createNewFloatFile("values.input", size, 9000);
+	createNewFloatFile("values.input", size, 5);
 
 	compressFile("values.input", "out.hc");
+
+	decompressFile("out.hc", "values.output");
 
 	return 0;
 }
