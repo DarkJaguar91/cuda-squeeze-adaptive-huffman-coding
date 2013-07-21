@@ -49,12 +49,19 @@ struct Node {
 
 struct compareNode {
 	bool operator ()(const Node * a, const Node * b) {
-		if (long(b->weight) == long(a->weight))
+		if (long(b->weight) == long(a->weight)) {
 			if (b->data == NULL)
 				return 0;
 			else if (a->data == NULL)
 				return 1;
+		}
 		return b->weight < a->weight;
+	}
+};
+
+struct compareCode {
+	bool operator ()(const std::vector<bit> * a, const std::vector<bit> * b) {
+		return b->size() < a->size();
 	}
 };
 
@@ -70,6 +77,11 @@ public:
 		setUpTree(values);
 	}
 
+	HTree(std::vector<uniqueValue> & vals) :
+			root(NULL) {
+		setUpTree(vals);
+	}
+
 	~HTree() {
 		if (root != NULL)
 			deleteNode(root);
@@ -81,6 +93,25 @@ public:
 			deleteNode(root);
 
 		binData(values);
+
+		createTree();
+
+		calcCodes();
+	}
+
+	void setUpTree(std::vector<uniqueValue> & vals) {
+		using namespace std;
+		if (root != NULL)
+			deleteNode(root);
+
+		std::map<float, Node *> ul;
+		for (std::vector<uniqueValue>::iterator it = vals.begin();
+				it != vals.end(); ++it) {
+			ul[(*it).value] = new Node(new float((*it).value), NULL,
+					(*it).count);
+		}
+
+		uniqueList = ul;
 
 		createTree();
 
@@ -107,6 +138,37 @@ public:
 		return tmp;
 	}
 
+	void getValue(std::vector<bit> & code, std::vector<float> & vals) {
+		using namespace std;
+		Node * tmp = root; // set a temp node to root
+
+		while (code.size() > 0) { // while we still have values to read
+			Node * lookAt = NULL; // create a temp child node
+
+			if (code.at(0) == 0) { // move to left child if placer is 0
+				lookAt = tmp->left;
+			} else if (code.at(0) == 1) { // move to right child if placer is 1
+				lookAt = tmp->right;
+			} else {
+				return;
+			}
+
+			if (lookAt == NULL){
+				cout << "HUGE PROBLEM\n";
+			}
+			else if (lookAt->data != NULL) { // if we are at a leaf node
+				vals.push_back(*lookAt->data); // get the data value
+				code.erase(code.begin());
+				return;
+			}
+
+			tmp = lookAt;
+
+			code.erase(code.begin()); // delete one placer since we have used it
+		}
+
+	}
+
 	void getCode(float val, std::vector<bit> & code) {
 		using namespace std;
 
@@ -117,12 +179,17 @@ public:
 		}
 	}
 
+	long getNumValuesEncoded() {
+		return root->weight;
+	}
+
 private:
 	Node * root;
 	std::map<float, Node *> uniqueList;
 
 	void calcCodes() {
 		using namespace std;
+
 		for (std::map<float, Node *>::iterator it = uniqueList.begin();
 				it != uniqueList.end(); ++it) {
 			Node * node = it->second;
@@ -183,15 +250,15 @@ private:
 	void binData(std::vector<float> & values) {
 		std::map<float, Node *> ul;
 		int i;
-#pragma omp parallel for schedule(dynamic) private(i) shared(ul)
+//#pragma omp parallel for
 		for (i = 0; i < int(values.size()); ++i) {
 			float val = values.at(i);
 
 			if (ul.count(val) <= 0) {
-#pragma omp critical
+//#pragma omp critical
 				ul[val] = new Node(new float(val), NULL, 1);
 			} else {
-#pragma omp atomic
+//#pragma omp atomic
 				ul.find(val)->second->weight++;
 			}
 		}
