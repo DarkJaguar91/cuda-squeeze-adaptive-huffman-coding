@@ -116,6 +116,8 @@ public:
 		createTree();
 
 		calcCodes();
+
+		createStringList();
 	}
 
 	void print() {
@@ -138,6 +140,18 @@ public:
 		return tmp;
 	}
 
+	void getValue2(std::vector<bit> & code, std::vector<float> & vals) {
+		for (std::map<std::string, float>::iterator it = codeList.begin();
+				it != codeList.end(); ++it) {
+			std::string ncode(code.begin(), code.begin() + it->first.length());
+			if (ncode == it->first) {
+				vals.push_back(it->second);
+				code.erase(code.begin(), code.begin() + it->first.length());
+				return;
+			}
+		}
+	}
+
 	void getValue(std::vector<bit> & code, std::vector<float> & vals) {
 		using namespace std;
 		Node * tmp = root; // set a temp node to root
@@ -153,10 +167,9 @@ public:
 				return;
 			}
 
-			if (lookAt == NULL){
+			if (lookAt == NULL) {
 				cout << "HUGE PROBLEM\n";
-			}
-			else if (lookAt->data != NULL) { // if we are at a leaf node
+			} else if (lookAt->data != NULL) { // if we are at a leaf node
 				vals.push_back(*lookAt->data); // get the data value
 				code.erase(code.begin());
 				return;
@@ -166,7 +179,6 @@ public:
 
 			code.erase(code.begin()); // delete one placer since we have used it
 		}
-
 	}
 
 	void getCode(float val, std::vector<bit> & code) {
@@ -186,34 +198,50 @@ public:
 private:
 	Node * root;
 	std::map<float, Node *> uniqueList;
+	std::map<std::string, float> codeList;
+
+	void createStringList() {
+		for (std::map<float, Node *>::iterator it = uniqueList.begin();
+				it != uniqueList.end(); ++it) {
+			std::string code(it->second->code.begin(), it->second->code.end());
+
+			codeList[code] = *it->second->data;
+		}
+	}
 
 	void calcCodes() {
 		using namespace std;
 
-		for (std::map<float, Node *>::iterator it = uniqueList.begin();
-				it != uniqueList.end(); ++it) {
-			Node * node = it->second;
-			Node * par = node->parent;
+#pragma omp parallel
+		{
+			for (std::map<float, Node *>::iterator it = uniqueList.begin();
+					it != uniqueList.end(); ++it) {
+#pragma omp single nowait
+				{
+					Node * node = it->second;
+					Node * par = node->parent;
 
-			vector<bit> code;
+					vector<bit> code;
 
-			while (par->parent != NULL) {
-				if (node == par->left)
-					code.push_back(0);
-				else
-					code.push_back(1);
+					while (par->parent != NULL) {
+						if (node == par->left)
+							code.push_back(0);
+						else
+							code.push_back(1);
 
-				node = par;
-				par = par->parent;
+						node = par;
+						par = par->parent;
+					}
+					if (node == par->left)
+						code.push_back(0);
+					else
+						code.push_back(1);
+
+					std::reverse(code.begin(), code.end());
+
+					it->second->code = code;
+				}
 			}
-			if (node == par->left)
-				code.push_back(0);
-			else
-				code.push_back(1);
-
-			std::reverse(code.begin(), code.end());
-
-			it->second->code = code;
 		}
 	}
 
@@ -250,15 +278,18 @@ private:
 	void binData(std::vector<float> & values) {
 		std::map<float, Node *> ul;
 		int i;
-//#pragma omp parallel for
+#pragma omp parallel for
 		for (i = 0; i < int(values.size()); ++i) {
 			float val = values.at(i);
 
 			if (ul.count(val) <= 0) {
-//#pragma omp critical
-				ul[val] = new Node(new float(val), NULL, 1);
+#pragma omp critical
+				if (ul.count(val) <= 0)
+					ul[val] = new Node(new float(val), NULL, 1);
+				else
+					ul.find(val)->second->weight++;
 			} else {
-//#pragma omp atomic
+#pragma omp atomic
 				ul.find(val)->second->weight++;
 			}
 		}
