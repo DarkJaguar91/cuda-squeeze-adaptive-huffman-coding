@@ -142,71 +142,130 @@ void decompressFile(const char * inputFileName, const char * outputFileName) {
 	FILE * output = fopen(outputFileName, "w+");
 
 	bool first = true;
+	double tottime = 0;
 
-//	while (fgetc(input) != EOF){
-	std::flush(cout);
-	long numUnique;
-	vector<uniqueValue> unique;
-	vector<float> vals;
-	vector<bit> code;
-	long numValsToDecode = 0;
-	long numChars = 0;
+//	while (fgetc(input) != EOF) {
+		std::flush(cout);
+		long numUnique;
+		vector<uniqueValue> unique;
+		vector<float> vals;
+		vector<bit> code;
+		long numValsToDecode = 0;
+		long numChars = 0;
 
-	fread(&numUnique, sizeof(long), 1, input);
-	unique.resize(numUnique);
-	fread(&unique[0], sizeof(uniqueValue), numUnique, input);
-	fread(&numValsToDecode, sizeof(long), 1, input);
-	fread(&numChars, sizeof(long), 1, input);
+		fread(&numUnique, sizeof(long), 1, input);
+		unique.resize(numUnique);
+		fread(&unique[0], sizeof(uniqueValue), numUnique, input);
+		fread(&numValsToDecode, sizeof(long), 1, input);
+		fread(&numChars, sizeof(long), 1, input);
 
-	HTree tree(unique);
+		Timer::tic();
+		HTree tree(unique);
 
-	unsigned char c;
-	fread(&c, sizeof(unsigned char), 1, input);
-	for (int z = 0 ; z < numChars; ++z){
-		for (long i = 0; i < 8; ++i) {
-			code.push_back(((c >> 7 - i) & 1));
+		unsigned char c;
+		fread(&c, sizeof(unsigned char), 1, input);
+		for (int z = 0; z < numChars; ++z) {
+			for (long i = 0; i < 8; ++i) {
+				code.push_back(((c >> (7 - i)) & 1));
+			}
+
+			fread(&c, sizeof(unsigned char), 1, input);
+		};
+
+		cout << endl << code.size() << endl;
+
+		long cnt = 0;
+		for (int i = 0; i < numValsToDecode; ++i) {
+			++cnt;
+			tree.getValue2(code, vals);
 		}
 
-		fread(&c, sizeof(unsigned char), 1, input);
-	};
+		tottime += Timer::toc();
 
-	cout << code.size() << endl;
-
-	long cnt = 0;
-	for (int i = 0 ; i < numValsToDecode; ++i){
-		++cnt;
-		tree.getValue(code, vals);
-	}
-
-	cout << " finished reading from tree" << endl; flush(cout);
-
-	cout << vals.size() << "    ";
-	longVal numVals = 0;
-	if (first)
-		first = false;
-	else {
+		cout << vals.size() << "    ";
+		longVal numVals = 0;
+		if (first)
+			first = false;
+		else {
+			fseek(output, 0L, SEEK_SET);
+			fread(&numVals, sizeof(longVal), 1, output);
+		}
 		fseek(output, 0L, SEEK_SET);
-		fread(&numVals, sizeof(longVal), 1, output);
-	}
-	fseek(output, 0L, SEEK_SET);
-	numVals += vals.size();
-	fwrite(&numVals, sizeof(longVal), 1, output);
-	fseek(output, 0L, SEEK_END);
-	fwrite(&vals[0], sizeof(float), vals.size(), output);
+		numVals += vals.size();
+		fwrite(&numVals, sizeof(longVal), 1, output);
+		fseek(output, 0L, SEEK_END);
+		fwrite(&vals[0], sizeof(float), vals.size(), output);
 //	}
 
 	fclose(input);
 	fclose(output);
+	cout << " Done in: " << tottime << endl;
+}
+
+void compareFiles(const char * file1, const char * file2) {
+	FILE * f1, *f2;
+
+	f1 = fopen(file1, "r");
+	f2 = fopen(file2, "r");
+
+	if (f1 == NULL || f2 == NULL) {
+		cout << "a file name is incorrect..." << endl;
+		return;
+	}
+
+	fseek(f1, 0L, SEEK_END);
+	size_t f1Size = ftell(f1);
+	fseek(f1, 0L, SEEK_SET);
+
+	fseek(f2, 0L, SEEK_END);
+	if (long(f1Size) != long(ftell(f2))) {
+		cout << "sizes are different" << endl;
+		fclose(f1);
+		fclose(f2);
+		return;
+	}
+	fseek(f2, 0L, SEEK_SET);
+
+	longVal v1, v2;
+	fread(&v1, sizeof(longVal), 1, f1);
+	fread(&v2, sizeof(longVal), 1, f2);
+
+	if (v1 != v2){
+		cout << "Different number of elements!" << endl;
+		fclose(f1);
+		fclose(f2);
+		return;
+	}
+
+	for (int i = 0; i < v1; ++i) {
+		float val1, val2;
+		fread(&val1, sizeof(float), 1, f1);
+		fread(&val2, sizeof(float), 1, f2);
+
+		if (val1 != val2) {
+			cout << "Files not the Same!" << endl;
+			fclose(f1);
+			fclose(f2);
+			return;
+		}
+	}
+
+	fclose(f1);
+	fclose(f2);
+
+	cout << "Files Matched" << endl;
 }
 
 int main() {
-	longVal size = 1024 * 1024 * 10;
+	longVal size = 1024 * 1024 * 1;
 	size /= sizeof(float);
-	createNewFloatFile("values.input", size, 5);
+	createNewFloatFile("values.input", size, 255);
 
 	compressFile("values.input", "out.hc");
 
 	decompressFile("out.hc", "values.output");
+
+	compareFiles("values.input", "values.output");
 
 	return 0;
 }
