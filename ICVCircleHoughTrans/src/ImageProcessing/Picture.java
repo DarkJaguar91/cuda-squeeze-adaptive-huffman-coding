@@ -19,7 +19,7 @@ public class Picture extends JLabel {
 
 	private static final String regexImage = ".*[jpg|png|gif]$";
 
-	private BufferedImage image;
+	public BufferedImage image;
 	private String filename;
 	private int width, height;
 
