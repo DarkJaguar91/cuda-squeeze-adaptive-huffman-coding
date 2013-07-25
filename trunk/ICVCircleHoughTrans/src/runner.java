@@ -9,7 +9,6 @@ import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
@@ -140,6 +139,8 @@ public class runner {
 			panel.updateUI();
 			pic2.setImage(ImageProcesses.createEdgeImage(pic1, "out.jpg"));
 			panel.updateUI();
+//			ImageProcesses.findCircles(pic2);
+//			panel.updateUI();
 		}
 	}
 

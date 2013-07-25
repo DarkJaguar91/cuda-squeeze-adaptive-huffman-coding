@@ -1,38 +1,100 @@
 package ImageProcessing;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
 
 public class ImageProcesses {
-	static int[][] edgeFilterX = { { -1, 0, 1 },
-								   { -2, 0, 2 },
-								   { -1, 0, 1 } };
-	static int[][] edgeFilterY = { { 1, 2, 1 },
-		                           { 0, 0, 0 }, 
-		                           { -1, -2, -1 } };
+	public static Picture createEdgeImage(Picture pic, String out) {
+		int[][] edgeFilterX = { { -1, 0, 1 }, { -2, 0, 2 }, { -1, 0, 1 } };
+		int[][] edgeFilterY = { { 1, 2, 1 }, { 0, 0, 0 }, { -1, -2, -1 } };
 
-	public static Picture createEdgeImage(Picture pic, String output) {
-		int height = pic.height();
-		int width = pic.width();
-		Picture pic2 = new Picture(output, width, height);
+		Picture p = ImageMethods.runDualBandFilter(pic, out, edgeFilterX, edgeFilterY);
 
-		for (int y = 0; y < height; y++) {
-			for (int x = 0; x < width; x++) {
-				// get colours
-				int c1 = 0, c2 = 0;
-				for (int i = 0; i < 3; ++i)
-					for (int j = 0; j < 3; ++j) {
-						int lum = (int) ImageMethods.lum(pic.get(x - 1 + i, y
-								- 1 + j));
-						c1 += lum * edgeFilterX[i][j];
-						c2 += lum * edgeFilterY[i][j];
+		return p;
+	}
+
+	public static void findCircles(Picture pic) {
+		int[][][] images = new int[50][pic.width()][pic.height()];
+
+		for (int y = 0; y < pic.height(); ++y) {
+			for (int x = 0; x < pic.width(); ++x) {
+				boolean picVal = pic.get(x, y).getRed() > 255 * 0.5f;
+
+				if (picVal)
+					for (int radius = 1; radius < 51; ++radius) {
+						int xc = radius, yc = 0;
+						int radiusError = 1 - x;
+						int currentBox = radius - 1;
+
+						while (xc >= yc) {
+							if (xc + x < pic.width() && yc + y < pic.height())
+								images[currentBox][xc + x][yc + y] += 1;
+
+							if (yc + x < pic.width() && xc + y < pic.height())
+								images[currentBox][yc + x][xc + y] += 1;
+
+							if (-xc + x < pic.width() && yc + y < pic.height()
+									&& -xc + x >= 0 && yc + y >= 0)
+								images[currentBox][-xc + x][yc + y] += 1;
+
+							if (-yc + x < pic.width() && xc + y < pic.height()
+									&& -yc + x >= 0 && xc + y >= 0)
+								images[currentBox][-yc + x][xc + y] += 1;
+
+							if (-xc + x < pic.width() && -yc + y < pic.height()
+									&& -xc + x >= 0 && -yc + y >= 0)
+								images[currentBox][-xc + x][-yc + y] += 1;
+
+							if (-yc + x < pic.width() && -xc + y < pic.height()
+									&& -yc + x >= 0 && -xc + y >= 0)
+								images[currentBox][-yc + x][-xc + y] += 1;
+
+							if (xc + x < pic.width() && -yc + y < pic.height()
+									&& xc + x >= 0 && -yc + y >= 0)
+								images[currentBox][xc + x][-yc + y] += 1;
+
+							if (yc + x < pic.width() && -xc + y < pic.height()
+									&& yc + x >= 0 && -xc + y >= 0)
+								images[currentBox][yc + x][-xc + y] += 1;
+
+							yc++;
+							if (radiusError < 0)
+								radiusError += 2 * yc + 1;
+							else {
+								xc--;
+								radiusError += 2 * (yc - xc + 1);
+							}
+						}
+					}
+			}
+		}// end of circle creation
+
+		Graphics2D g = pic.image.createGraphics();
+		g.setColor(Color.RED);
+		for (int i = 0; i < 50; ++i) {
+			for (int y = 0; y < pic.height(); ++y) {
+				for (int x = 0; x < pic.width(); ++x) {
+					int current = images[i][x][y];
+
+					boolean maximum = true;
+					for (int xc = x == 0 ? 0 : -1; xc < (x == pic.width() - 1 ? 0
+							: 1); ++xc) {
+						for (int yc = y == 0 ? 0 : -1; yc < (y == pic.height() - 1 ? 0
+								: 1); ++yc) {
+							if (images[i][x + xc][y + yc] >= current) {
+								maximum = false;
+								break;
+							}
+						}
 					}
 
-				int mag = 255 - ImageMethods.truncate((int) Math.sqrt(c1 * c1
-						+ c2 * c2));
-				pic2.set(x, y, new Color(mag, mag, mag));
+					if (maximum) {
+						if (current > (i + 1) * 4)
+							g.fillOval(x, y, i + 1, i + 1);
+					}
+				}
 			}
 		}
 
-		return pic2;
 	}
 }
