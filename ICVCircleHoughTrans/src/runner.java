@@ -20,7 +20,7 @@ import ImageProcessing.Picture;
 
 public class runner {
 	static JPanel panel;
-	static Picture pic1, pic2;
+	static Picture pic1, pic2, pic3;
 	static JPopupMenu menu;
 	static Picture currentPic = null;
 	static JFileChooser chooser = null;
@@ -38,7 +38,16 @@ public class runner {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				loadImage();
+				Runnable tr = new Runnable() {
+					
+					@Override
+					public void run() {
+						loadImage();
+					}
+				};
+				Thread t = new Thread(tr);
+				t.start();
+//				loadImage();
 			}
 		});
 		itm2.addActionListener(new ActionListener() {
@@ -66,6 +75,7 @@ public class runner {
 		
 		pic1 = new Picture("", 10, 10);
 		pic2 = new Picture("", 10, 10);
+		pic3 = new Picture("", 10, 10);
 		
 		MouseListener listen = new MouseListener() {
 			
@@ -106,6 +116,7 @@ public class runner {
 		p3.setLayout(new BorderLayout());
 		p1.add(pic1, BorderLayout.CENTER);
 		p2.add(pic2, BorderLayout.CENTER);
+		p3.add(pic3, BorderLayout.CENTER);
 		
 		panel.add(p1);
 		panel.add(p2);
@@ -113,8 +124,7 @@ public class runner {
 		
 		pic1.addMouseListener(listen);
 		pic2.addMouseListener(listen);
-		
-		pic2.save();
+		pic3.addMouseListener(listen);
 		
 		f.setJMenuBar(bar);
 		f.getContentPane().add(panel);
@@ -139,8 +149,9 @@ public class runner {
 			panel.updateUI();
 			pic2.setImage(ImageProcesses.createEdgeImage(pic1, "out.jpg"));
 			panel.updateUI();
-//			ImageProcesses.findCircles(pic2);
-//			panel.updateUI();
+			pic3.setImage(ImageProcesses.findCircles(pic2));
+			panel.updateUI();
+			System.out.println("Done");
 		}
 	}
 
