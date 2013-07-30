@@ -4,6 +4,8 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
+import java.awt.datatransfer.DataFlavor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
@@ -314,7 +316,16 @@ public class runner {
 	}
 
 	public static void loadImageURL() {
-		String ans = JOptionPane.showInputDialog("URL to image");
+		String data = "";
+		
+		try {
+			data = (String) Toolkit.getDefaultToolkit()
+	                .getSystemClipboard().getData(DataFlavor.stringFlavor);
+		}
+		catch (Exception e){};
+		 
+		
+		String ans = JOptionPane.showInputDialog("URL to image", data);
 
 		if (ans != null) {
 			pic1.setImage(ans);

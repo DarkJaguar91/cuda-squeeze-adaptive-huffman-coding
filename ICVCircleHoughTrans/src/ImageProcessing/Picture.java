@@ -1,6 +1,7 @@
 package ImageProcessing;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
@@ -150,10 +151,14 @@ public class Picture extends JLabel {
 
 	public void paint(Graphics g) {
 		super.paint(g);
-		if (image != null)
+		if (image != null){
+			Dimension size = getSizeToFit(new Dimension(image.getWidth(), image.getHeight()), this.getSize());
+			int x = (this.getWidth() - size.width) / 2;
+			int y = (this.getHeight() - size.height) / 2;
 			g.drawImage(
 					Toolkit.getDefaultToolkit().createImage(image.getSource()),
-					0, 0, this.getWidth(), this.getHeight(), this);
+					x, y, size.width, size.height, this);
+		}
 	}
 
 	public Color get(int x, int y) {
@@ -180,4 +185,26 @@ public class Picture extends JLabel {
 		return width;
 	}
 
+	Dimension getSizeToFit(Dimension original, Dimension toFit) {
+        double factor = getScaleFactorToFit(original, toFit);
+        Dimension size = new Dimension(original);
+        size.width *= factor;
+        size.height *= factor;
+        return size;
+    }
+	
+	double getScaleFactorToFit(Dimension original, Dimension toFit) {
+        double dScale = 1d;
+        if (original != null && toFit != null) {
+            double dScaleWidth = getScaleFactor(original.width, toFit.width);
+            double dScaleHeight = getScaleFactor(original.height, toFit.height);
+            dScale = Math.min(dScaleHeight, dScaleWidth);
+        }
+        return dScale;
+    }
+	
+	 double getScaleFactor(int iMasterSize, int iTargetSize) {
+         return (double) iTargetSize / (double) iMasterSize;
+     }
+	
 }
