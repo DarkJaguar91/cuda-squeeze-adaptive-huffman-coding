@@ -112,6 +112,10 @@ public class Picture extends JLabel {
 		}
 	}
 
+	public String getFileName(){
+		return filename;
+	}
+	
 	public void save() {
 		if (!filename.matches(regexImage)) {
 			filename += ".jpg";

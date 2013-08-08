@@ -17,7 +17,6 @@ import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -38,18 +37,18 @@ import ImageProcessing.Picture;
 /**
  * 
  * @author Brandon James Talbot
- *
- * Main frame that contains all widgets and processing methods
+ * 
+ *         Main frame that contains all widgets and processing methods
  */
 public class MainFrame extends JFrame {
 	/**
 	 * Serial ID
 	 */
 	private static final long serialVersionUID = 6987177916802281720L;
-	
+
 	// Global vars
 	JPanel panel;
-	Picture pic1, pic2, pic3;
+	Picture pic1, pic2, pic3, pic4, pic5;
 	JPopupMenu menu;
 	Picture currentPic = null;
 	JFileChooser chooser = null;
@@ -57,17 +56,17 @@ public class MainFrame extends JFrame {
 	JSpinner maxRadius;
 	JSlider circSlider;
 	JSlider edgeSlider;
-	JCheckBox drawHuphSpace;
 	JButton runAgain;
 	JMenuItem itm;
 	JMenuItem itm2;
 	public int total, current; // used for progress bar
 	boolean drawProgress = false;
-	
+
 	/**
 	 * Constructor
 	 */
-	public MainFrame(){
+	public MainFrame() {
+		super("Hough Circle Finder");
 		// set frame details
 		setIconImage(new ImageIcon("Images/icon.gif").getImage());
 		setSize(1250, 750);
@@ -76,6 +75,7 @@ public class MainFrame extends JFrame {
 
 		// create menu bar
 		JMenuBar bar = new JMenuBar();
+		bar.setLayout(new FlowLayout(FlowLayout.LEADING));
 		itm = new JMenuItem("Load Image File");
 		itm2 = new JMenuItem("Load Image from URL");
 		itm.addActionListener(new ActionListener() {
@@ -123,12 +123,14 @@ public class MainFrame extends JFrame {
 
 		// picture panel
 		panel = new JPanel();
-		panel.setLayout(new GridLayout(1, 3));
+		panel.setLayout(new GridLayout(1, 5));
 
 		// picture jpanels
 		pic1 = new Picture("", 10, 10);
 		pic2 = new Picture("", 10, 10);
-		pic3 = new Picture("", 10, 10);
+		pic3 = new Picture("outputCirc", 10, 10);
+		pic4 = new Picture("accumulator", 10, 10);
+		pic5 = new Picture("output", 10, 10);
 
 		MouseListener listen = new MouseListener() {
 
@@ -178,40 +180,57 @@ public class MainFrame extends JFrame {
 					int y = this.getHeight() / 2 - 5;
 					int height = 10;
 					int width = this.getWidth() / 2;
-					g2.drawRect(x - 1, y - 1, width + 1, height + 1); // outline box
+					g2.drawRect(x - 1, y - 1, width + 1, height + 1); // outline
+																		// box
 
 					double percen = current / (double) total;
-					g2.drawString("Progress:", (int)(x + width * 0.25f), y - 10); // text
-					g2.setColor(new Color((int)(255 - (220 * percen)), (int)(200 * percen), 0)); // interp color
+					g2.drawString("Progress:", (int) (x + width * 0.25f),
+							y - 10); // text
+					g2.setColor(new Color((int) (255 - (220 * percen)),
+							(int) (200 * percen), 0)); // interp color
 					g2.fillRect( // draw rectangle
-							x,
-							y,
-							(int) ((percen) * (double) width),
-							height);
+							x, y, (int) ((percen) * (double) width), height);
 				} else {
 					super.paint(g); // paint jlabel if not progressing
 				}
 			}
 		};
+		JPanel p4 = new JPanel();
+		JPanel p5 = new JPanel();
 		// add panel details (border etc)
 		p1.setBorder(BorderFactory.createEtchedBorder());
 		p2.setBorder(BorderFactory.createEtchedBorder());
 		p3.setBorder(BorderFactory.createEtchedBorder());
+		p4.setBorder(BorderFactory.createEtchedBorder());
+		p5.setBorder(BorderFactory.createEtchedBorder());
 		p1.setLayout(new BorderLayout());
 		p2.setLayout(new BorderLayout());
 		p3.setLayout(new BorderLayout());
+		p4.setLayout(new BorderLayout());
+		p5.setLayout(new BorderLayout());
 		p1.add(pic1, BorderLayout.CENTER);
 		p2.add(pic2, BorderLayout.CENTER);
 		p3.add(pic3, BorderLayout.CENTER);
+		p4.add(pic4, BorderLayout.CENTER);
+		p5.add(pic5, BorderLayout.CENTER);
+		p1.add(new JLabel("Origional Image"), BorderLayout.NORTH);
+		p2.add(new JLabel("Edge detection"), BorderLayout.NORTH);
+		p3.add(new JLabel("Found circles"), BorderLayout.NORTH);
+		p4.add(new JLabel("Accumulator normalization"), BorderLayout.NORTH);
+		p5.add(new JLabel("Found cirlces on origional"), BorderLayout.NORTH);
 
 		panel.add(p1);
 		panel.add(p2);
+		panel.add(p4);
 		panel.add(p3);
+		panel.add(p5);
 
 		// add the mouse listener
 		pic1.addMouseListener(listen);
 		pic2.addMouseListener(listen);
 		pic3.addMouseListener(listen);
+		pic4.addMouseListener(listen);
+		pic5.addMouseListener(listen);
 
 		// setting up the sliders
 		minRadius = new JSpinner(new SpinnerNumberModel(5, 5, 60, 1));
@@ -240,14 +259,11 @@ public class MainFrame extends JFrame {
 		setJSliderLabels(circSlider);
 		setJSliderLabels(edgeSlider);
 
-		// checkbox
-		drawHuphSpace = new JCheckBox("Draw Hough Space?", false);
-
 		JPanel Panel2 = new JPanel();
 		Panel2.setLayout(new BorderLayout());
 
 		JPanel holder = new JPanel();
-		holder.setLayout(new GridLayout(1, 3));
+		holder.setLayout(new GridLayout(1, 2));
 		JPanel setter = new JPanel();
 		setter.setLayout(new FlowLayout(FlowLayout.CENTER));
 		setter.setBorder(BorderFactory.createEtchedBorder());
@@ -260,12 +276,6 @@ public class MainFrame extends JFrame {
 		setter.setBorder(BorderFactory.createEtchedBorder());
 		setter.add(new JLabel("Max circle Radius:"));
 		setter.add(maxRadius);
-		holder.add(setter);
-
-		setter = new JPanel();
-		setter.setLayout(new FlowLayout(FlowLayout.CENTER));
-		setter.setBorder(BorderFactory.createEtchedBorder());
-		setter.add(drawHuphSpace);
 		holder.add(setter);
 		Panel2.add(holder, BorderLayout.NORTH);
 
@@ -317,10 +327,12 @@ public class MainFrame extends JFrame {
 		// start file chooser
 		chooser = new JFileChooser();
 	}
-	
+
 	/**
 	 * Setter for jslider labels (method to remove redundancy)
-	 * @param slider Slider to add labels to
+	 * 
+	 * @param slider
+	 *            Slider to add labels to
 	 */
 	public void setJSliderLabels(JSlider slider) {
 		slider.setMinorTickSpacing(1);
@@ -331,7 +343,9 @@ public class MainFrame extends JFrame {
 
 	/**
 	 * Method to save an image to file
-	 * @param p Picture object to save
+	 * 
+	 * @param p
+	 *            Picture object to save
 	 */
 	public void saveImage(Picture p) {
 		int ans = chooser.showSaveDialog(null);
@@ -342,8 +356,7 @@ public class MainFrame extends JFrame {
 	}
 
 	/**
-	 * Method to load an image
-	 * Uses jfilechooser
+	 * Method to load an image Uses jfilechooser
 	 */
 	public void loadImage() {
 		int ans = chooser.showOpenDialog(null);
@@ -359,14 +372,14 @@ public class MainFrame extends JFrame {
 	 */
 	public void loadImageURL() {
 		String data = "";
-		
+
 		try {
-			data = (String) Toolkit.getDefaultToolkit()
-	                .getSystemClipboard().getData(DataFlavor.stringFlavor);
+			data = (String) Toolkit.getDefaultToolkit().getSystemClipboard()
+					.getData(DataFlavor.stringFlavor);
+		} catch (Exception e) {
 		}
-		catch (Exception e){};
-		 
-		
+		;
+
 		String ans = JOptionPane.showInputDialog("URL to image", data);
 
 		if (ans != null) {
@@ -383,16 +396,17 @@ public class MainFrame extends JFrame {
 		panel.updateUI();
 		pic2.setImage(ImageProcesses.createEdgeImage(pic1, "out.jpg"));
 		panel.updateUI();
+		pic5.setImage(pic1);
 		pic3.setImage(ImageProcesses.findCircles(pic2,
 				(int) (minRadius.getValue()), (int) (maxRadius.getValue()),
 				edgeSlider.getValue() / 100f, circSlider.getValue() / 100f,
-				drawHuphSpace.isSelected(), panel, this));
+				panel, this, pic4, pic5));
 		enable();
 		panel.updateUI();
 	}
 
 	/**
-	 * Disables all buttons since the program uses threads 
+	 * Disables all buttons since the program uses threads
 	 */
 	public void disable() {
 		itm.setEnabled(false);
@@ -417,10 +431,11 @@ public class MainFrame extends JFrame {
 	public void runCircleAlgorithm() {
 		disable();
 		panel.updateUI();
+		pic5.setImage(pic1);
 		pic3.setImage(ImageProcesses.findCircles(pic2,
 				(int) (minRadius.getValue()), (int) (maxRadius.getValue()),
 				edgeSlider.getValue() / 100f, circSlider.getValue() / 100f,
-				drawHuphSpace.isSelected(), panel, this));
+				panel, this, pic4, pic5));
 		enable();
 		panel.updateUI();
 	}
