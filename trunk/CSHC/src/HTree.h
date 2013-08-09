@@ -12,6 +12,7 @@
 #include <vector>
 #include <algorithm>
 #include <omp.h>
+#include <bitset>
 
 #ifndef HTREE_H_
 #define HTREE_H_
@@ -29,7 +30,7 @@ struct uniqueValue {
 
 struct Node {
 	Node(float * d = NULL, Node * par = NULL, long w = 0) :
-			data(d), weight(w), parent(par), left(NULL), right(NULL) {
+			data(d), weight(w), code(NULL), parent(par), left(NULL), right(NULL) {
 	}
 
 	~Node() {
@@ -40,7 +41,7 @@ struct Node {
 	float * data;
 	long weight;
 
-	std::vector<bit> code;
+	std::vector<bit> * code;
 
 	Node * parent;
 	Node * left;
@@ -127,7 +128,7 @@ public:
 
 	std::vector<bit> getCode(float val) {
 		if (uniqueList.count(val) > 0)
-			return uniqueList.find(val)->second->code;
+			return *uniqueList.find(val)->second->code;
 		return std::vector<bit>();
 	}
 
@@ -141,15 +142,40 @@ public:
 	}
 
 	void getValue2(std::vector<bit> & code, std::vector<float> & vals) {
-		for (std::map<std::string, float>::iterator it = codeList.begin();
-				it != codeList.end(); ++it) {
-			std::string ncode(code.begin(), code.begin() + it->first.length());
-			if (ncode == it->first) {
-				vals.push_back(it->second);
-				code.erase(code.begin(), code.begin() + it->first.length());
-				return;
+		using namespace std;
+		int cpos = 0;
+		while ((code.size() - cpos) > 8){
+			string *check = NULL;
+			if (code[cpos] == 0 && code[cpos + 1] == 0){
+				check = new string(code.begin() + cpos, code.begin() + 10 + cpos);
 			}
+			else if (code[cpos] == 0 && code[cpos + 1] == 1){
+				check = new string(code.begin() + cpos, code.begin() + 18 + cpos);
+			}
+			else if (code[cpos] == 1 && code[cpos + 1] == 0){
+				check = new string(code.begin() + cpos, code.begin() + 26 + cpos);
+			}
+			else {
+				check = new string(code.begin() + cpos, code.begin() + 34 + cpos);
+			}
+
+			//code.erase(code.begin(), code.begin() + check->length());
+
+			cpos += check->length();
+
+			vals.push_back(codeList[*check]);
+			delete(check);
 		}
+
+//		for (std::map<std::string, float>::iterator it = codeList.begin();
+//				it != codeList.end(); ++it) {
+//			std::string ncode(code.begin(), code.begin() + it->first.length());
+//			if (ncode == it->first) {
+//				vals.push_back(it->second);
+//				code.erase(code.begin(), code.begin() + it->first.length());
+//				return;
+//			}
+//		}
 	}
 
 	void getValue(std::vector<bit> & code, std::vector<float> & vals) {
@@ -185,7 +211,7 @@ public:
 		using namespace std;
 
 		if (uniqueList.count(val) > 0) {
-			vector<bit> tmp = uniqueList.find(val)->second->code;
+			vector<bit> tmp = *uniqueList.find(val)->second->code;
 
 			copy(tmp.begin(), tmp.end(), back_inserter(code));
 		}
@@ -203,7 +229,8 @@ private:
 	void createStringList() {
 		for (std::map<float, Node *>::iterator it = uniqueList.begin();
 				it != uniqueList.end(); ++it) {
-			std::string code(it->second->code.begin(), it->second->code.end());
+			std::string code(it->second->code->begin(),
+					it->second->code->end());
 
 			codeList[code] = *it->second->data;
 		}
@@ -221,23 +248,55 @@ private:
 					Node * node = it->second;
 					Node * par = node->parent;
 
-					vector<bit> code;
+					vector<bit> * code = new vector<bit>();
 
 					while (par->parent != NULL) {
 						if (node == par->left)
-							code.push_back(0);
+							code->push_back(0);
 						else
-							code.push_back(1);
+							code->push_back(1);
 
 						node = par;
 						par = par->parent;
 					}
 					if (node == par->left)
-						code.push_back(0);
+						code->push_back(0);
 					else
-						code.push_back(1);
+						code->push_back(1);
 
-					std::reverse(code.begin(), code.end());
+					if (code->size() > 24) {
+						union {
+							float input;
+							int output;
+						} data;
+
+						data.input = *it->second->data;
+
+						std::bitset<32> bits(data.output);
+
+						code = new vector<bit>();
+						code->push_back(1);
+						code->push_back(1);
+						for (int i = 0; i < 32; ++i)
+							code->push_back(bits[i]);
+
+					} else {
+						for (int i = 0; i < (int)(code->size() % 8); ++i)
+							code->push_back(0);
+
+						if (code->size() == 8) {
+							code->push_back(0);
+							code->push_back(0);
+						} else if (code->size() == 16) {
+							code->push_back(0);
+							code->push_back(1);
+						} else {
+							code->push_back(1);
+							code->push_back(0);
+						}
+
+						std::reverse(code->begin(), code->end());
+					}
 
 					it->second->code = code;
 				}
@@ -278,18 +337,18 @@ private:
 	void binData(std::vector<float> & values) {
 		std::map<float, Node *> ul;
 		int i;
-#pragma omp parallel for
+//#pragma omp parallel for
 		for (i = 0; i < int(values.size()); ++i) {
 			float val = values.at(i);
 
 			if (ul.count(val) <= 0) {
-#pragma omp critical
+//#pragma omp critical
 				if (ul.count(val) <= 0)
 					ul[val] = new Node(new float(val), NULL, 1);
 				else
 					ul.find(val)->second->weight++;
 			} else {
-#pragma omp atomic
+//#pragma omp atomic
 				ul.find(val)->second->weight++;
 			}
 		}

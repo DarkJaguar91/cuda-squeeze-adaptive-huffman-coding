@@ -117,16 +117,13 @@ void compressFile(const char * inputFileName, const char * outputFileName) {
 		for (int i = 0; i < int(code.size() % 8); ++i)
 			code.push_back(0);
 
-		long numValsEnc = tree.getNumValuesEncoded();
 		long numchars = code.size() / 8;
-		cout << endl << numbers.size() << endl;
-		cout << numValsEnc << endl;
-		cout << code.size() << endl;
-		fwrite(&numValsEnc, sizeof(long), 1, output);
 		fwrite(&numchars, sizeof(long), 1, output);
 		flushBuffer(code, output);
 		unsigned char endll = '\n';
 		fwrite(&endll, sizeof(unsigned char), 1, output);
+		bit cont = currentPos < fileSize ? 0 : 1;
+		fwrite(&cont, sizeof(bit), 1, output);
 	}
 
 	fclose(input);
@@ -145,18 +142,17 @@ void decompressFile(const char * inputFileName, const char * outputFileName) {
 	double tottime = 0;
 
 //	while (fgetc(input) != EOF) {
+	readAgain: {
 		std::flush(cout);
 		long numUnique;
 		vector<uniqueValue> unique;
 		vector<float> vals;
 		vector<bit> code;
-		long numValsToDecode = 0;
 		long numChars = 0;
 
 		fread(&numUnique, sizeof(long), 1, input);
 		unique.resize(numUnique);
 		fread(&unique[0], sizeof(uniqueValue), numUnique, input);
-		fread(&numValsToDecode, sizeof(long), 1, input);
 		fread(&numChars, sizeof(long), 1, input);
 
 		Timer::tic();
@@ -172,17 +168,11 @@ void decompressFile(const char * inputFileName, const char * outputFileName) {
 			fread(&c, sizeof(unsigned char), 1, input);
 		};
 
-		cout << endl << code.size() << endl;
-
-		long cnt = 0;
-		for (int i = 0; i < numValsToDecode; ++i) {
-			++cnt;
-			tree.getValue2(code, vals);
-		}
+		std::flush(std::cout);
+		tree.getValue2(code, vals);
 
 		tottime += Timer::toc();
 
-		cout << vals.size() << "    ";
 		longVal numVals = 0;
 		if (first)
 			first = false;
@@ -195,10 +185,18 @@ void decompressFile(const char * inputFileName, const char * outputFileName) {
 		fwrite(&numVals, sizeof(longVal), 1, output);
 		fseek(output, 0L, SEEK_END);
 		fwrite(&vals[0], sizeof(float), vals.size(), output);
+	}
+	bit testCont;
+
+	fread(&testCont, sizeof(bit), 1, input);
+
+	if (testCont == 0)
+		goto readAgain;
 //	}
 
 	fclose(input);
 	fclose(output);
+
 	cout << " Done in: " << tottime << endl;
 }
 
@@ -230,7 +228,7 @@ void compareFiles(const char * file1, const char * file2) {
 	fread(&v1, sizeof(longVal), 1, f1);
 	fread(&v2, sizeof(longVal), 1, f2);
 
-	if (v1 != v2){
+	if (v1 != v2) {
 		cout << "Different number of elements!" << endl;
 		fclose(f1);
 		fclose(f2);
@@ -257,9 +255,9 @@ void compareFiles(const char * file1, const char * file2) {
 }
 
 int main() {
-	longVal size = 1024 * 1024 * 1;
+	longVal size = 1024 * 1024 * 200;
 	size /= sizeof(float);
-	createNewFloatFile("values.input", size, 255);
+	createNewFloatFile("values.input", size, (9000 / 17) / 10);
 
 	compressFile("values.input", "out.hc");
 
