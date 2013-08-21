@@ -86,10 +86,10 @@ void compressFile(const char * inputFileName, const char * outputFileName) {
 	longVal numberToRead = 1024 * 1024 * 100 / sizeof(float);
 	while (currentPos < fileSize) {
 		vector<float> numbers;
-		vector<bit> code;
-
 		getDataFromFile(input, numberToRead, fileSize, currentPos, numbers);
 		currentPos += numberToRead;
+
+		vector<bit> code;
 
 		Timer::tic();
 		HTree tree(numbers);
@@ -255,7 +255,7 @@ void compareFiles(const char * file1, const char * file2) {
 }
 
 int main() {
-	longVal size = 1024 * 1024 * 200;
+	longVal size = 1024 * 1024 * 1;
 	size /= sizeof(float);
 	createNewFloatFile("values.input", size, (9000 / 17) / 10);
 

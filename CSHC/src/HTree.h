@@ -98,6 +98,8 @@ public:
 		createTree();
 
 		calcCodes();
+
+		setEnvVars();
 	}
 
 	void setUpTree(std::vector<uniqueValue> & vals) {
@@ -119,6 +121,8 @@ public:
 		calcCodes();
 
 		createStringList();
+
+		setEnvVars();
 	}
 
 	void print() {
@@ -144,19 +148,22 @@ public:
 	void getValue2(std::vector<bit> & code, std::vector<float> & vals) {
 		using namespace std;
 		int cpos = 0;
-		while ((code.size() - cpos) > 8){
+		while ((code.size() - cpos) > 8) {
+			string front = string(code.begin() + cpos, code.begin() + cpos + 1);
 			string *check = NULL;
-			if (code[cpos] == 0 && code[cpos + 1] == 0){
-				check = new string(code.begin() + cpos, code.begin() + 10 + cpos);
-			}
-			else if (code[cpos] == 0 && code[cpos + 1] == 1){
-				check = new string(code.begin() + cpos, code.begin() + 18 + cpos);
-			}
-			else if (code[cpos] == 1 && code[cpos + 1] == 0){
-				check = new string(code.begin() + cpos, code.begin() + 26 + cpos);
-			}
-			else {
-				check = new string(code.begin() + cpos, code.begin() + 34 + cpos);
+
+			if (front == zz){//code[cpos] == 0 && code[cpos + 1] == 0) {
+				check = new string(code.begin() + cpos,
+						code.begin() + 10 + cpos);
+			} else if (front == zo){//code[cpos] == 0 && code[cpos + 1] == 1) {
+				check = new string(code.begin() + cpos,
+						code.begin() + 18 + cpos);
+			} else if (front == oz){//code[cpos] == 1 && code[cpos + 1] == 0) {
+				check = new string(code.begin() + cpos,
+						code.begin() + 26 + cpos);
+			} else {
+				check = new string(code.begin() + cpos,
+						code.begin() + 34 + cpos);
 			}
 
 			//code.erase(code.begin(), code.begin() + check->length());
@@ -164,7 +171,7 @@ public:
 			cpos += check->length();
 
 			vals.push_back(codeList[*check]);
-			delete(check);
+			delete (check);
 		}
 
 //		for (std::map<std::string, float>::iterator it = codeList.begin();
@@ -225,14 +232,30 @@ private:
 	Node * root;
 	std::map<float, Node *> uniqueList;
 	std::map<std::string, float> codeList;
+	std::string zz, zo, oz;
+
+	void setEnvVars(){
+		unsigned char z = 0;
+		unsigned char o = 1;
+
+		zz = z + z;
+		zo = z + o;
+		oz = o + z;
+	}
 
 	void createStringList() {
-		for (std::map<float, Node *>::iterator it = uniqueList.begin();
-				it != uniqueList.end(); ++it) {
-			std::string code(it->second->code->begin(),
-					it->second->code->end());
+//#pragma omp parallel
+		{
+			for (std::map<float, Node *>::iterator it = uniqueList.begin();
+					it != uniqueList.end(); ++it) {
+//#pragma omp single nowait
+				{
+					std::string code(it->second->code->begin(),
+							it->second->code->end());
 
-			codeList[code] = *it->second->data;
+					codeList[code] = *it->second->data;
+				}
+			}
 		}
 	}
 
@@ -281,7 +304,7 @@ private:
 							code->push_back(bits[i]);
 
 					} else {
-						for (int i = 0; i < (int)(code->size() % 8); ++i)
+						for (int i = 0; i < (int) (code->size() % 8); ++i)
 							code->push_back(0);
 
 						if (code->size() == 8) {
@@ -337,18 +360,20 @@ private:
 	void binData(std::vector<float> & values) {
 		std::map<float, Node *> ul;
 		int i;
-//#pragma omp parallel for
+#pragma omp parallel for shared(ul) private(i) schedule(dynamic)
 		for (i = 0; i < int(values.size()); ++i) {
 			float val = values.at(i);
 
 			if (ul.count(val) <= 0) {
-//#pragma omp critical
-				if (ul.count(val) <= 0)
-					ul[val] = new Node(new float(val), NULL, 1);
-				else
-					ul.find(val)->second->weight++;
+#pragma omp critical
+				{
+					if (ul.count(val) <= 0)
+						ul[val] = new Node(new float(val), NULL, 1);
+					else
+						ul.find(val)->second->weight++;
+				}
 			} else {
-//#pragma omp atomic
+#pragma omp atomic
 				ul.find(val)->second->weight++;
 			}
 		}
