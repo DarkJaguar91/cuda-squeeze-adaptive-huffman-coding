@@ -84,7 +84,8 @@ void compressFile(const char * inputFileName, const char * outputFileName) {
 
 	double totTime = 0;
 	longVal numberToRead = 1024 * 1024 * 100 / sizeof(float);
-	while (currentPos < fileSize) {
+
+	do {
 		vector<float> numbers;
 		getDataFromFile(input, numberToRead, fileSize, currentPos, numbers);
 		currentPos += numberToRead;
@@ -124,7 +125,7 @@ void compressFile(const char * inputFileName, const char * outputFileName) {
 		fwrite(&endll, sizeof(unsigned char), 1, output);
 		bit cont = currentPos < fileSize ? 0 : 1;
 		fwrite(&cont, sizeof(bit), 1, output);
-	}
+	} while (currentPos < fileSize);
 
 	fclose(input);
 	fclose(output);
@@ -255,15 +256,34 @@ void compareFiles(const char * file1, const char * file2) {
 }
 
 int main() {
-	longVal size = 1024 * 1024 * 1;
-	size /= sizeof(float);
-	createNewFloatFile("values.input", size, (9000 / 17) / 10);
+//	longVal size = 1024 * 1024 * 1;
+//	size /= sizeof(float);
+//	createNewFloatFile("values.input", size, (50));
+//
+//	compressFile("values.input", "out.hc");
+//
+//	decompressFile("out.hc", "values.output");
+//
+//	compareFiles("values.input", "values.output");
 
-	compressFile("values.input", "out.hc");
+	vector<float> floats;
+	srand(time(NULL));
+	for (int i = 0; i < ((1024 * 1024) / sizeof(float)); ++i) {
+		floats.push_back(rand() % 50);
+	}
 
-	decompressFile("out.hc", "values.output");
 
-	compareFiles("values.input", "values.output");
+	cout <<"hello" << endl;
+	Timer::tic();
+	HTree f(floats);
+	flush(cout);
+
+	vector<bit> code;
+
+	for (int i = 0; i < ((1024 * 1024) / sizeof(float)); ++i) {
+		f.getCode(floats[i], code);
+	}
+	cout << "took: " << Timer::toc() << endl;
 
 	return 0;
 }

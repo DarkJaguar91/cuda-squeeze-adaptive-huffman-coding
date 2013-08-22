@@ -152,13 +152,13 @@ public:
 			string front = string(code.begin() + cpos, code.begin() + cpos + 1);
 			string *check = NULL;
 
-			if (front == zz){//code[cpos] == 0 && code[cpos + 1] == 0) {
+			if (front == zz) { //code[cpos] == 0 && code[cpos + 1] == 0) {
 				check = new string(code.begin() + cpos,
 						code.begin() + 10 + cpos);
-			} else if (front == zo){//code[cpos] == 0 && code[cpos + 1] == 1) {
+			} else if (front == zo) { //code[cpos] == 0 && code[cpos + 1] == 1) {
 				check = new string(code.begin() + cpos,
 						code.begin() + 18 + cpos);
-			} else if (front == oz){//code[cpos] == 1 && code[cpos + 1] == 0) {
+			} else if (front == oz) { //code[cpos] == 1 && code[cpos + 1] == 0) {
 				check = new string(code.begin() + cpos,
 						code.begin() + 26 + cpos);
 			} else {
@@ -173,16 +173,6 @@ public:
 			vals.push_back(codeList[*check]);
 			delete (check);
 		}
-
-//		for (std::map<std::string, float>::iterator it = codeList.begin();
-//				it != codeList.end(); ++it) {
-//			std::string ncode(code.begin(), code.begin() + it->first.length());
-//			if (ncode == it->first) {
-//				vals.push_back(it->second);
-//				code.erase(code.begin(), code.begin() + it->first.length());
-//				return;
-//			}
-//		}
 	}
 
 	void getValue(std::vector<bit> & code, std::vector<float> & vals) {
@@ -234,7 +224,7 @@ private:
 	std::map<std::string, float> codeList;
 	std::string zz, zo, oz;
 
-	void setEnvVars(){
+	void setEnvVars() {
 		unsigned char z = 0;
 		unsigned char o = 1;
 
@@ -262,11 +252,11 @@ private:
 	void calcCodes() {
 		using namespace std;
 
-#pragma omp parallel
+//#pragma omp parallel
 		{
 			for (std::map<float, Node *>::iterator it = uniqueList.begin();
 					it != uniqueList.end(); ++it) {
-#pragma omp single nowait
+//#pragma omp single nowait
 				{
 					Node * node = it->second;
 					Node * par = node->parent;
