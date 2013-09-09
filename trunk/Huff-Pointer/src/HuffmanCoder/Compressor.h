@@ -41,20 +41,15 @@ public:
 		delete (root);
 	}
 
-	void compress(const std::vector<float> & values, HuffCode & code) {
-		for (longValue i = 0; i < longValue(values.size()); ++i) {
-			HuffCode * c = map[values[i]];
-			std::copy(c->begin(), c->end(), std::back_inserter(code));
-		}
-	}
-
-	void compress(const float * values, HuffCode ** code, const longValue & numFloats) {
+	void compress(const float * values, HuffCode ** code,
+			const longValue & numFloats) {
 		longValue i;
-#pragma omp parallel for private(i)
+
 		for (i = 0; i < numFloats; ++i) {
 			code[i] = map[values[i]];
 		}
 	}
+
 private:
 	HuffMap map;
 
