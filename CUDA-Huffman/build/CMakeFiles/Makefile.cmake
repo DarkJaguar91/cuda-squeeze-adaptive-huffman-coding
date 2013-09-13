@@ -10,11 +10,12 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "../CMakeLists.txt"
   "../CPUCompression/CMakeLists.txt"
   "../GPUCompression/CMakeLists.txt"
+  "../GPULibrary/CMakeLists.txt"
   "../Timer/CMakeLists.txt"
-  "CMakeFiles/CMakeCCompiler.cmake"
-  "CMakeFiles/CMakeCXXCompiler.cmake"
-  "CMakeFiles/CMakeSystem.cmake"
-  "GPUCompression/CMakeFiles/gpuCode.dir/gpuCode_generated_GPUmain.cu.o.depend"
+  "CMakeFiles/2.8.11.2/CMakeCCompiler.cmake"
+  "CMakeFiles/2.8.11.2/CMakeCXXCompiler.cmake"
+  "CMakeFiles/2.8.11.2/CMakeSystem.cmake"
+  "GPULibrary/CMakeFiles/gpuLib.dir/gpuLib_generated_GPUlib.cu.o.depend"
   "/usr/share/cmake-2.8/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCommonLanguageInclude.cmake"
@@ -45,15 +46,17 @@ SET(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 SET(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "GPUCompression/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "GPULibrary/CMakeFiles/CMakeDirectoryInformation.cmake"
   "CPUCompression/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Timer/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "GPUCompression/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/cuda-huffman.dir/DependInfo.cmake"
-  "GPUCompression/CMakeFiles/gpuCode.dir/DependInfo.cmake"
+  "GPULibrary/CMakeFiles/gpuLib.dir/DependInfo.cmake"
   "CPUCompression/CMakeFiles/cpuCode.dir/DependInfo.cmake"
   "Timer/CMakeFiles/timerLib.dir/DependInfo.cmake"
+  "GPUCompression/CMakeFiles/gpuCode.dir/DependInfo.cmake"
   )

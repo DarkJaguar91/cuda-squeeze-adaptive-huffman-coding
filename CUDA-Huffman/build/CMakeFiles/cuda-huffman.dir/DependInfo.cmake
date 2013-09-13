@@ -4,15 +4,16 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/btalbot/projects/CUDA-Huffman/main.cpp" "/home/btalbot/projects/CUDA-Huffman/build/CMakeFiles/cuda-huffman.dir/main.cpp.o"
+  "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/main.cpp" "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/CMakeFiles/cuda-huffman.dir/main.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/btalbot/projects/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir/DependInfo.cmake"
-  "/home/btalbot/projects/CUDA-Huffman/build/CPUCompression/CMakeFiles/cpuCode.dir/DependInfo.cmake"
-  "/home/btalbot/projects/CUDA-Huffman/build/Timer/CMakeFiles/timerLib.dir/DependInfo.cmake"
+  "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir/DependInfo.cmake"
+  "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPULibrary/CMakeFiles/gpuLib.dir/DependInfo.cmake"
+  "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/CPUCompression/CMakeFiles/cpuCode.dir/DependInfo.cmake"
+  "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/Timer/CMakeFiles/timerLib.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
