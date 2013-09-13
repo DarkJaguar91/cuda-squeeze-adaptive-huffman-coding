@@ -100,19 +100,19 @@ CPUCompression/CPUmain.h
 GPUCompression/GPUmain.h
 /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/GPUCompression/GPUmain.h
 
-/usr/local/cuda/include/cuda.h
+/usr/local/cuda-5.5/include/cuda.h
 stdlib.h
 -
 
-/usr/local/cuda/include/host_defines.h
+/usr/local/cuda-5.5/include/host_defines.h
 
-/usr/local/cuda/include/thrust/advance.h
+/usr/local/cuda-5.5/include/thrust/advance.h
 thrust/detail/config.h
 -
 thrust/detail/advance.inl
 -
 
-/usr/local/cuda/include/thrust/detail/advance.inl
+/usr/local/cuda-5.5/include/thrust/detail/advance.inl
 thrust/detail/config.h
 -
 thrust/advance.h
@@ -120,7 +120,7 @@ thrust/advance.h
 thrust/system/detail/generic/advance.h
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/allocator_traits.h
+/usr/local/cuda-5.5/include/thrust/detail/allocator/allocator_traits.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits/pointer_traits.h
@@ -132,7 +132,7 @@ thrust/detail/type_traits.h
 thrust/detail/allocator/allocator_traits.inl
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/allocator_traits.inl
+/usr/local/cuda-5.5/include/thrust/detail/allocator/allocator_traits.inl
 thrust/detail/config.h
 -
 thrust/detail/allocator/allocator_traits.h
@@ -146,7 +146,7 @@ new
 limits
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/copy_construct_range.h
+/usr/local/cuda-5.5/include/thrust/detail/allocator/copy_construct_range.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -154,7 +154,7 @@ thrust/detail/execution_policy.h
 thrust/detail/allocator/copy_construct_range.inl
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/copy_construct_range.inl
+/usr/local/cuda-5.5/include/thrust/detail/allocator/copy_construct_range.inl
 thrust/detail/config.h
 -
 thrust/detail/allocator/allocator_traits.h
@@ -178,13 +178,13 @@ thrust/for_each.h
 memory
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/default_construct_range.h
+/usr/local/cuda-5.5/include/thrust/detail/allocator/default_construct_range.h
 thrust/detail/config.h
 -
 thrust/detail/allocator/default_construct_range.inl
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/default_construct_range.inl
+/usr/local/cuda-5.5/include/thrust/detail/allocator/default_construct_range.inl
 thrust/detail/config.h
 -
 thrust/detail/allocator/allocator_traits.h
@@ -198,13 +198,13 @@ thrust/for_each.h
 thrust/uninitialized_fill.h
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/destroy_range.h
+/usr/local/cuda-5.5/include/thrust/detail/allocator/destroy_range.h
 thrust/detail/config.h
 -
 thrust/detail/allocator/destroy_range.inl
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/destroy_range.inl
+/usr/local/cuda-5.5/include/thrust/detail/allocator/destroy_range.inl
 thrust/detail/allocator/destroy_range.h
 -
 thrust/detail/allocator/allocator_traits.h
@@ -216,13 +216,13 @@ thrust/for_each.h
 memory
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/fill_construct_range.h
+/usr/local/cuda-5.5/include/thrust/detail/allocator/fill_construct_range.h
 thrust/detail/config.h
 -
 thrust/detail/allocator/fill_construct_range.inl
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/fill_construct_range.inl
+/usr/local/cuda-5.5/include/thrust/detail/allocator/fill_construct_range.inl
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -238,11 +238,11 @@ thrust/uninitialized_fill.h
 memory
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/no_throw_allocator.h
+/usr/local/cuda-5.5/include/thrust/detail/allocator/no_throw_allocator.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/tagged_allocator.h
+/usr/local/cuda-5.5/include/thrust/detail/allocator/tagged_allocator.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits/pointer_traits.h
@@ -252,7 +252,7 @@ thrust/iterator/iterator_traits.h
 thrust/detail/allocator/tagged_allocator.inl
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/tagged_allocator.inl
+/usr/local/cuda-5.5/include/thrust/detail/allocator/tagged_allocator.inl
 thrust/detail/config.h
 -
 thrust/detail/allocator/tagged_allocator.h
@@ -260,7 +260,7 @@ thrust/detail/allocator/tagged_allocator.h
 limits
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/temporary_allocator.h
+/usr/local/cuda-5.5/include/thrust/detail/allocator/temporary_allocator.h
 thrust/detail/config.h
 -
 thrust/detail/allocator/tagged_allocator.h
@@ -276,7 +276,7 @@ thrust/detail/execution_policy.h
 thrust/detail/allocator/temporary_allocator.inl
 -
 
-/usr/local/cuda/include/thrust/detail/allocator/temporary_allocator.inl
+/usr/local/cuda-5.5/include/thrust/detail/allocator/temporary_allocator.inl
 thrust/detail/config.h
 -
 thrust/detail/allocator/temporary_allocator.h
@@ -286,21 +286,21 @@ thrust/detail/temporary_buffer.h
 thrust/system/detail/bad_alloc.h
 -
 
-/usr/local/cuda/include/thrust/detail/config.h
+/usr/local/cuda-5.5/include/thrust/detail/config.h
 thrust/detail/config/config.h
 -
 
-/usr/local/cuda/include/thrust/detail/config/compiler.h
+/usr/local/cuda-5.5/include/thrust/detail/config/compiler.h
 cuda.h
 -
 
-/usr/local/cuda/include/thrust/detail/config/compiler_fence.h
+/usr/local/cuda-5.5/include/thrust/detail/config/compiler_fence.h
 thrust/detail/config.h
 -
 intrin.h
 -
 
-/usr/local/cuda/include/thrust/detail/config/config.h
+/usr/local/cuda-5.5/include/thrust/detail/config/config.h
 thrust/detail/config/simple_defines.h
 -
 thrust/detail/config/compiler.h
@@ -320,29 +320,29 @@ thrust/detail/config/forceinline.h
 thrust/detail/config/hd_warning_disable.h
 -
 
-/usr/local/cuda/include/thrust/detail/config/debug.h
+/usr/local/cuda-5.5/include/thrust/detail/config/debug.h
 
-/usr/local/cuda/include/thrust/detail/config/device_system.h
+/usr/local/cuda-5.5/include/thrust/detail/config/device_system.h
 
-/usr/local/cuda/include/thrust/detail/config/forceinline.h
+/usr/local/cuda-5.5/include/thrust/detail/config/forceinline.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/detail/config/hd_warning_disable.h
+/usr/local/cuda-5.5/include/thrust/detail/config/hd_warning_disable.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/detail/config/host_device.h
+/usr/local/cuda-5.5/include/thrust/detail/config/host_device.h
 thrust/detail/config.h
 -
 host_defines.h
 -
 
-/usr/local/cuda/include/thrust/detail/config/host_system.h
+/usr/local/cuda-5.5/include/thrust/detail/config/host_system.h
 
-/usr/local/cuda/include/thrust/detail/config/simple_defines.h
+/usr/local/cuda-5.5/include/thrust/detail/config/simple_defines.h
 
-/usr/local/cuda/include/thrust/detail/contiguous_storage.h
+/usr/local/cuda-5.5/include/thrust/detail/contiguous_storage.h
 thrust/iterator/detail/normal_iterator.h
 -
 thrust/detail/execution_policy.h
@@ -352,7 +352,7 @@ thrust/detail/allocator/allocator_traits.h
 thrust/detail/contiguous_storage.inl
 -
 
-/usr/local/cuda/include/thrust/detail/contiguous_storage.inl
+/usr/local/cuda-5.5/include/thrust/detail/contiguous_storage.inl
 thrust/detail/contiguous_storage.h
 -
 thrust/detail/swap.h
@@ -370,7 +370,7 @@ thrust/detail/allocator/fill_construct_range.h
 utility
 -
 
-/usr/local/cuda/include/thrust/detail/copy.h
+/usr/local/cuda-5.5/include/thrust/detail/copy.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -378,7 +378,7 @@ thrust/detail/execution_policy.h
 thrust/detail/copy.inl
 -
 
-/usr/local/cuda/include/thrust/detail/copy.inl
+/usr/local/cuda-5.5/include/thrust/detail/copy.inl
 thrust/detail/config.h
 -
 thrust/detail/copy.h
@@ -390,7 +390,7 @@ thrust/system/detail/generic/copy.h
 thrust/system/detail/adl/copy.h
 -
 
-/usr/local/cuda/include/thrust/detail/device_free.inl
+/usr/local/cuda-5.5/include/thrust/detail/device_free.inl
 thrust/detail/config.h
 -
 thrust/device_free.h
@@ -402,7 +402,7 @@ thrust/system/detail/generic/select_system.h
 thrust/detail/malloc_and_free.h
 -
 
-/usr/local/cuda/include/thrust/detail/device_malloc.inl
+/usr/local/cuda-5.5/include/thrust/detail/device_malloc.inl
 thrust/detail/config.h
 -
 thrust/device_malloc.h
@@ -414,7 +414,7 @@ thrust/system/detail/generic/select_system.h
 thrust/detail/malloc_and_free.h
 -
 
-/usr/local/cuda/include/thrust/detail/device_ptr.inl
+/usr/local/cuda-5.5/include/thrust/detail/device_ptr.inl
 thrust/device_ptr.h
 -
 thrust/device_reference.h
@@ -426,17 +426,17 @@ thrust/detail/type_traits.h
 thrust/iterator/iterator_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/device_reference.inl
+/usr/local/cuda-5.5/include/thrust/detail/device_reference.inl
 thrust/detail/config.h
 -
 thrust/device_reference.h
 -
 
-/usr/local/cuda/include/thrust/detail/device_vector.inl
+/usr/local/cuda-5.5/include/thrust/detail/device_vector.inl
 thrust/host_vector.h
 -
 
-/usr/local/cuda/include/thrust/detail/distance.inl
+/usr/local/cuda-5.5/include/thrust/detail/distance.inl
 thrust/advance.h
 -
 thrust/system/detail/generic/distance.h
@@ -444,7 +444,7 @@ thrust/system/detail/generic/distance.h
 thrust/iterator/iterator_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/equal.inl
+/usr/local/cuda-5.5/include/thrust/detail/equal.inl
 thrust/equal.h
 -
 thrust/iterator/iterator_traits.h
@@ -456,11 +456,11 @@ thrust/system/detail/generic/equal.h
 thrust/system/detail/adl/equal.h
 -
 
-/usr/local/cuda/include/thrust/detail/execution_policy.h
+/usr/local/cuda-5.5/include/thrust/detail/execution_policy.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/detail/extrema.inl
+/usr/local/cuda-5.5/include/thrust/detail/extrema.inl
 thrust/detail/config.h
 -
 thrust/extrema.h
@@ -474,7 +474,7 @@ thrust/system/detail/generic/extrema.h
 thrust/system/detail/adl/extrema.h
 -
 
-/usr/local/cuda/include/thrust/detail/fill.inl
+/usr/local/cuda-5.5/include/thrust/detail/fill.inl
 thrust/fill.h
 -
 thrust/iterator/iterator_traits.h
@@ -486,7 +486,7 @@ thrust/system/detail/generic/fill.h
 thrust/system/detail/adl/fill.h
 -
 
-/usr/local/cuda/include/thrust/detail/find.inl
+/usr/local/cuda-5.5/include/thrust/detail/find.inl
 thrust/detail/config.h
 -
 thrust/iterator/iterator_traits.h
@@ -498,7 +498,7 @@ thrust/system/detail/generic/find.h
 thrust/system/detail/adl/find.h
 -
 
-/usr/local/cuda/include/thrust/detail/for_each.inl
+/usr/local/cuda-5.5/include/thrust/detail/for_each.inl
 thrust/detail/config.h
 -
 thrust/for_each.h
@@ -512,17 +512,17 @@ thrust/system/detail/generic/for_each.h
 thrust/system/detail/adl/for_each.h
 -
 
-/usr/local/cuda/include/thrust/detail/function.h
+/usr/local/cuda-5.5/include/thrust/detail/function.h
 thrust/detail/config.h
 -
 thrust/detail/raw_reference_cast.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional.inl
+/usr/local/cuda-5.5/include/thrust/detail/functional.inl
 thrust/functional.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/actor.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/actor.h
 thrust/detail/config.h
 -
 thrust/tuple.h
@@ -538,7 +538,7 @@ thrust/detail/type_traits/result_of.h
 thrust/detail/functional/actor.inl
 -
 
-/usr/local/cuda/include/thrust/detail/functional/actor.inl
+/usr/local/cuda-5.5/include/thrust/detail/functional/actor.inl
 thrust/detail/config.h
 -
 thrust/detail/functional/composite.h
@@ -548,19 +548,19 @@ thrust/detail/functional/operators/assignment_operator.h
 thrust/functional.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/argument.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/argument.h
 thrust/detail/config.h
 -
 thrust/tuple.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/composite.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/composite.h
 thrust/detail/functional/actor.h
 -
 thrust/tuple.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/operators.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/operators.h
 thrust/detail/config.h
 -
 thrust/detail/functional/operators/arithmetic_operators.h
@@ -574,7 +574,7 @@ thrust/detail/functional/operators/bitwise_operators.h
 thrust/detail/functional/operators/compound_assignment_operators.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/operators/arithmetic_operators.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/operators/arithmetic_operators.h
 thrust/detail/config.h
 -
 thrust/detail/functional/actor.h
@@ -586,7 +586,7 @@ thrust/detail/functional/operators/operator_adaptors.h
 thrust/functional.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/operators/assignment_operator.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/operators/assignment_operator.h
 thrust/detail/config.h
 -
 thrust/detail/functional/actor.h
@@ -598,7 +598,7 @@ thrust/detail/functional/operators/operator_adaptors.h
 thrust/functional.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/operators/bitwise_operators.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/operators/bitwise_operators.h
 thrust/detail/config.h
 -
 thrust/detail/functional/actor.h
@@ -610,7 +610,7 @@ thrust/detail/functional/operators/operator_adaptors.h
 thrust/functional.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/operators/compound_assignment_operators.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/operators/compound_assignment_operators.h
 thrust/detail/config.h
 -
 thrust/detail/functional/actor.h
@@ -620,7 +620,7 @@ thrust/detail/functional/composite.h
 thrust/detail/functional/operators/operator_adaptors.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/operators/logical_operators.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/operators/logical_operators.h
 thrust/detail/config.h
 -
 thrust/detail/functional/actor.h
@@ -632,7 +632,7 @@ thrust/detail/functional/operators/operator_adaptors.h
 thrust/functional.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/operators/operator_adaptors.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/operators/operator_adaptors.h
 thrust/detail/config.h
 -
 thrust/tuple.h
@@ -640,7 +640,7 @@ thrust/tuple.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/operators/relational_operators.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/operators/relational_operators.h
 thrust/detail/config.h
 -
 thrust/detail/functional/actor.h
@@ -652,7 +652,7 @@ thrust/detail/functional/operators/operator_adaptors.h
 thrust/functional.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/placeholder.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/placeholder.h
 thrust/detail/config.h
 -
 thrust/detail/functional/actor.h
@@ -660,13 +660,13 @@ thrust/detail/functional/actor.h
 thrust/detail/functional/argument.h
 -
 
-/usr/local/cuda/include/thrust/detail/functional/value.h
+/usr/local/cuda-5.5/include/thrust/detail/functional/value.h
 thrust/detail/config.h
 -
 thrust/detail/functional/actor.h
 -
 
-/usr/local/cuda/include/thrust/detail/generate.inl
+/usr/local/cuda-5.5/include/thrust/detail/generate.inl
 thrust/generate.h
 -
 thrust/iterator/iterator_traits.h
@@ -678,11 +678,11 @@ thrust/system/detail/generic/generate.h
 thrust/system/detail/adl/generate.h
 -
 
-/usr/local/cuda/include/thrust/detail/host_vector.inl
+/usr/local/cuda-5.5/include/thrust/detail/host_vector.inl
 thrust/host_vector.h
 -
 
-/usr/local/cuda/include/thrust/detail/inner_product.inl
+/usr/local/cuda-5.5/include/thrust/detail/inner_product.inl
 thrust/detail/config.h
 -
 thrust/inner_product.h
@@ -696,7 +696,7 @@ thrust/system/detail/generic/inner_product.h
 thrust/system/detail/adl/inner_product.h
 -
 
-/usr/local/cuda/include/thrust/detail/internal_functional.h
+/usr/local/cuda-5.5/include/thrust/detail/internal_functional.h
 thrust/tuple.h
 -
 thrust/iterator/iterator_traits.h
@@ -710,7 +710,7 @@ thrust/detail/raw_reference_cast.h
 memory
 -
 
-/usr/local/cuda/include/thrust/detail/malloc_and_free.h
+/usr/local/cuda-5.5/include/thrust/detail/malloc_and_free.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -724,11 +724,11 @@ thrust/system/detail/generic/memory.h
 thrust/system/detail/adl/malloc_and_free.h
 -
 
-/usr/local/cuda/include/thrust/detail/minmax.h
+/usr/local/cuda-5.5/include/thrust/detail/minmax.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/detail/mismatch.inl
+/usr/local/cuda-5.5/include/thrust/detail/mismatch.inl
 thrust/detail/config.h
 -
 thrust/mismatch.h
@@ -742,13 +742,13 @@ thrust/system/detail/generic/mismatch.h
 thrust/system/detail/adl/mismatch.h
 -
 
-/usr/local/cuda/include/thrust/detail/numeric_traits.h
+/usr/local/cuda-5.5/include/thrust/detail/numeric_traits.h
 thrust/detail/type_traits.h
 -
 limits
 -
 
-/usr/local/cuda/include/thrust/detail/overlapped_copy.h
+/usr/local/cuda-5.5/include/thrust/detail/overlapped_copy.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_traits.h
@@ -762,13 +762,13 @@ thrust/detail/temporary_array.h
 thrust/system/cpp/detail/execution_policy.h
 -
 
-/usr/local/cuda/include/thrust/detail/pair.inl
+/usr/local/cuda-5.5/include/thrust/detail/pair.inl
 thrust/pair.h
 -
 thrust/detail/swap.h
 -
 
-/usr/local/cuda/include/thrust/detail/pointer.h
+/usr/local/cuda-5.5/include/thrust/detail/pointer.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_adaptor.h
@@ -784,19 +784,19 @@ thrust/detail/reference_forward_declaration.h
 thrust/detail/pointer.inl
 -
 
-/usr/local/cuda/include/thrust/detail/pointer.inl
+/usr/local/cuda-5.5/include/thrust/detail/pointer.inl
 thrust/detail/config.h
 -
 thrust/detail/pointer.h
 -
 
-/usr/local/cuda/include/thrust/detail/raw_pointer_cast.h
+/usr/local/cuda-5.5/include/thrust/detail/raw_pointer_cast.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits/pointer_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/raw_reference_cast.h
+/usr/local/cuda-5.5/include/thrust/detail/raw_reference_cast.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits/has_nested_type.h
@@ -810,7 +810,7 @@ thrust/iterator/detail/tuple_of_iterator_references.h
 thrust/detail/raw_reference_cast.inl
 -
 
-/usr/local/cuda/include/thrust/detail/raw_reference_cast.inl
+/usr/local/cuda-5.5/include/thrust/detail/raw_reference_cast.inl
 thrust/detail/config.h
 -
 thrust/detail/raw_reference_cast.h
@@ -820,7 +820,7 @@ thrust/detail/type_traits.h
 thrust/detail/tuple_transform.h
 -
 
-/usr/local/cuda/include/thrust/detail/reduce.inl
+/usr/local/cuda-5.5/include/thrust/detail/reduce.inl
 thrust/reduce.h
 -
 thrust/iterator/iterator_traits.h
@@ -836,7 +836,7 @@ thrust/system/detail/adl/reduce.h
 thrust/system/detail/adl/reduce_by_key.h
 -
 
-/usr/local/cuda/include/thrust/detail/reference.h
+/usr/local/cuda-5.5/include/thrust/detail/reference.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -848,7 +848,7 @@ thrust/detail/reference_forward_declaration.h
 thrust/detail/reference.inl
 -
 
-/usr/local/cuda/include/thrust/detail/reference.inl
+/usr/local/cuda-5.5/include/thrust/detail/reference.inl
 thrust/detail/config.h
 -
 thrust/detail/reference.h
@@ -868,13 +868,13 @@ thrust/system/detail/adl/assign_value.h
 thrust/system/detail/adl/iter_swap.h
 -
 
-/usr/local/cuda/include/thrust/detail/reference_forward_declaration.h
+/usr/local/cuda-5.5/include/thrust/detail/reference_forward_declaration.h
 thrust/detail/config.h
 -
 thrust/detail/use_default.h
 -
 
-/usr/local/cuda/include/thrust/detail/replace.inl
+/usr/local/cuda-5.5/include/thrust/detail/replace.inl
 thrust/detail/config.h
 -
 thrust/replace.h
@@ -888,7 +888,7 @@ thrust/system/detail/generic/replace.h
 thrust/system/detail/adl/replace.h
 -
 
-/usr/local/cuda/include/thrust/detail/scan.inl
+/usr/local/cuda-5.5/include/thrust/detail/scan.inl
 thrust/detail/config.h
 -
 thrust/scan.h
@@ -906,7 +906,7 @@ thrust/system/detail/adl/scan.h
 thrust/system/detail/adl/scan_by_key.h
 -
 
-/usr/local/cuda/include/thrust/detail/scatter.inl
+/usr/local/cuda-5.5/include/thrust/detail/scatter.inl
 thrust/scatter.h
 -
 thrust/iterator/iterator_traits.h
@@ -918,7 +918,7 @@ thrust/system/detail/generic/scatter.h
 thrust/system/detail/adl/scatter.h
 -
 
-/usr/local/cuda/include/thrust/detail/sort.inl
+/usr/local/cuda-5.5/include/thrust/detail/sort.inl
 thrust/detail/config.h
 -
 thrust/sort.h
@@ -932,17 +932,17 @@ thrust/system/detail/generic/sort.h
 thrust/system/detail/adl/sort.h
 -
 
-/usr/local/cuda/include/thrust/detail/static_assert.h
+/usr/local/cuda-5.5/include/thrust/detail/static_assert.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/swap.h
+/usr/local/cuda-5.5/include/thrust/detail/swap.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/detail/temporary_array.h
+/usr/local/cuda-5.5/include/thrust/detail/temporary_array.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_traits.h
@@ -960,7 +960,7 @@ memory
 thrust/detail/temporary_array.inl
 -
 
-/usr/local/cuda/include/thrust/detail/temporary_array.inl
+/usr/local/cuda-5.5/include/thrust/detail/temporary_array.inl
 thrust/detail/temporary_array.h
 -
 thrust/distance.h
@@ -970,7 +970,7 @@ thrust/system/detail/generic/select_system.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/temporary_buffer.h
+/usr/local/cuda-5.5/include/thrust/detail/temporary_buffer.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -986,7 +986,7 @@ thrust/system/detail/generic/temporary_buffer.h
 thrust/system/detail/adl/temporary_buffer.h
 -
 
-/usr/local/cuda/include/thrust/detail/transform.inl
+/usr/local/cuda-5.5/include/thrust/detail/transform.inl
 thrust/transform.h
 -
 thrust/iterator/iterator_traits.h
@@ -998,7 +998,7 @@ thrust/system/detail/generic/transform.h
 thrust/system/detail/adl/transform.h
 -
 
-/usr/local/cuda/include/thrust/detail/transform_reduce.inl
+/usr/local/cuda-5.5/include/thrust/detail/transform_reduce.inl
 thrust/detail/config.h
 -
 thrust/iterator/iterator_traits.h
@@ -1010,61 +1010,61 @@ thrust/system/detail/generic/transform_reduce.h
 thrust/system/detail/adl/transform_reduce.h
 -
 
-/usr/local/cuda/include/thrust/detail/tuple.inl
+/usr/local/cuda-5.5/include/thrust/detail/tuple.inl
 thrust/detail/type_traits.h
 -
 thrust/detail/swap.h
 -
 
-/usr/local/cuda/include/thrust/detail/tuple_meta_transform.h
+/usr/local/cuda-5.5/include/thrust/detail/tuple_meta_transform.h
 thrust/tuple.h
 -
 
-/usr/local/cuda/include/thrust/detail/tuple_transform.h
+/usr/local/cuda-5.5/include/thrust/detail/tuple_transform.h
 thrust/tuple.h
 -
 thrust/detail/tuple_meta_transform.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits/has_trivial_assign.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/function_traits.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/function_traits.h
 thrust/detail/type_traits.h
 -
 thrust/detail/type_traits/has_nested_type.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/has_member_function.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/has_member_function.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/has_nested_type.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/has_nested_type.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/has_trivial_assign.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/has_trivial_assign.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/is_call_possible.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/is_call_possible.h
 thrust/detail/type_traits.h
 -
 thrust/detail/type_traits/has_member_function.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/is_metafunction_defined.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/is_metafunction_defined.h
 thrust/detail/type_traits/has_nested_type.h
 -
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/iterator/is_output_iterator.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/iterator/is_output_iterator.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -1076,11 +1076,11 @@ thrust/iterator/iterator_traits.h
 thrust/iterator/detail/any_assign.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/minimum_type.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/minimum_type.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/pointer_traits.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/pointer_traits.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -1094,7 +1094,7 @@ thrust/iterator/iterator_traits.h
 cstddef
 -
 
-/usr/local/cuda/include/thrust/detail/type_traits/result_of.h
+/usr/local/cuda-5.5/include/thrust/detail/type_traits/result_of.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -1102,7 +1102,7 @@ thrust/detail/type_traits.h
 thrust/detail/type_traits/function_traits.h
 -
 
-/usr/local/cuda/include/thrust/detail/uninitialized_fill.inl
+/usr/local/cuda-5.5/include/thrust/detail/uninitialized_fill.inl
 thrust/uninitialized_fill.h
 -
 thrust/iterator/iterator_traits.h
@@ -1114,11 +1114,11 @@ thrust/system/detail/generic/uninitialized_fill.h
 thrust/system/detail/adl/uninitialized_fill.h
 -
 
-/usr/local/cuda/include/thrust/detail/use_default.h
+/usr/local/cuda-5.5/include/thrust/detail/use_default.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/detail/vector_base.h
+/usr/local/cuda-5.5/include/thrust/detail/vector_base.h
 thrust/iterator/detail/normal_iterator.h
 -
 thrust/iterator/reverse_iterator.h
@@ -1134,7 +1134,7 @@ vector
 thrust/detail/vector_base.inl
 -
 
-/usr/local/cuda/include/thrust/detail/vector_base.inl
+/usr/local/cuda-5.5/include/thrust/detail/vector_base.inl
 thrust/detail/vector_base.h
 -
 thrust/detail/copy.h
@@ -1158,7 +1158,7 @@ thrust/detail/temporary_array.h
 stdexcept
 -
 
-/usr/local/cuda/include/thrust/device_free.h
+/usr/local/cuda-5.5/include/thrust/device_free.h
 thrust/detail/config.h
 -
 thrust/device_ptr.h
@@ -1166,7 +1166,7 @@ thrust/device_ptr.h
 thrust/detail/device_free.inl
 -
 
-/usr/local/cuda/include/thrust/device_malloc.h
+/usr/local/cuda-5.5/include/thrust/device_malloc.h
 thrust/detail/config.h
 -
 thrust/device_ptr.h
@@ -1176,7 +1176,7 @@ cstddef
 thrust/detail/device_malloc.inl
 -
 
-/usr/local/cuda/include/thrust/device_malloc_allocator.h
+/usr/local/cuda-5.5/include/thrust/device_malloc_allocator.h
 thrust/detail/config.h
 -
 thrust/device_ptr.h
@@ -1192,7 +1192,7 @@ limits
 stdexcept
 -
 
-/usr/local/cuda/include/thrust/device_ptr.h
+/usr/local/cuda-5.5/include/thrust/device_ptr.h
 thrust/detail/config.h
 -
 thrust/memory.h
@@ -1204,7 +1204,7 @@ thrust/detail/device_ptr.inl
 thrust/detail/raw_pointer_cast.h
 -
 
-/usr/local/cuda/include/thrust/device_reference.h
+/usr/local/cuda-5.5/include/thrust/device_reference.h
 thrust/detail/config.h
 -
 thrust/device_ptr.h
@@ -1216,7 +1216,7 @@ thrust/detail/reference.h
 thrust/detail/device_reference.inl
 -
 
-/usr/local/cuda/include/thrust/device_vector.h
+/usr/local/cuda-5.5/include/thrust/device_vector.h
 thrust/detail/config.h
 -
 thrust/device_malloc_allocator.h
@@ -1228,7 +1228,7 @@ vector
 thrust/detail/device_vector.inl
 -
 
-/usr/local/cuda/include/thrust/distance.h
+/usr/local/cuda-5.5/include/thrust/distance.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_traits.h
@@ -1236,7 +1236,7 @@ thrust/iterator/iterator_traits.h
 thrust/detail/distance.inl
 -
 
-/usr/local/cuda/include/thrust/equal.h
+/usr/local/cuda-5.5/include/thrust/equal.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1244,7 +1244,7 @@ thrust/detail/execution_policy.h
 thrust/detail/equal.inl
 -
 
-/usr/local/cuda/include/thrust/extrema.h
+/usr/local/cuda-5.5/include/thrust/extrema.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1256,7 +1256,7 @@ thrust/detail/extrema.inl
 thrust/detail/minmax.h
 -
 
-/usr/local/cuda/include/thrust/fill.h
+/usr/local/cuda-5.5/include/thrust/fill.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1264,7 +1264,7 @@ thrust/detail/execution_policy.h
 thrust/detail/fill.inl
 -
 
-/usr/local/cuda/include/thrust/find.h
+/usr/local/cuda-5.5/include/thrust/find.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1272,7 +1272,7 @@ thrust/detail/execution_policy.h
 thrust/detail/find.inl
 -
 
-/usr/local/cuda/include/thrust/for_each.h
+/usr/local/cuda-5.5/include/thrust/for_each.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -1282,7 +1282,7 @@ thrust/detail/execution_policy.h
 thrust/detail/for_each.inl
 -
 
-/usr/local/cuda/include/thrust/functional.h
+/usr/local/cuda-5.5/include/thrust/functional.h
 thrust/detail/config.h
 -
 functional
@@ -1294,7 +1294,7 @@ thrust/detail/functional.inl
 thrust/detail/functional/operators.h
 -
 
-/usr/local/cuda/include/thrust/generate.h
+/usr/local/cuda-5.5/include/thrust/generate.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1302,7 +1302,7 @@ thrust/detail/execution_policy.h
 thrust/detail/generate.inl
 -
 
-/usr/local/cuda/include/thrust/host_vector.h
+/usr/local/cuda-5.5/include/thrust/host_vector.h
 thrust/detail/config.h
 -
 memory
@@ -1314,7 +1314,7 @@ vector
 thrust/detail/host_vector.inl
 -
 
-/usr/local/cuda/include/thrust/inner_product.h
+/usr/local/cuda-5.5/include/thrust/inner_product.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1322,7 +1322,7 @@ thrust/detail/execution_policy.h
 thrust/detail/inner_product.inl
 -
 
-/usr/local/cuda/include/thrust/iterator/constant_iterator.h
+/usr/local/cuda-5.5/include/thrust/iterator/constant_iterator.h
 thrust/detail/config.h
 -
 thrust/iterator/detail/constant_iterator_base.h
@@ -1330,7 +1330,7 @@ thrust/iterator/detail/constant_iterator_base.h
 thrust/iterator/iterator_facade.h
 -
 
-/usr/local/cuda/include/thrust/iterator/counting_iterator.h
+/usr/local/cuda-5.5/include/thrust/iterator/counting_iterator.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_adaptor.h
@@ -1342,23 +1342,23 @@ thrust/iterator/iterator_categories.h
 thrust/iterator/detail/counting_iterator.inl
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/any_assign.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/any_assign.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/any_system_tag.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/any_system_tag.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/constant_iterator_base.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/constant_iterator_base.h
 thrust/iterator/counting_iterator.h
 -
 thrust/iterator/iterator_adaptor.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/counting_iterator.inl
+/usr/local/cuda-5.5/include/thrust/iterator/detail/counting_iterator.inl
 thrust/iterator/counting_iterator.h
 -
 thrust/iterator/iterator_traits.h
@@ -1370,21 +1370,21 @@ thrust/detail/type_traits.h
 cstddef
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/device_system_tag.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/device_system_tag.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/distance_from_result.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/distance_from_result.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/host_system_tag.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/host_system_tag.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/is_iterator_category.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/is_iterator_category.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_categories.h
@@ -1392,13 +1392,13 @@ thrust/iterator/iterator_categories.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/is_trivial_iterator.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/is_trivial_iterator.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits/pointer_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/iterator_adaptor_base.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/iterator_adaptor_base.h
 thrust/detail/type_traits.h
 -
 thrust/iterator/iterator_traits.h
@@ -1408,7 +1408,7 @@ thrust/detail/use_default.h
 thrust/iterator/iterator_facade.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/iterator_category_to_system.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/iterator_category_to_system.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_categories.h
@@ -1424,7 +1424,7 @@ thrust/iterator/detail/any_system_tag.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/iterator_category_to_traversal.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/iterator_category_to_traversal.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_categories.h
@@ -1436,7 +1436,7 @@ thrust/iterator/detail/iterator_category_to_system.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/iterator_facade_category.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/iterator_facade_category.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -1456,7 +1456,7 @@ thrust/iterator/detail/is_iterator_category.h
 thrust/iterator/detail/iterator_category_to_traversal.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/iterator_traits.inl
+/usr/local/cuda-5.5/include/thrust/iterator/detail/iterator_traits.inl
 thrust/iterator/iterator_categories.h
 -
 thrust/iterator/detail/iterator_category_to_traversal.h
@@ -1464,17 +1464,17 @@ thrust/iterator/detail/iterator_category_to_traversal.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/iterator_traversal_tags.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/iterator_traversal_tags.h
 
-/usr/local/cuda/include/thrust/iterator/detail/minimum_category.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/minimum_category.h
 thrust/detail/type_traits/minimum_type.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/minimum_system.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/minimum_system.h
 thrust/detail/type_traits/minimum_type.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/normal_iterator.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/normal_iterator.h
 thrust/iterator/iterator_adaptor.h
 -
 thrust/iterator/detail/is_trivial_iterator.h
@@ -1482,7 +1482,7 @@ thrust/iterator/detail/is_trivial_iterator.h
 thrust/detail/type_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/permutation_iterator_base.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/permutation_iterator_base.h
 thrust/iterator/iterator_adaptor.h
 -
 thrust/iterator/iterator_traits.h
@@ -1492,7 +1492,7 @@ thrust/detail/type_traits.h
 thrust/iterator/detail/minimum_system.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/retag.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/retag.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -1502,19 +1502,19 @@ thrust/iterator/detail/tagged_iterator.h
 thrust/detail/pointer.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/reverse_iterator.inl
+/usr/local/cuda-5.5/include/thrust/iterator/detail/reverse_iterator.inl
 thrust/iterator/reverse_iterator.h
 -
 thrust/iterator/iterator_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/reverse_iterator_base.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/reverse_iterator_base.h
 thrust/iterator/iterator_adaptor.h
 -
 thrust/iterator/iterator_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/tagged_iterator.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/tagged_iterator.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_adaptor.h
@@ -1524,7 +1524,7 @@ thrust/iterator/iterator_traits.h
 thrust/detail/use_default.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/transform_iterator.inl
+/usr/local/cuda-5.5/include/thrust/iterator/detail/transform_iterator.inl
 thrust/iterator/transform_iterator.h
 -
 thrust/iterator/iterator_adaptor.h
@@ -1536,7 +1536,7 @@ thrust/detail/type_traits.h
 thrust/detail/type_traits/result_of.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/tuple_of_iterator_references.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/tuple_of_iterator_references.h
 thrust/detail/config.h
 -
 thrust/tuple.h
@@ -1546,19 +1546,19 @@ thrust/pair.h
 thrust/detail/reference_forward_declaration.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/universal_categories.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/universal_categories.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_categories.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/zip_iterator.inl
+/usr/local/cuda-5.5/include/thrust/iterator/detail/zip_iterator.inl
 thrust/iterator/zip_iterator.h
 -
 thrust/detail/tuple_transform.h
 -
 
-/usr/local/cuda/include/thrust/iterator/detail/zip_iterator_base.h
+/usr/local/cuda-5.5/include/thrust/iterator/detail/zip_iterator_base.h
 thrust/iterator/iterator_traits.h
 -
 thrust/iterator/iterator_facade.h
@@ -1580,7 +1580,7 @@ thrust/detail/type_traits.h
 thrust/iterator/detail/tuple_of_iterator_references.h
 -
 
-/usr/local/cuda/include/thrust/iterator/iterator_adaptor.h
+/usr/local/cuda-5.5/include/thrust/iterator/iterator_adaptor.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_facade.h
@@ -1590,7 +1590,7 @@ thrust/detail/use_default.h
 thrust/iterator/detail/iterator_adaptor_base.h
 -
 
-/usr/local/cuda/include/thrust/iterator/iterator_categories.h
+/usr/local/cuda-5.5/include/thrust/iterator/iterator_categories.h
 thrust/detail/config.h
 -
 iterator
@@ -1598,7 +1598,7 @@ iterator
 thrust/iterator/detail/universal_categories.h
 -
 
-/usr/local/cuda/include/thrust/iterator/iterator_facade.h
+/usr/local/cuda-5.5/include/thrust/iterator/iterator_facade.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -1608,7 +1608,7 @@ thrust/iterator/detail/iterator_facade_category.h
 thrust/iterator/detail/distance_from_result.h
 -
 
-/usr/local/cuda/include/thrust/iterator/iterator_traits.h
+/usr/local/cuda-5.5/include/thrust/iterator/iterator_traits.h
 thrust/detail/config.h
 -
 iterator
@@ -1624,7 +1624,7 @@ thrust/iterator/detail/any_system_tag.h
 thrust/iterator/detail/iterator_traits.inl
 -
 
-/usr/local/cuda/include/thrust/iterator/permutation_iterator.h
+/usr/local/cuda-5.5/include/thrust/iterator/permutation_iterator.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -1636,13 +1636,13 @@ thrust/iterator/iterator_facade.h
 thrust/iterator/iterator_traits.h
 -
 
-/usr/local/cuda/include/thrust/iterator/retag.h
+/usr/local/cuda-5.5/include/thrust/iterator/retag.h
 thrust/detail/config.h
 -
 thrust/iterator/detail/retag.h
 -
 
-/usr/local/cuda/include/thrust/iterator/reverse_iterator.h
+/usr/local/cuda-5.5/include/thrust/iterator/reverse_iterator.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits.h
@@ -1654,7 +1654,7 @@ thrust/iterator/iterator_facade.h
 thrust/iterator/detail/reverse_iterator.inl
 -
 
-/usr/local/cuda/include/thrust/iterator/transform_iterator.h
+/usr/local/cuda-5.5/include/thrust/iterator/transform_iterator.h
 thrust/detail/config.h
 -
 thrust/iterator/detail/transform_iterator.inl
@@ -1666,7 +1666,7 @@ thrust/detail/type_traits.h
 thrust/detail/function.h
 -
 
-/usr/local/cuda/include/thrust/iterator/zip_iterator.h
+/usr/local/cuda-5.5/include/thrust/iterator/zip_iterator.h
 thrust/detail/config.h
 -
 thrust/iterator/detail/zip_iterator_base.h
@@ -1678,7 +1678,7 @@ thrust/detail/type_traits.h
 thrust/iterator/detail/zip_iterator.inl
 -
 
-/usr/local/cuda/include/thrust/memory.h
+/usr/local/cuda-5.5/include/thrust/memory.h
 thrust/detail/config.h
 -
 thrust/detail/type_traits/pointer_traits.h
@@ -1696,7 +1696,7 @@ thrust/detail/malloc_and_free.h
 thrust/detail/temporary_buffer.h
 -
 
-/usr/local/cuda/include/thrust/mismatch.h
+/usr/local/cuda-5.5/include/thrust/mismatch.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1706,7 +1706,7 @@ thrust/pair.h
 thrust/detail/mismatch.inl
 -
 
-/usr/local/cuda/include/thrust/pair.h
+/usr/local/cuda-5.5/include/thrust/pair.h
 thrust/detail/config.h
 -
 utility
@@ -1714,7 +1714,7 @@ utility
 thrust/detail/pair.inl
 -
 
-/usr/local/cuda/include/thrust/reduce.h
+/usr/local/cuda-5.5/include/thrust/reduce.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1726,7 +1726,7 @@ thrust/pair.h
 thrust/detail/reduce.inl
 -
 
-/usr/local/cuda/include/thrust/replace.h
+/usr/local/cuda-5.5/include/thrust/replace.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1734,7 +1734,7 @@ thrust/detail/execution_policy.h
 thrust/detail/replace.inl
 -
 
-/usr/local/cuda/include/thrust/scan.h
+/usr/local/cuda-5.5/include/thrust/scan.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1742,7 +1742,7 @@ thrust/detail/execution_policy.h
 thrust/detail/scan.inl
 -
 
-/usr/local/cuda/include/thrust/scatter.h
+/usr/local/cuda-5.5/include/thrust/scatter.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1750,7 +1750,7 @@ thrust/detail/execution_policy.h
 thrust/detail/scatter.inl
 -
 
-/usr/local/cuda/include/thrust/sort.h
+/usr/local/cuda-5.5/include/thrust/sort.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -1758,121 +1758,121 @@ thrust/detail/execution_policy.h
 thrust/detail/sort.inl
 -
 
-/usr/local/cuda/include/thrust/system/cpp/detail/execution_policy.h
+/usr/local/cuda-5.5/include/thrust/system/cpp/detail/execution_policy.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/assign_value.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/assign_value.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/copy.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/copy.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/equal.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/equal.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/extrema.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/extrema.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/fill.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/fill.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/find.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/find.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/for_each.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/for_each.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/generate.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/generate.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/get_value.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/get_value.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/inner_product.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/inner_product.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/iter_swap.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/iter_swap.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/malloc_and_free.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/malloc_and_free.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/mismatch.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/mismatch.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/reduce.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/reduce.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/reduce_by_key.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/reduce_by_key.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/replace.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/replace.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/scan.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/scan.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/scan_by_key.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/scan_by_key.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/scatter.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/scatter.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/sort.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/sort.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/temporary_buffer.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/temporary_buffer.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/transform.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/transform.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/transform_reduce.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/transform_reduce.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/adl/uninitialized_fill.h
+/usr/local/cuda-5.5/include/thrust/system/detail/adl/uninitialized_fill.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/bad_alloc.h
+/usr/local/cuda-5.5/include/thrust/system/detail/bad_alloc.h
 new
 -
 string
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/advance.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/advance.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/advance.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/advance.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/advance.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/advance.h
@@ -1880,7 +1880,7 @@ thrust/system/detail/generic/advance.h
 thrust/iterator/iterator_traits.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/copy.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/copy.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -1888,7 +1888,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/copy.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/copy.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/copy.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/copy.h
@@ -1908,7 +1908,7 @@ thrust/iterator/zip_iterator.h
 thrust/iterator/detail/minimum_system.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/distance.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/distance.h
 thrust/detail/config.h
 -
 thrust/iterator/iterator_traits.h
@@ -1916,7 +1916,7 @@ thrust/iterator/iterator_traits.h
 thrust/system/detail/generic/distance.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/distance.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/distance.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/distance.h
@@ -1924,7 +1924,7 @@ thrust/system/detail/generic/distance.h
 thrust/iterator/iterator_traits.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/equal.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/equal.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -1932,7 +1932,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/equal.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/equal.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/equal.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/equal.h
@@ -1944,7 +1944,7 @@ thrust/detail/internal_functional.h
 thrust/mismatch.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/extrema.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/extrema.h
 thrust/detail/config.h
 -
 thrust/pair.h
@@ -1954,7 +1954,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/extrema.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/extrema.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/extrema.inl
 thrust/detail/config.h
 -
 thrust/extrema.h
@@ -1974,7 +1974,7 @@ thrust/iterator/counting_iterator.h
 thrust/iterator/zip_iterator.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/fill.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/fill.h
 thrust/detail/internal_functional.h
 -
 thrust/generate.h
@@ -1982,7 +1982,7 @@ thrust/generate.h
 thrust/system/detail/generic/tag.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/find.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/find.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -1990,7 +1990,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/find.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/find.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/find.inl
 thrust/detail/config.h
 -
 thrust/find.h
@@ -2010,7 +2010,7 @@ thrust/iterator/zip_iterator.h
 thrust/detail/internal_functional.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/for_each.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/for_each.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -2020,7 +2020,7 @@ thrust/system/detail/generic/tag.h
 thrust/detail/static_assert.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/generate.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/generate.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2028,7 +2028,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/generate.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/generate.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/generate.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/generate.h
@@ -2040,7 +2040,7 @@ thrust/detail/internal_functional.h
 thrust/for_each.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/inner_product.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/inner_product.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2048,7 +2048,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/inner_product.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/inner_product.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/inner_product.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/inner_product.h
@@ -2060,7 +2060,7 @@ thrust/detail/internal_functional.h
 thrust/transform_reduce.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/memory.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/memory.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -2078,7 +2078,7 @@ thrust/system/detail/generic/type_traits.h
 thrust/system/detail/generic/memory.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/memory.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/memory.inl
 thrust/detail/config.h
 -
 thrust/detail/type_traits/pointer_traits.h
@@ -2094,7 +2094,7 @@ thrust/detail/static_assert.h
 thrust/detail/malloc_and_free.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/mismatch.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/mismatch.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2102,7 +2102,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/mismatch.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/mismatch.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/mismatch.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/mismatch.h
@@ -2114,7 +2114,7 @@ thrust/detail/internal_functional.h
 thrust/find.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/reduce.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/reduce.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2124,7 +2124,7 @@ thrust/iterator/iterator_traits.h
 thrust/system/detail/generic/reduce.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/reduce.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/reduce.inl
 thrust/reduce.h
 -
 thrust/system/detail/generic/reduce.h
@@ -2136,7 +2136,7 @@ thrust/functional.h
 thrust/detail/static_assert.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/reduce_by_key.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/reduce_by_key.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2146,7 +2146,7 @@ thrust/iterator/iterator_traits.h
 thrust/system/detail/generic/reduce_by_key.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/reduce_by_key.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/reduce_by_key.inl
 thrust/iterator/iterator_traits.h
 -
 thrust/iterator/detail/minimum_system.h
@@ -2172,7 +2172,7 @@ thrust/scan.h
 thrust/detail/temporary_array.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/replace.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/replace.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2180,7 +2180,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/replace.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/replace.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/replace.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/replace.h
@@ -2192,7 +2192,7 @@ thrust/replace.h
 thrust/detail/internal_functional.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/scan.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/scan.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2200,7 +2200,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/scan.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/scan.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/scan.inl
 thrust/detail/config.h
 -
 thrust/detail/static_assert.h
@@ -2218,7 +2218,7 @@ thrust/detail/type_traits/iterator/is_output_iterator.h
 thrust/functional.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/scan_by_key.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/scan_by_key.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2226,7 +2226,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/scan_by_key.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/scan_by_key.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/scan_by_key.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/scan_by_key.h
@@ -2248,7 +2248,7 @@ thrust/detail/internal_functional.h
 thrust/scan.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/scatter.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/scatter.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2256,7 +2256,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/scatter.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/scatter.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/scatter.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/scatter.h
@@ -2270,7 +2270,7 @@ thrust/transform.h
 thrust/iterator/permutation_iterator.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/select_system.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/select_system.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -2286,7 +2286,7 @@ thrust/system/detail/generic/type_traits.h
 thrust/iterator/iterator_traits.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/sort.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/sort.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2294,7 +2294,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/sort.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/sort.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/sort.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/sort.h
@@ -2316,11 +2316,11 @@ thrust/tuple.h
 thrust/detail/internal_functional.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/tag.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/tag.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/temporary_buffer.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/temporary_buffer.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2332,7 +2332,7 @@ thrust/detail/pointer.h
 thrust/system/detail/generic/temporary_buffer.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/temporary_buffer.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/temporary_buffer.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/temporary_buffer.h
@@ -2344,7 +2344,7 @@ thrust/detail/malloc_and_free.h
 thrust/pair.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/transform.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/transform.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2352,7 +2352,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/transform.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/transform.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/transform.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/transform.h
@@ -2370,7 +2370,7 @@ thrust/iterator/zip_iterator.h
 thrust/detail/internal_functional.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/transform_reduce.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/transform_reduce.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2378,7 +2378,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/transform_reduce.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/transform_reduce.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/transform_reduce.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/transform_reduce.h
@@ -2388,11 +2388,11 @@ thrust/reduce.h
 thrust/iterator/transform_iterator.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/type_traits.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/type_traits.h
 thrust/detail/config.h
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/uninitialized_fill.h
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/uninitialized_fill.h
 thrust/detail/config.h
 -
 thrust/system/detail/generic/tag.h
@@ -2400,7 +2400,7 @@ thrust/system/detail/generic/tag.h
 thrust/system/detail/generic/uninitialized_fill.inl
 -
 
-/usr/local/cuda/include/thrust/system/detail/generic/uninitialized_fill.inl
+/usr/local/cuda-5.5/include/thrust/system/detail/generic/uninitialized_fill.inl
 thrust/detail/config.h
 -
 thrust/system/detail/generic/uninitialized_fill.h
@@ -2414,7 +2414,7 @@ thrust/detail/type_traits.h
 thrust/iterator/iterator_traits.h
 -
 
-/usr/local/cuda/include/thrust/transform.h
+/usr/local/cuda-5.5/include/thrust/transform.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -2422,7 +2422,7 @@ thrust/detail/execution_policy.h
 thrust/detail/transform.inl
 -
 
-/usr/local/cuda/include/thrust/transform_reduce.h
+/usr/local/cuda-5.5/include/thrust/transform_reduce.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h
@@ -2430,7 +2430,7 @@ thrust/detail/execution_policy.h
 thrust/detail/transform_reduce.inl
 -
 
-/usr/local/cuda/include/thrust/tuple.h
+/usr/local/cuda-5.5/include/thrust/tuple.h
 thrust/detail/config.h
 -
 thrust/detail/tuple.inl
@@ -2438,7 +2438,7 @@ thrust/detail/tuple.inl
 thrust/pair.h
 -
 
-/usr/local/cuda/include/thrust/uninitialized_fill.h
+/usr/local/cuda-5.5/include/thrust/uninitialized_fill.h
 thrust/detail/config.h
 -
 thrust/detail/execution_policy.h

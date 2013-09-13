@@ -17,13 +17,9 @@
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//For backwards compatibility, what version of CMake commands and
-// syntax should this version of CMake try to support.
-CMAKE_BACKWARDS_COMPATIBILITY:STRING=2.4
-
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=Release
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -46,10 +42,10 @@ CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the compiler during Release with Debug Info builds.
-CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //C compiler.
-CMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc
+CMAKE_C_COMPILER:FILEPATH=/usr/bin/cc
 
 //Flags used by the compiler during all build types.
 CMAKE_C_FLAGS:STRING=
@@ -66,7 +62,7 @@ CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the compiler during Release with Debug Info builds.
-CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Flags used by the linker.
 CMAKE_EXE_LINKER_FLAGS:STRING=' '
@@ -173,7 +169,7 @@ CUDA_BUILD_CUBIN:BOOL=OFF
 CUDA_BUILD_EMULATION:BOOL=OFF
 
 //"cudart" library
-CUDA_CUDART_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libcudart.so
+CUDA_CUDART_LIBRARY:FILEPATH=/usr/local/cuda-5.5/lib64/libcudart.so
 
 //"cuda" library (older versions only).
 CUDA_CUDA_LIBRARY:FILEPATH=CUDA_CUDA_LIBRARY-NOTFOUND
@@ -186,10 +182,10 @@ CUDA_GENERATED_OUTPUT_DIR:PATH=
 CUDA_HOST_COMPILATION_CPP:BOOL=ON
 
 //Host side compiler used by NVCC
-CUDA_HOST_COMPILER:FILEPATH=/usr/bin/gcc
+CUDA_HOST_COMPILER:FILEPATH=/usr/bin/cc
 
 //Path to a program.
-CUDA_NVCC_EXECUTABLE:FILEPATH=/usr/local/cuda/bin/nvcc
+CUDA_NVCC_EXECUTABLE:FILEPATH=/usr/local/cuda-5.5/bin/nvcc
 
 //Semi-colon delimit multiple arguments.
 CUDA_NVCC_FLAGS:STRING=
@@ -217,10 +213,10 @@ CUDA_SDK_ROOT_DIR:PATH=CUDA_SDK_ROOT_DIR-NOTFOUND
 CUDA_SEPARABLE_COMPILATION:BOOL=OFF
 
 //Path to a file.
-CUDA_TOOLKIT_INCLUDE:PATH=/usr/local/cuda/include
+CUDA_TOOLKIT_INCLUDE:PATH=/usr/local/cuda-5.5/include
 
 //Toolkit location.
-CUDA_TOOLKIT_ROOT_DIR:PATH=/usr/local/cuda
+CUDA_TOOLKIT_ROOT_DIR:PATH=/usr/local/cuda-5.5
 
 //Print out the commands run while compiling the CUDA source file.
 //  With the Makefile generator this defaults to VERBOSE variable
@@ -229,31 +225,25 @@ CUDA_TOOLKIT_ROOT_DIR:PATH=/usr/local/cuda
 CUDA_VERBOSE_BUILD:BOOL=OFF
 
 //Version of CUDA as computed from nvcc.
-CUDA_VERSION:STRING=5.0
+CUDA_VERSION:STRING=5.5
 
 //"cublas" library
-CUDA_cublas_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libcublas.so
+CUDA_cublas_LIBRARY:FILEPATH=/usr/local/cuda-5.5/lib64/libcublas.so
 
 //"cufft" library
-CUDA_cufft_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libcufft.so
+CUDA_cufft_LIBRARY:FILEPATH=/usr/local/cuda-5.5/lib64/libcufft.so
 
 //"cupti" library
-CUDA_cupti_LIBRARY:FILEPATH=/usr/local/cuda/extras/CUPTI/lib64/libcupti.so
+CUDA_cupti_LIBRARY:FILEPATH=/usr/local/cuda-5.5/extras/CUPTI/lib64/libcupti.so
 
 //"curand" library
-CUDA_curand_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libcurand.so
+CUDA_curand_LIBRARY:FILEPATH=/usr/local/cuda-5.5/lib64/libcurand.so
 
 //"cusparse" library
-CUDA_cusparse_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libcusparse.so
+CUDA_cusparse_LIBRARY:FILEPATH=/usr/local/cuda-5.5/lib64/libcusparse.so
 
 //"npp" library
-CUDA_npp_LIBRARY:FILEPATH=/usr/local/cuda/lib64/libnpp.so
-
-//Single output directory for building all executables.
-EXECUTABLE_OUTPUT_PATH:PATH=
-
-//Single output directory for building all libraries.
-LIBRARY_OUTPUT_PATH:PATH=
+CUDA_npp_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libnpp.so
 
 //C++ compiler flags for OpenMP parallization
 OpenMP_CXX_FLAGS:STRING=-fopenmp
@@ -274,7 +264,7 @@ cuda-huffman_SOURCE_DIR:STATIC=/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-
 gpuCode_LIB_DEPENDS:STATIC=
 
 //Dependencies for the target
-gpuLib_LIB_DEPENDS:STATIC=general;/usr/local/cuda/lib64/libcudart.so;
+gpuLib_LIB_DEPENDS:STATIC=general;/usr/local/cuda-5.5/lib64/libcudart.so;
 
 //The directory containing a CMake configuration file for rt.
 rt_DIR:PATH=rt_DIR-NOTFOUND
@@ -333,10 +323,6 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//Result of TRY_COMPILE
-CMAKE_DETERMINE_CXX_ABI_COMPILED:INTERNAL=TRUE
-//Result of TRY_COMPILE
-CMAKE_DETERMINE_C_ABI_COMPILED:INTERNAL=TRUE
 //Executable file format
 CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
@@ -412,7 +398,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 CUDA_64_BIT_DEVICE_CODE-ADVANCED:INTERNAL=1
 //List of intermediate files that are part of the cuda dependency
 // scanning.
-CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//gpuCode_generated_GPUmain.cu.o.depend;/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPULibrary/CMakeFiles/gpuCode.dir//gpuCode_generated_GPUmain.cu.o.depend;/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPULibrary/CMakeFiles/gpuLib.dir//gpuLib_generated_GPUlib.cu.o.depend
+CUDA_ADDITIONAL_CLEAN_FILES:INTERNAL=/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPULibrary/CMakeFiles/gpuLib.dir//gpuLib_generated_GPUlib.cu.o.depend
 //ADVANCED property for variable: CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE
 CUDA_ATTACH_VS_BUILD_RULE_TO_CUDA_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_CUDART_LIBRARY
@@ -444,7 +430,7 @@ CUDA_SDK_ROOT_DIR_INTERNAL:INTERNAL=CUDA_SDK_ROOT_DIR-NOTFOUND
 CUDA_TOOLKIT_INCLUDE-ADVANCED:INTERNAL=1
 //This is the value of the last time CUDA_TOOLKIT_ROOT_DIR was
 // set successfully.
-CUDA_TOOLKIT_ROOT_DIR_INTERNAL:INTERNAL=/usr/local/cuda
+CUDA_TOOLKIT_ROOT_DIR_INTERNAL:INTERNAL=/usr/local/cuda-5.5
 //ADVANCED property for variable: CUDA_VERSION
 CUDA_VERSION-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CUDA_cublas_LIBRARY
@@ -466,7 +452,7 @@ CUDA_parse_cubin:INTERNAL=/usr/share/cmake-2.8/Modules/FindCUDA/parse_cubin.cmak
 //Location of run_nvcc.cmake
 CUDA_run_nvcc:INTERNAL=/usr/share/cmake-2.8/Modules/FindCUDA/run_nvcc.cmake
 //Details about finding CUDA
-FIND_PACKAGE_MESSAGE_DETAILS_CUDA:INTERNAL=[/usr/local/cuda][/usr/local/cuda/bin/nvcc][/usr/local/cuda/include][/usr/local/cuda/lib64/libcudart.so][v5.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_CUDA:INTERNAL=[/usr/local/cuda-5.5][/usr/local/cuda-5.5/bin/nvcc][/usr/local/cuda-5.5/include][/usr/local/cuda-5.5/lib64/libcudart.so][v5.5()]
 //Details about finding OpenMP
 FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[-fopenmp][-fopenmp][v()]
 //ADVANCED property for variable: OpenMP_CXX_FLAGS
