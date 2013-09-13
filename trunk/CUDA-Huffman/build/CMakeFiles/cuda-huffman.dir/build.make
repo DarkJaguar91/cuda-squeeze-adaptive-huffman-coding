@@ -81,12 +81,12 @@ cuda__huffman_EXTERNAL_OBJECTS =
 
 cuda-huffman: CMakeFiles/cuda-huffman.dir/main.cpp.o
 cuda-huffman: CMakeFiles/cuda-huffman.dir/build.make
-cuda-huffman: /usr/local/cuda/lib64/libcudart.so
+cuda-huffman: /usr/local/cuda-5.5/lib64/libcudart.so
 cuda-huffman: GPUCompression/libgpuCode.a
 cuda-huffman: GPULibrary/libgpuLib.a
 cuda-huffman: CPUCompression/libcpuCode.a
 cuda-huffman: Timer/libtimerLib.a
-cuda-huffman: /usr/local/cuda/lib64/libcudart.so
+cuda-huffman: /usr/local/cuda-5.5/lib64/libcudart.so
 cuda-huffman: CMakeFiles/cuda-huffman.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable cuda-huffman"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cuda-huffman.dir/link.txt --verbose=$(VERBOSE)
