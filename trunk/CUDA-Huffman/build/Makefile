@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/btalbot/projects/CUDA-Huffman
+CMAKE_SOURCE_DIR = /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/btalbot/projects/CUDA-Huffman/build
+CMAKE_BINARY_DIR = /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -110,9 +110,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/btalbot/projects/CUDA-Huffman/build/CMakeFiles /home/btalbot/projects/CUDA-Huffman/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/CMakeFiles /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/btalbot/projects/CUDA-Huffman/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,17 +153,17 @@ cuda-huffman/fast:
 .PHONY : cuda-huffman/fast
 
 #=============================================================================
-# Target rules for targets named gpuCode
+# Target rules for targets named gpuLib
 
 # Build rule for target.
-gpuCode: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gpuCode
-.PHONY : gpuCode
+gpuLib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gpuLib
+.PHONY : gpuLib
 
 # fast build rule for target.
-gpuCode/fast:
-	$(MAKE) -f GPUCompression/CMakeFiles/gpuCode.dir/build.make GPUCompression/CMakeFiles/gpuCode.dir/build
-.PHONY : gpuCode/fast
+gpuLib/fast:
+	$(MAKE) -f GPULibrary/CMakeFiles/gpuLib.dir/build.make GPULibrary/CMakeFiles/gpuLib.dir/build
+.PHONY : gpuLib/fast
 
 #=============================================================================
 # Target rules for targets named cpuCode
@@ -190,6 +190,19 @@ timerLib: cmake_check_build_system
 timerLib/fast:
 	$(MAKE) -f Timer/CMakeFiles/timerLib.dir/build.make Timer/CMakeFiles/timerLib.dir/build
 .PHONY : timerLib/fast
+
+#=============================================================================
+# Target rules for targets named gpuCode
+
+# Build rule for target.
+gpuCode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gpuCode
+.PHONY : gpuCode
+
+# fast build rule for target.
+gpuCode/fast:
+	$(MAKE) -f GPUCompression/CMakeFiles/gpuCode.dir/build.make GPUCompression/CMakeFiles/gpuCode.dir/build
+.PHONY : gpuCode/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -228,9 +241,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... gpuCode"
+	@echo "... gpuLib"
 	@echo "... cpuCode"
 	@echo "... timerLib"
+	@echo "... gpuCode"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

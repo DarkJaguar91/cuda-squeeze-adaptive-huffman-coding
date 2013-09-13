@@ -1,10 +1,6 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-
-FIND_PACKAGE(CUDA)
-if(CUDA_FOUND)
-    SET(CUDA_NVCC_FLAGS "-arch;sm_20")
-else(CUDA_FOUND)
-    message("CUDA is not installed on this system.")
-endif()
-SET(LIB_TYPE STATIC)	#set the lib type
-CUDA_ADD_LIBRARY(gpuCode ${LIB_TYPE} GPUmain.cu)
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8 FATAL_ERROR)
+set(CMAKE_BUILD_TYPE Release)
+#enable this if you need SSE AND XOP support!!!:
+#set( CMAKE_CXX_FLAGS "-Wall -m64 -O3 -fopenmp -mfpmath=sse -mmmx -msse -msse2 -msse3 -msse4 -msse4a -msse4.1 -msse4.2 -mxop" )
+set( CMAKE_CXX_FLAGS "-Wall -m64 -O3 -fopenmp" )
+add_library(gpuCode GPUmain.cpp)

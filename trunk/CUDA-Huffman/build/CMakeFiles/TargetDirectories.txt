@@ -1,4 +1,5 @@
-/home/btalbot/projects/CUDA-Huffman/build/CPUCompression/CMakeFiles/cpuCode.dir
-/home/btalbot/projects/CUDA-Huffman/build/CMakeFiles/cuda-huffman.dir
-/home/btalbot/projects/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir
-/home/btalbot/projects/CUDA-Huffman/build/Timer/CMakeFiles/timerLib.dir
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/CPUCompression/CMakeFiles/cpuCode.dir
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/CMakeFiles/cuda-huffman.dir
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPULibrary/CMakeFiles/gpuLib.dir
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/Timer/CMakeFiles/timerLib.dir

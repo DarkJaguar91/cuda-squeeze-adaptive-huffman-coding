@@ -1,2 +1,2 @@
-/usr/bin/ar cr libgpuCode.a  CMakeFiles/gpuCode.dir/./gpuCode_generated_GPUmain.cu.o
+/usr/bin/ar cr libgpuCode.a  CMakeFiles/gpuCode.dir/GPUmain.cpp.o
 /usr/bin/ranlib libgpuCode.a

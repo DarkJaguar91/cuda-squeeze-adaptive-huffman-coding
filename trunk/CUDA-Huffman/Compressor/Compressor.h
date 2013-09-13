@@ -40,6 +40,16 @@ public:
 
 		delete (root);
 	}
+	
+	void initialize() {
+		std::vector<Node *> leaves;
+
+		Node * root = createTree(leaves);
+
+		calcCodes(leaves);
+
+		delete (root);
+	}
 
 	void compress(const float * values, HuffCode ** code,
 			const longValue & numFloats) {

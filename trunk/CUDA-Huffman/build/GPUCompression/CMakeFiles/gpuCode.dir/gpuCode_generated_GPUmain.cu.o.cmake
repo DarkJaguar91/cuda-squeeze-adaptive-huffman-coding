@@ -56,25 +56,26 @@ endif()
 
 # Set these up as variables to make reading the generated file easier
 set(CMAKE_COMMAND "/usr/bin/cmake") # path
-set(source_file "/home/btalbot/projects/CUDA-Huffman/GPUCompression/GPUmain.cu") # path
-set(NVCC_generated_dependency_file "/home/btalbot/projects/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//gpuCode_generated_GPUmain.cu.o.NVCC-depend") # path
-set(cmake_dependency_file "/home/btalbot/projects/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//gpuCode_generated_GPUmain.cu.o.depend") # path
+set(source_file "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/GPUCompression/GPUmain.cu") # path
+set(NVCC_generated_dependency_file "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//gpuCode_generated_GPUmain.cu.o.NVCC-depend") # path
+set(cmake_dependency_file "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//gpuCode_generated_GPUmain.cu.o.depend") # path
 set(CUDA_make2cmake "/usr/share/cmake-2.8/Modules/FindCUDA/make2cmake.cmake") # path
 set(CUDA_parse_cubin "/usr/share/cmake-2.8/Modules/FindCUDA/parse_cubin.cmake") # path
 set(build_cubin OFF) # bool
+set(CUDA_HOST_COMPILER "/usr/bin/gcc") # bool
 # We won't actually use these variables for now, but we need to set this, in
 # order to force this file to be run again if it changes.
-set(generated_file_path "/home/btalbot/projects/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//.") # path
-set(generated_file_internal "/home/btalbot/projects/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_GPUmain.cu.o") # path
-set(generated_cubin_file_internal "/home/btalbot/projects/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_GPUmain.cu.o.cubin.txt") # path
+set(generated_file_path "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//.") # path
+set(generated_file_internal "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_GPUmain.cu.o") # path
+set(generated_cubin_file_internal "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-Huffman/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_GPUmain.cu.o.cubin.txt") # path
 
 set(CUDA_NVCC_EXECUTABLE "/usr/local/cuda/bin/nvcc") # path
 set(CUDA_NVCC_FLAGS -arch;sm_20 ;; ) # list
 # Build specific configuration flags
-set(CUDA_NVCC_FLAGS_RELEASE  ;; )
-set(CUDA_NVCC_FLAGS_DEBUG  ;; )
-set(CUDA_NVCC_FLAGS_MINSIZEREL  ;; )
-set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ;; )
+set(CUDA_NVCC_FLAGS_RELEASE  ; )
+set(CUDA_NVCC_FLAGS_DEBUG  ; )
+set(CUDA_NVCC_FLAGS_MINSIZEREL  ; )
+set(CUDA_NVCC_FLAGS_RELWITHDEBINFO  ; )
 set(nvcc_flags -m64) # list
 set(CUDA_NVCC_INCLUDE_ARGS "-I/usr/local/cuda/include;-I/usr/local/cuda/include") # list (needs to be in quotes to handle spaces properly).
 set(format_flag "-c") # string
@@ -110,8 +111,15 @@ endif()
 # Add the build specific configuration flags
 list(APPEND CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS_${build_configuration}})
 
-if(DEFINED CCBIN)
-  set(CCBIN -ccbin "${CCBIN}")
+# Any -ccbin existing in CUDA_NVCC_FLAGS gets highest priority
+list( FIND CUDA_NVCC_FLAGS "-ccbin" ccbin_found0 )
+list( FIND CUDA_NVCC_FLAGS "--compiler-bindir" ccbin_found1 )
+if( ccbin_found0 LESS 0 AND ccbin_found1 LESS 0 )
+  if (CUDA_HOST_COMPILER STREQUAL "$(VCInstallDir)bin" AND DEFINED CCBIN)
+    set(CCBIN -ccbin "${CCBIN}")
+  else()
+    set(CCBIN -ccbin "${CUDA_HOST_COMPILER}")
+  endif()
 endif()
 
 # cuda_execute_process - Executes a command with optional command echo and status message.
@@ -147,7 +155,7 @@ macro(cuda_execute_process status command)
     endforeach()
     # Echo the command
     execute_process(COMMAND ${CMAKE_COMMAND} -E echo ${cuda_execute_process_string})
-  endif(verbose)
+  endif()
   # Run the command
   execute_process(COMMAND ${ARGN} RESULT_VARIABLE CUDA_result )
 endmacro()
@@ -285,4 +293,4 @@ if( build_cubin )
     -P "${CUDA_parse_cubin}"
     )
 
-endif( build_cubin )
+endif()

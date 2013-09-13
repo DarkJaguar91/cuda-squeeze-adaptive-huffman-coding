@@ -3,12 +3,12 @@
 void CPUCode::compressCPU(){
   using namespace std;
 
-	int numThreads = 4;
+	int numThreads = omp_get_max_threads();
 
 	omp_set_num_threads(numThreads);
 	cout << "Using: " << omp_get_max_threads() << " threads\n";
 
-	longValue numFloats = 1024 * 1024 * 100 / sizeof(float);
+	longValue numFloats = 1024 * 1024 * 1024 / sizeof(float);
 
 	srand(time(NULL));
 	float * floats;//= new float[numFloats];
