@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bjtal/projects/CUDA-HuffmanCoder/Timer/Timer.cpp
+Timer.h
+/home/bjtal/projects/CUDA-HuffmanCoder/Timer/Timer.h
+
+/home/bjtal/projects/CUDA-HuffmanCoder/Timer/Timer.h
+time.h
+-
+

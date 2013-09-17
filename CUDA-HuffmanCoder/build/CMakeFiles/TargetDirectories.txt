@@ -1,0 +1,4 @@
+/home/bjtal/projects/CUDA-HuffmanCoder/build/CPUCompression/CMakeFiles/cpuCode.dir
+/home/bjtal/projects/CUDA-HuffmanCoder/build/CMakeFiles/cuda-huffmancoder.dir
+/home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir
+/home/bjtal/projects/CUDA-HuffmanCoder/build/Timer/CMakeFiles/timerLib.dir
