@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bjtal/projects/CUDA-HuffmanCoder
+CMAKE_SOURCE_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bjtal/projects/CUDA-HuffmanCoder/build
+CMAKE_BINARY_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cuda-huffmancoder.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/cuda-huffmancoder.dir/flags.make
 
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: CMakeFiles/cuda-huffmancoder.dir/flags.make
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/projects/CUDA-HuffmanCoder/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/cuda-huffmancoder.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cuda-huffmancoder.dir/main.cpp.o -c /home/bjtal/projects/CUDA-HuffmanCoder/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cuda-huffmancoder.dir/main.cpp.o -c /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/main.cpp
 
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cuda-huffmancoder.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bjtal/projects/CUDA-HuffmanCoder/main.cpp > CMakeFiles/cuda-huffmancoder.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/main.cpp > CMakeFiles/cuda-huffmancoder.dir/main.cpp.i
 
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cuda-huffmancoder.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bjtal/projects/CUDA-HuffmanCoder/main.cpp -o CMakeFiles/cuda-huffmancoder.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/main.cpp -o CMakeFiles/cuda-huffmancoder.dir/main.cpp.s
 
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/cuda-huffmancoder.dir/main.cpp.o.requires
@@ -83,6 +83,7 @@ cuda-huffmancoder: CMakeFiles/cuda-huffmancoder.dir/main.cpp.o
 cuda-huffmancoder: CMakeFiles/cuda-huffmancoder.dir/build.make
 cuda-huffmancoder: /usr/local/cuda-5.5/lib64/libcudart.so
 cuda-huffmancoder: CPUCompression/libcpuCode.a
+cuda-huffmancoder: GPUCompressor/libGPUCoder.a
 cuda-huffmancoder: GPUCompression/libgpuCode.a
 cuda-huffmancoder: Timer/libtimerLib.a
 cuda-huffmancoder: /usr/local/cuda-5.5/lib64/libcudart.so
@@ -102,6 +103,6 @@ CMakeFiles/cuda-huffmancoder.dir/clean:
 .PHONY : CMakeFiles/cuda-huffmancoder.dir/clean
 
 CMakeFiles/cuda-huffmancoder.dir/depend:
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bjtal/projects/CUDA-HuffmanCoder /home/bjtal/projects/CUDA-HuffmanCoder /home/bjtal/projects/CUDA-HuffmanCoder/build /home/bjtal/projects/CUDA-HuffmanCoder/build /home/bjtal/projects/CUDA-HuffmanCoder/build/CMakeFiles/cuda-huffmancoder.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles/cuda-huffmancoder.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cuda-huffmancoder.dir/depend
 

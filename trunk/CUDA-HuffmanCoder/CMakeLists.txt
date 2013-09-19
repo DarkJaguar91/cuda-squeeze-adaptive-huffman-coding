@@ -19,8 +19,10 @@ add_subdirectory(HuffmanCoder)
 add_subdirectory(Timer)
 add_subdirectory(CPUCompression)
 add_subdirectory(GPUCompression)
+add_subdirectory(GPUCompressor)
 
 target_link_libraries(cuda-huffmancoder cpuCode)
+target_link_libraries(cuda-huffmancoder GPUCoder)
 target_link_libraries(cuda-huffmancoder gpuCode)
 target_link_libraries(cuda-huffmancoder timerLib)
 

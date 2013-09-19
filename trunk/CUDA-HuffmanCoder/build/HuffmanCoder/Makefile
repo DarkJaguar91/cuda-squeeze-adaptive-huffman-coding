@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bjtal/projects/CUDA-HuffmanCoder
+CMAKE_SOURCE_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bjtal/projects/CUDA-HuffmanCoder/build
+CMAKE_BINARY_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -110,14 +110,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/projects/CUDA-HuffmanCoder/build/CMakeFiles /home/bjtal/projects/CUDA-HuffmanCoder/build/HuffmanCoder/CMakeFiles/progress.marks
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 HuffmanCoder/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/projects/CUDA-HuffmanCoder/build/CMakeFiles 0
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/HuffmanCoder/CMakeFiles/progress.marks
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 HuffmanCoder/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 HuffmanCoder/clean
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 HuffmanCoder/clean
 .PHONY : clean
 
 # The main clean target
@@ -126,17 +126,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 HuffmanCoder/preinstall
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 HuffmanCoder/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 HuffmanCoder/preinstall
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 HuffmanCoder/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -162,6 +162,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

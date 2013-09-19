@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bjtal/projects/CUDA-HuffmanCoder
+CMAKE_SOURCE_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bjtal/projects/CUDA-HuffmanCoder/build
+CMAKE_BINARY_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build
 
 # Include any dependencies generated for this target.
 include GPUCompression/CMakeFiles/gpuCode.dir/depend.make
@@ -57,94 +57,93 @@ GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: ../Timer
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/_G_config.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/alloca.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/assert.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/algorithm
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/backward/auto_ptr.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/backward/binders.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/algorithmfwd.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/allocator.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/atomic_lockfree_defines.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/basic_ios.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/basic_ios.tcc
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/basic_string.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/basic_string.tcc
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/char_traits.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/concept_check.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/cpp_type_traits.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/cxxabi_forced.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/deque.tcc
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/exception_defines.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/functexcept.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/ios_base.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/istream.tcc
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/locale_classes.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/locale_classes.tcc
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/locale_facets.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/locale_facets.tcc
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/localefwd.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/memoryfwd.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/move.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/ostream.tcc
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/ostream_insert.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/postypes.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/range_access.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_algo.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_algobase.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_bvector.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_construct.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_deque.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_function.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_heap.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_iterator.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_iterator_base_types.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_map.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_multimap.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_pair.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_queue.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_raw_storage_iter.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_relops.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_tempbuf.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_tree.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_uninitialized.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stl_vector.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stream_iterator.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/streambuf.tcc
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/streambuf_iterator.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/stringfwd.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/bits/vector.tcc
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/cctype
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/clocale
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/cmath
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/cstddef
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/cstdlib
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/cstring
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/cwchar
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/cwctype
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/debug/debug.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/deque
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/exception
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/ext/alloc_traits.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/ext/atomicity.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/ext/new_allocator.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/ext/numeric_traits.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/ext/type_traits.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/functional
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/ios
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/iosfwd
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/iostream
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/istream
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/iterator
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/limits
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/map
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/memory
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/new
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/ostream
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/queue
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/stdexcept
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/streambuf
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/string
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/utility
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.8/vector
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/algorithm
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/backward/auto_ptr.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/backward/binders.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/algorithmfwd.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/allocator.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/atomic_lockfree_defines.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/basic_ios.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/basic_ios.tcc
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/basic_string.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/basic_string.tcc
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/char_traits.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/concept_check.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/cpp_type_traits.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/cxxabi_forced.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/deque.tcc
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/exception_defines.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/functexcept.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/ios_base.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/istream.tcc
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/locale_classes.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/locale_classes.tcc
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/locale_facets.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/locale_facets.tcc
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/localefwd.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/move.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/ostream.tcc
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/ostream_insert.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/postypes.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/range_access.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_algo.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_algobase.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_bvector.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_construct.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_deque.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_function.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_heap.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_iterator.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_iterator_base_funcs.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_iterator_base_types.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_map.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_multimap.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_pair.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_queue.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_raw_storage_iter.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_relops.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_tempbuf.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_tree.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_uninitialized.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stl_vector.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stream_iterator.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/streambuf.tcc
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/streambuf_iterator.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/stringfwd.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/bits/vector.tcc
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/cctype
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/clocale
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/cmath
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/cstddef
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/cstdlib
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/cstring
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/cwchar
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/cwctype
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/debug/debug.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/deque
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/exception
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/ext/alloc_traits.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/ext/atomicity.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/ext/new_allocator.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/ext/numeric_traits.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/ext/type_traits.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/functional
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/ios
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/iosfwd
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/iostream
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/istream
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/iterator
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/limits
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/map
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/memory
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/new
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/ostream
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/queue
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/stdexcept
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/streambuf
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/string
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/utility
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/c++/4.7/vector
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/ctype.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/endian.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/features.h
@@ -195,16 +194,16 @@ GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/inc
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/bits/wchar.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/bits/wordsize.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/bits/xopen_lim.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/atomic_word.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++config.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_base.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/ctype_inline.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.8/bits/os_defines.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/atomic_word.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/c++allocator.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/c++config.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/c++locale.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/cpu_defines.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/ctype_base.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/ctype_inline.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/gthr-default.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/gthr.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/c++/4.7/bits/os_defines.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/gnu/stubs.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/sys/cdefs.h
@@ -212,13 +211,13 @@ GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/inc
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/sys/sysmacros.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/x86_64-linux-gnu/sys/types.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/include/xlocale.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.8/include/float.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.8/include/omp.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h
-GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.7/include-fixed/limits.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.7/include-fixed/syslimits.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.7/include/float.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.7/include/omp.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdarg.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stddef.h
+GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/lib/gcc/x86_64-linux-gnu/4.7/include/stdint.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/local/cuda-5.5/include/builtin_types.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/local/cuda-5.5/include/channel_descriptor.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/local/cuda-5.5/include/common_functions.h
@@ -693,24 +692,24 @@ GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/loc
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/local/cuda-5.5/include/vector_types.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: GPUCompression/CMakeFiles/gpuCode.dir/gpuCode_generated_gpumain.cu.o.cmake
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: ../GPUCompression/gpumain.cu
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/projects/CUDA-HuffmanCoder/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building NVCC (Device) object GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o"
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir && /usr/bin/cmake -E make_directory /home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//.
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o -D generated_cubin_file:STRING=/home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o.cubin.txt -P /home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//gpuCode_generated_gpumain.cu.o.cmake
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir && /usr/bin/cmake -E make_directory /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//.
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o -D generated_cubin_file:STRING=/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o.cubin.txt -P /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//gpuCode_generated_gpumain.cu.o.cmake
 
 # Object files for target gpuCode
 gpuCode_OBJECTS =
 
 # External object files for target gpuCode
 gpuCode_EXTERNAL_OBJECTS = \
-"/home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o"
+"/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o"
 
 GPUCompression/libgpuCode.a: GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o
 GPUCompression/libgpuCode.a: GPUCompression/CMakeFiles/gpuCode.dir/build.make
 GPUCompression/libgpuCode.a: GPUCompression/CMakeFiles/gpuCode.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libgpuCode.a"
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -P CMakeFiles/gpuCode.dir/cmake_clean_target.cmake
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gpuCode.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -P CMakeFiles/gpuCode.dir/cmake_clean_target.cmake
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gpuCode.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 GPUCompression/CMakeFiles/gpuCode.dir/build: GPUCompression/libgpuCode.a
@@ -720,10 +719,10 @@ GPUCompression/CMakeFiles/gpuCode.dir/requires:
 .PHONY : GPUCompression/CMakeFiles/gpuCode.dir/requires
 
 GPUCompression/CMakeFiles/gpuCode.dir/clean:
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -P CMakeFiles/gpuCode.dir/cmake_clean.cmake
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -P CMakeFiles/gpuCode.dir/cmake_clean.cmake
 .PHONY : GPUCompression/CMakeFiles/gpuCode.dir/clean
 
 GPUCompression/CMakeFiles/gpuCode.dir/depend: GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o
-	cd /home/bjtal/projects/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bjtal/projects/CUDA-HuffmanCoder /home/bjtal/projects/CUDA-HuffmanCoder/GPUCompression /home/bjtal/projects/CUDA-HuffmanCoder/build /home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression /home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompression /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : GPUCompression/CMakeFiles/gpuCode.dir/depend
 
