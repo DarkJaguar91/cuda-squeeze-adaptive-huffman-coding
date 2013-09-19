@@ -1,6 +1,6 @@
 #include "gpumain.h"
 
-void GPUCode::compressGPU(const float * floats, frequencyValues & map, const longValue & numVals){
+void GPUCode::compressGPUlib(const float * floats, frequencyValues & map, const longValue & numVals){
 	using namespace std;
 	
 	thrust::device_vector<float> device_data(numVals);

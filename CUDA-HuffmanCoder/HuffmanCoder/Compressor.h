@@ -31,7 +31,7 @@ public:
 	;
 
 	void initialize(const float * values, const longValue & numFloats) {
-		binDataGFX(values, numFloats);
+		binData(values, numFloats);
 
 		std::vector<Node *> leaves;
 
@@ -63,14 +63,6 @@ public:
 
 private:
 	HuffMap map;
-
-	void binDataGFX(const float * values, const longValue & numValues){
-	  #pragma omp critical
-	  {
-	  GPUCode::compressGPU(values, frequencyMap, numValues);
-	  }
-	  #pragma omp flush
-	}
 	
 	void binData(const float * values, const longValue & numValues) {
 		longValue i;

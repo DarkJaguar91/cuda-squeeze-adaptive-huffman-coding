@@ -10,11 +10,12 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "../CMakeLists.txt"
   "../CPUCompression/CMakeLists.txt"
   "../GPUCompression/CMakeLists.txt"
+  "../GPUCompressor/CMakeLists.txt"
   "../HuffmanCoder/CMakeLists.txt"
   "../Timer/CMakeLists.txt"
-  "CMakeFiles/2.8.11.2/CMakeCCompiler.cmake"
-  "CMakeFiles/2.8.11.2/CMakeCXXCompiler.cmake"
-  "CMakeFiles/2.8.11.2/CMakeSystem.cmake"
+  "CMakeFiles/2.8.10.1/CMakeCCompiler.cmake"
+  "CMakeFiles/2.8.10.1/CMakeCXXCompiler.cmake"
+  "CMakeFiles/2.8.10.1/CMakeSystem.cmake"
   "GPUCompression/CMakeFiles/gpuCode.dir/gpuCode_generated_gpumain.cu.o.depend"
   "/usr/share/cmake-2.8/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeCXXInformation.cmake"
@@ -50,6 +51,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "Timer/CMakeFiles/CMakeDirectoryInformation.cmake"
   "CPUCompression/CMakeFiles/CMakeDirectoryInformation.cmake"
   "GPUCompression/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "GPUCompressor/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -58,4 +60,5 @@ SET(CMAKE_DEPEND_INFO_FILES
   "Timer/CMakeFiles/timerLib.dir/DependInfo.cmake"
   "CPUCompression/CMakeFiles/cpuCode.dir/DependInfo.cmake"
   "GPUCompression/CMakeFiles/gpuCode.dir/DependInfo.cmake"
+  "GPUCompressor/CMakeFiles/GPUCoder.dir/DependInfo.cmake"
   )

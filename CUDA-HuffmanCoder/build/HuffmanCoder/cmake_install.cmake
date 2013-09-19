@@ -1,4 +1,4 @@
-# Install script for directory: /home/bjtal/projects/CUDA-HuffmanCoder/HuffmanCoder
+# Install script for directory: /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/HuffmanCoder
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

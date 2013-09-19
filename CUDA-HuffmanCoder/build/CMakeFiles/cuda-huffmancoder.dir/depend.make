@@ -7,7 +7,7 @@ CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: ../CPUCompression/../HuffmanCoder/D
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: ../CPUCompression/../HuffmanCoder/HTree.h
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: ../CPUCompression/../Timer/Timer.h
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: ../CPUCompression/CPUmain.h
-CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: ../GPUCompression/gpumain.h
+CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: ../GPUCompressor/gpurunner.h
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: ../main.cpp
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: /usr/local/cuda-5.5/include/cuda.h
 CMakeFiles/cuda-huffmancoder.dir/main.cpp.o: /usr/local/cuda-5.5/include/host_defines.h

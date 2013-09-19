@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bjtal/projects/CUDA-HuffmanCoder
+CMAKE_SOURCE_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bjtal/projects/CUDA-HuffmanCoder/build
+CMAKE_BINARY_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -110,9 +110,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/projects/CUDA-HuffmanCoder/build/CMakeFiles /home/bjtal/projects/CUDA-HuffmanCoder/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/projects/CUDA-HuffmanCoder/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -191,6 +191,19 @@ gpuCode/fast:
 	$(MAKE) -f GPUCompression/CMakeFiles/gpuCode.dir/build.make GPUCompression/CMakeFiles/gpuCode.dir/build
 .PHONY : gpuCode/fast
 
+#=============================================================================
+# Target rules for targets named GPUCoder
+
+# Build rule for target.
+GPUCoder: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 GPUCoder
+.PHONY : GPUCoder
+
+# fast build rule for target.
+GPUCoder/fast:
+	$(MAKE) -f GPUCompressor/CMakeFiles/GPUCoder.dir/build.make GPUCompressor/CMakeFiles/GPUCoder.dir/build
+.PHONY : GPUCoder/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -231,6 +244,7 @@ help:
 	@echo "... timerLib"
 	@echo "... cpuCode"
 	@echo "... gpuCode"
+	@echo "... GPUCoder"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

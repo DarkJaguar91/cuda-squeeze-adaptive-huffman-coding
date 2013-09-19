@@ -1,4 +1,4 @@
-# Install script for directory: /home/bjtal/projects/CUDA-HuffmanCoder
+# Install script for directory: /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cuda-huffmancoder"
          RPATH "")
   ENDIF()
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/bjtal/projects/CUDA-HuffmanCoder/build/cuda-huffmancoder")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/cuda-huffmancoder")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cuda-huffmancoder" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cuda-huffmancoder")
     FILE(RPATH_REMOVE
@@ -52,10 +52,11 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/home/bjtal/projects/CUDA-HuffmanCoder/build/HuffmanCoder/cmake_install.cmake")
-  INCLUDE("/home/bjtal/projects/CUDA-HuffmanCoder/build/Timer/cmake_install.cmake")
-  INCLUDE("/home/bjtal/projects/CUDA-HuffmanCoder/build/CPUCompression/cmake_install.cmake")
-  INCLUDE("/home/bjtal/projects/CUDA-HuffmanCoder/build/GPUCompression/cmake_install.cmake")
+  INCLUDE("/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/HuffmanCoder/cmake_install.cmake")
+  INCLUDE("/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/Timer/cmake_install.cmake")
+  INCLUDE("/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CPUCompression/cmake_install.cmake")
+  INCLUDE("/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/cmake_install.cmake")
+  INCLUDE("/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompressor/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -65,7 +66,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/bjtal/projects/CUDA-HuffmanCoder/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/bjtal/projects/CUDA-HuffmanCoder/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
