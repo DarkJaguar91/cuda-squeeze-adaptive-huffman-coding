@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder
+CMAKE_SOURCE_DIR = /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build
+CMAKE_BINARY_DIR = /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -110,14 +110,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/progress.marks
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles 0
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/progress.marks
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/clean
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/clean
 .PHONY : clean
 
 # The main clean target
@@ -126,22 +126,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/preinstall
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/preinstall
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 GPUCompression/CMakeFiles/gpuCode.dir/rule:
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/CMakeFiles/gpuCode.dir/rule
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f CMakeFiles/Makefile2 GPUCompression/CMakeFiles/gpuCode.dir/rule
 .PHONY : GPUCompression/CMakeFiles/gpuCode.dir/rule
 
 # Convenience name for target.
@@ -150,7 +150,7 @@ gpuCode: GPUCompression/CMakeFiles/gpuCode.dir/rule
 
 # fast build rule for target.
 gpuCode/fast:
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f GPUCompression/CMakeFiles/gpuCode.dir/build.make GPUCompression/CMakeFiles/gpuCode.dir/build
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(MAKE) -f GPUCompression/CMakeFiles/gpuCode.dir/build.make GPUCompression/CMakeFiles/gpuCode.dir/build
 .PHONY : gpuCode/fast
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

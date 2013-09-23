@@ -10,5 +10,5 @@
 #include "../Timer/Timer.h"
 
 namespace GPUCode {
-  void compressGPUlib(const float * floats, frequencyValues & map, const longValue & numVal);
+  double compressGPUlib(const float * floats, frequencyValues & map, const longValue & numVal);
 }

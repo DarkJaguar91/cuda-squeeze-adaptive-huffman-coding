@@ -1,4 +1,4 @@
-# Install script for directory: /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompression
+# Install script for directory: /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompression
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/CPUmain.cpp" "/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CPUCompression/CMakeFiles/cpuCode.dir/CPUmain.cpp.o"
+  "/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/CPUmain.cpp" "/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CPUCompression/CMakeFiles/cpuCode.dir/CPUmain.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
