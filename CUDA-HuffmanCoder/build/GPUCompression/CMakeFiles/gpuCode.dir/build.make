@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder
+CMAKE_SOURCE_DIR = /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build
+CMAKE_BINARY_DIR = /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build
 
 # Include any dependencies generated for this target.
 include GPUCompression/CMakeFiles/gpuCode.dir/depend.make
@@ -692,24 +692,24 @@ GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/loc
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: /usr/local/cuda-5.5/include/vector_types.h
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: GPUCompression/CMakeFiles/gpuCode.dir/gpuCode_generated_gpumain.cu.o.cmake
 GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o: ../GPUCompression/gpumain.cu
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building NVCC (Device) object GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o"
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir && /usr/bin/cmake -E make_directory /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//.
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o -D generated_cubin_file:STRING=/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o.cubin.txt -P /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//gpuCode_generated_gpumain.cu.o.cmake
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir && /usr/bin/cmake -E make_directory /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//.
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o -D generated_cubin_file:STRING=/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//./gpuCode_generated_gpumain.cu.o.cubin.txt -P /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir//gpuCode_generated_gpumain.cu.o.cmake
 
 # Object files for target gpuCode
 gpuCode_OBJECTS =
 
 # External object files for target gpuCode
 gpuCode_EXTERNAL_OBJECTS = \
-"/home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o"
+"/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o"
 
 GPUCompression/libgpuCode.a: GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o
 GPUCompression/libgpuCode.a: GPUCompression/CMakeFiles/gpuCode.dir/build.make
 GPUCompression/libgpuCode.a: GPUCompression/CMakeFiles/gpuCode.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libgpuCode.a"
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -P CMakeFiles/gpuCode.dir/cmake_clean_target.cmake
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gpuCode.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -P CMakeFiles/gpuCode.dir/cmake_clean_target.cmake
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gpuCode.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 GPUCompression/CMakeFiles/gpuCode.dir/build: GPUCompression/libgpuCode.a
@@ -719,10 +719,10 @@ GPUCompression/CMakeFiles/gpuCode.dir/requires:
 .PHONY : GPUCompression/CMakeFiles/gpuCode.dir/requires
 
 GPUCompression/CMakeFiles/gpuCode.dir/clean:
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -P CMakeFiles/gpuCode.dir/cmake_clean.cmake
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression && $(CMAKE_COMMAND) -P CMakeFiles/gpuCode.dir/cmake_clean.cmake
 .PHONY : GPUCompression/CMakeFiles/gpuCode.dir/clean
 
 GPUCompression/CMakeFiles/gpuCode.dir/depend: GPUCompression/CMakeFiles/gpuCode.dir/./gpuCode_generated_gpumain.cu.o
-	cd /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompression /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression /home/bhugo/brandon/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompression /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/GPUCompression/CMakeFiles/gpuCode.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : GPUCompression/CMakeFiles/gpuCode.dir/depend
 

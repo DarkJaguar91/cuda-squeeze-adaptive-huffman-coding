@@ -7,7 +7,7 @@ void CPUCode::compressCPU(){
 	//omp_set_num_threads(numThreads);
 	cout << "Using: " << omp_get_max_threads() << " threads\n";
 
-	longValue numFloats = 1024 * 1024 * 1024 / sizeof(float);
+	longValue numFloats = 1024 * 1024 * 1 / sizeof(float);
 	numFloats *= 1;
 	
 	srand(time(NULL));

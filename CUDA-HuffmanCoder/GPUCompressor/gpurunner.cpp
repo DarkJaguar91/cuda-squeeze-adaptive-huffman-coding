@@ -9,7 +9,7 @@ void GPUCoder::compressGPU(){
 	//omp_set_num_threads(numThreads);
 	cout << "Using: " << omp_get_max_threads() << " threads\n";
 
-	longValue numFloats = 1024 * 1024 * 1024 / sizeof(float);
+	longValue numFloats = 1024 * 1024 * 1 / sizeof(float);
 	numFloats *= 1;
 	
 	srand(time(NULL));
@@ -26,8 +26,9 @@ void GPUCoder::compressGPU(){
 
 	Timer::tic();
 	Compressor comp(map);
-	
-	GPUCode::compressGPUlib(&floats[0], map, numFloats);
+	double time = Timer::toc();
+	time += GPUCode::compressGPUlib(&floats[0], map, numFloats);
+	Timer::tic();
 	comp.initialize();
 	
 	longValue numProcess = ceil(numFloats / (numThreads));
@@ -38,7 +39,9 @@ void GPUCoder::compressGPU(){
 		
 		comp.compress(&floats[0] + (i * numProcess), codes + (i * numProcess), proc);
 	}
-	cout << "Compression took: " << Timer::toc() << endl;
+	time += Timer::toc();
+	cout << "Compression took: " << time << endl;	
+	
 
 	delete[] codes;
 }
