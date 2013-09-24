@@ -1,0 +1,10 @@
+1331 MB
+GPU Version:
+Pre Processing: 8.815e-06
+Copy Time (not-included): 0.229039
+Binning Time: 1.03529
+Unique Value and Count copy to HOST: 7.3913e-05
+Conversion to HashMap: 0.00128165
+Tree creation: 0.00700137
+Swapping of values: 6.57878
+Total Time: 7.6226
