@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/../GPUCompression/gpumain.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/../GPUCompression/gpumain.h
 vector
 -
 algorithm
@@ -22,23 +22,23 @@ thrust/inner_product.h
 thrust/iterator/constant_iterator.h
 -
 ../HuffmanCoder/Compressor.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/../GPUCompression/../HuffmanCoder/Compressor.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/../GPUCompression/../HuffmanCoder/Compressor.h
 ../Timer/Timer.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/../GPUCompression/../Timer/Timer.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/../GPUCompression/../Timer/Timer.h
 
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/Compressor.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/Compressor.h
 omp.h
 -
 HTree.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/HTree.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/HTree.h
 ../GPUCompression/gpumain.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/../GPUCompression/gpumain.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/../GPUCompression/gpumain.h
 
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/Decompressor.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/Decompressor.h
 HTree.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/HTree.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/HTree.h
 
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/HTree.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/HTree.h
 iostream
 -
 queue
@@ -50,11 +50,11 @@ algorithm
 stdint.h
 -
 
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../Timer/Timer.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../Timer/Timer.h
 time.h
 -
 
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/CPUmain.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/CPUmain.h
 iostream
 -
 algorithm
@@ -70,13 +70,13 @@ stdint.h
 vector
 -
 ../HuffmanCoder/Compressor.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/Compressor.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/Compressor.h
 ../HuffmanCoder/Decompressor.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/Decompressor.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../HuffmanCoder/Decompressor.h
 ../Timer/Timer.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../Timer/Timer.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/../Timer/Timer.h
 
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/gpurunner.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/gpurunner.h
 iostream
 -
 algorithm
@@ -92,13 +92,13 @@ stdint.h
 vector
 -
 ../HuffmanCoder/Compressor.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/../HuffmanCoder/Compressor.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/../HuffmanCoder/Compressor.h
 ../HuffmanCoder/Decompressor.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/../HuffmanCoder/Decompressor.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/../HuffmanCoder/Decompressor.h
 ../Timer/Timer.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/../Timer/Timer.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/../Timer/Timer.h
 
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/main.cpp
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/main.cpp
 iostream
 -
 vector
@@ -106,9 +106,9 @@ vector
 time.h
 -
 CPUCompression/CPUmain.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/CPUmain.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression/CPUmain.h
 GPUCompressor/gpurunner.h
-/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/gpurunner.h
+/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/GPUCompressor/gpurunner.h
 
 /usr/local/cuda-5.5/include/cuda.h
 stdlib.h

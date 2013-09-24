@@ -1,4 +1,4 @@
-# Install script for directory: /home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression
+# Install script for directory: /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/CPUCompression
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,15 +1,12 @@
 #include "CPUmain.h"
 
-void CPUCode::compressCPU(){
+void CPUCode::compressCPU(longValue numFloats){
   using namespace std;
 	int numThreads = omp_get_max_threads();
 
 	//omp_set_num_threads(numThreads);
 	cout << "Using: " << omp_get_max_threads() << " threads\n";
 
-	longValue numFloats = 1024 * 1024 * 1 / sizeof(float);
-	numFloats *= 1;
-	
 	srand(time(NULL));
 	std::vector<float> floats(numFloats);
 
