@@ -1,0 +1,3 @@
+/home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles/cuda-huffmancoder.dir
+/home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/GraphicsCard/CMakeFiles/gpuCode.dir
+/home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/Timer/CMakeFiles/timerLib.dir
