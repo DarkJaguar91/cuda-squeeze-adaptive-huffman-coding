@@ -11,5 +11,5 @@
 #include "../Timer/Timer.h"
 
 namespace CPUCode {
-  void compressCPU ();
+  void compressCPU (longValue numFloats);
 }

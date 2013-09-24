@@ -11,5 +11,5 @@
 #include "../Timer/Timer.h"
 
 namespace GPUCoder {
-  void compressGPU ();
+  void compressGPU (longValue numFloats);
 }

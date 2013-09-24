@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/Timer/Timer.cpp" "/home/bjtal/workspace/Hons/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/Timer/CMakeFiles/timerLib.dir/Timer.cpp.o"
+  "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/Timer/Timer.cpp" "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDA-HuffmanCoder/build/Timer/CMakeFiles/timerLib.dir/Timer.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

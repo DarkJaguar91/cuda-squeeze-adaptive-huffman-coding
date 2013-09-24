@@ -2,15 +2,12 @@
 
 #include "../GPUCompression/gpumain.h"
 
-void GPUCoder::compressGPU(){
+void GPUCoder::compressGPU(longValue numFloats){
 	using namespace std;
 	int numThreads = omp_get_max_threads();
 
 	//omp_set_num_threads(numThreads);
 	cout << "Using: " << omp_get_max_threads() << " threads\n";
-
-	longValue numFloats = 1024 * 1024 * 1 / sizeof(float);
-	numFloats *= 1;
 	
 	srand(time(NULL));
 	std::vector<float> floats(numFloats);
@@ -27,7 +24,8 @@ void GPUCoder::compressGPU(){
 	Timer::tic();
 	Compressor comp(map);
 	double time = Timer::toc();
-	time += GPUCode::compressGPUlib(&floats[0], map, numFloats);
+	cout << "Pre-processing: " << Timer::toc() << endl;
+	time += GPUCode::compressGPUlib(floats, map, numFloats);
 	Timer::tic();
 	comp.initialize();
 	
@@ -40,6 +38,7 @@ void GPUCoder::compressGPU(){
 		comp.compress(&floats[0] + (i * numProcess), codes + (i * numProcess), proc);
 	}
 	time += Timer::toc();
+	cout << "Swaping took: " << Timer::toc() << endl;
 	cout << "Compression took: " << time << endl;	
 	
 
