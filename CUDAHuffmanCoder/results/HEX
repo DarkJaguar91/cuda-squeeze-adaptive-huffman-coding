@@ -1,0 +1,16 @@
+Script started at Tue Sep 24 21:17:58 SAST 2013
+
+Running on: srvslsgpu002
+------------------------------------------------------------------------
+1331 MB
+GPU Version:
+Pre Processing: 2.7948e-05
+Copy Time (not-included): 15.8735
+Binning Time: 0.601637
+Unique Value and Count copy to HOST: 0.00011979
+Conversion to HashMap: 0.00232078
+Tree creation: 0.0113086
+Swapping of values: 5.60527
+Total Time: 6.22088
+28.120 seconds elapsed on the wall since process started
+bjtalbot@srvslshpc001:~/CUDAHuffmanCoder/src/Release> 
