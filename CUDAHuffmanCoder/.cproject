@@ -21,7 +21,7 @@
 					<folderInfo id="com.nvidia.cuda.ide.configuration.release.163395922." name="/" resourcePath="">
 						<toolChain id="com.nvidia.cuda.ide.toolchain.exe.release.459656805" name="CUDA Toolkit 5.5" superClass="com.nvidia.cuda.ide.toolchain.exe.release">
 							<targetPlatform archList="all" binaryParser="com.nvidia.cuda.ide.elf;com.nvidia.cuda.ide.macho;com.nvidia.cuda.ide.cubin" id="com.nvidia.cuda.ide.targetPlatform.1908163617" isAbstract="false" name="Debug Platform" osList="linux,macosx" superClass="com.nvidia.cuda.ide.targetPlatform"/>
-							<builder arguments="-C ${ConfigName}" buildPath="" command="make" id="com.nvidia.cuda.ide.builder.1638689260" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="CUDA Toolkit 5.5 Builder" superClass="com.nvidia.cuda.ide.builder"/>
+							<builder arguments="-C Release" buildPath="" command="make" id="com.nvidia.cuda.ide.builder.1638689260" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="CUDA Toolkit 5.5 Builder" superClass="com.nvidia.cuda.ide.builder"/>
 							<tool id="nvcc.compiler.base.1750442483" name="NVCC Compiler" superClass="nvcc.compiler.base">
 								<option id="nvcc.compiler.deviceDebug.1914320952" name="Generate device debug information (-G)" superClass="nvcc.compiler.deviceDebug"/>
 								<option id="nvcc.compiler.option.level.400072234" name="Generate host debug information (-g)" superClass="nvcc.compiler.option.level"/>
