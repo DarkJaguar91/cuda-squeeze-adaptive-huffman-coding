@@ -13,4 +13,34 @@ Tree creation: 0.0113086
 Swapping of values: 5.60527
 Total Time: 6.22088
 28.120 seconds elapsed on the wall since process started
-bjtalbot@srvslshpc001:~/CUDAHuffmanCoder/src/Release> 
+
+<------------------------------------------------------------------------------>
+
+Script started at Wed Sep 25 10:15:48 SAST 2013
+
+Running on: srvslsgpu001
+------------------------------------------------------------------------
+Free Memory: 5303.99MB | Total Memory: 5375.44MB
+
+Allocating 2410.91MB of floats
+
+CPU Version
+--------------------------------------------------------------
+Using: 16 threads
+Compression took: 21.701803
+--------------------------------------------------------------
+
+GPU Version
+--------------------------------------------------------------
+Using: 16 threads
+Pre Processing: 0.000023
+Copy Time (not-included): 0.740565
+Binning: 1.087101
+Device to host copy (counts & unique): 0.000061
+Conversion to HashMap: 0.001923
+Tree Creation: 0.009705
+Swapping Values: 7.310911
+Total Time: 8.409769
+--------------------------------------------------------------
+73.330 seconds elapsed on the wall since process started
+
