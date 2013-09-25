@@ -9,18 +9,18 @@
  */
 #include <iostream>
 #include <math.h>
+#include <stdio.h>
 
 #include "GraphicsCard/GrapicsCompression.h"
 #include "CPU/CPUmain.h"
 
-int main()
-{
+int main() {
 	using namespace std;
 
 	size_t freeSize, totSize;
 	cudaMemGetInfo(&freeSize, &totSize);
-	
-	cout << "Free Memory: " << (freeSize / 1024 / 1024.0f) << " | " << " Total Memory: " << (totSize / 1024 / 1024.0f) << endl << endl;
+
+	printf("\e[1;31mFree Memory: %.2fMB | Total Memory: %.2fMB\n\n\e[0m", (freeSize / 1024 / 1024.0f), (totSize / 1024 / 1024.0f));
 
 //	longValue numFloats = 1024 * 1024 * 1024;
 //	numFloats *= 0.5f;
@@ -28,17 +28,18 @@ int main()
 
 	longValue numFloats = floor((freeSize) / 2.2f / sizeof(float));
 
+	printf("\e[1;31mAllocating %.2fMB of floats\n\n\e[0m", (numFloats*4.0f/1024.0f/1024.0f));
 
-	cout << (numFloats * 4 / 1024 / 1024) << " MB\n\n";
-
-	cout << "CPU Version:" << endl;
+	printf("\e[1;36mCPU Version\n\e[0m");
+	printf("\e[1;36m--------------------------------------------------------------\n\e[0m");
 	CPUCode::compressCPU(numFloats);
-
+	printf("\e[1;36m--------------------------------------------------------------\n\e[0m");
 	cout << endl;
 
-	cout << "GPU Version:" << endl;
+	printf("\e[1;36mGPU Version\n\e[0m");
+	printf("\e[1;36m--------------------------------------------------------------\n\e[0m");
 	GPU::compress(numFloats);
-
+	printf("\e[1;36m--------------------------------------------------------------\n\e[0m");
 
 	return 0;
 }
