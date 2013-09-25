@@ -5,7 +5,7 @@ void CPUCode::compressCPU(longValue numFloats){
 	int numThreads = omp_get_max_threads();
 
 	//omp_set_num_threads(numThreads);
-	cout << "Using: " << omp_get_max_threads() << " threads\n";
+	printf("\e[0;33mUsing: %d threads\n\e[0m", omp_get_max_threads());
 
 	srand(time(NULL));
 	std::vector<float> floats(numFloats);
@@ -29,7 +29,7 @@ void CPUCode::compressCPU(longValue numFloats){
 		comp.initialize(&floats[0] + (i * numProcess), proc);
 		comp.compress(&floats[0] + (i * numProcess), codes + (i * numProcess), proc);
 	}
-	cout << "Compression took: " << Timer::toc() << endl;
+	printf("\e[1;32mCompression took: %f\n\e[0m", Timer::toc());
 
 	delete[] codes;
 }

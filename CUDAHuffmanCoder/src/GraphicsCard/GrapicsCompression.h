@@ -15,6 +15,7 @@
 #include <thrust/inner_product.h>
 #include <thrust/iterator/constant_iterator.h>
 #include <omp.h>
+#include <stdio.h>
 
 #include "../Timer/Timer.h"
 #include "../HuffmanCoder/Compressor.h"

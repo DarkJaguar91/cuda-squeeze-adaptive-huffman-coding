@@ -7,9 +7,8 @@
 
 #include "GrapicsCompression.h"
 
-void GPU::binVector(thrust::device_vector<float> & dev_vec, frequencyValues & map,
-		double & time) {
-	std::cout << "Using: " << omp_get_max_threads() << " threads\n";
+void GPU::binVector(thrust::device_vector<float> & dev_vec,
+		frequencyValues & map, double & time) {
 	Timer::tic();
 
 	thrust::sort(dev_vec.begin(), dev_vec.end());
@@ -24,20 +23,19 @@ void GPU::binVector(thrust::device_vector<float> & dev_vec, frequencyValues & ma
 	thrust::reduce_by_key(dev_vec.begin(), dev_vec.end(),
 			thrust::constant_iterator<int>(1), unique_device.begin(),
 			counts_device.begin());
-	std::cout << "Binning Time: " << Timer::toc() << std::endl;
+	printf("Binning: %f\n", Timer::toc());
 	time += Timer::toc();
 
 	Timer::tic();
 	thrust::host_vector<float> unique_host = unique_device;
 	thrust::host_vector<int> counts_host = counts_device;
-	std::cout << "Unique Value and Count copy to HOST: " << Timer::toc()
-			<< std::endl;
+	printf("Device to host copy (counts & unique): %f\n", Timer::toc());
 	time += Timer::toc();
 
 	Timer::tic();
 	for (int i = 0; i < num_bins; ++i)
 		map[unique_host[i]] = new longValue(counts_host[i]);
-	std::cout << "Conversion to HashMap: " << Timer::toc() << std::endl;
+	printf("Conversion to HashMap: %f\n", Timer::toc());
 	time += Timer::toc();
 }
 
@@ -51,6 +49,8 @@ void GPU::compress(const longValue & numberOfFloats) {
 
 	int numThreads = omp_get_max_threads();
 
+	printf("\e[0;33mUsing: %d threads\n\e[0m", omp_get_max_threads());
+
 	double totTime = 0;
 
 	Timer::tic();
@@ -58,13 +58,13 @@ void GPU::compress(const longValue & numberOfFloats) {
 	codes = (HuffCode **) malloc(sizeof(HuffCode*) * numberOfFloats);
 	frequencyValues map;
 	Compressor comp(map);
-	std::cout << "Pre Processing: " << Timer::toc() << std::endl;
+	printf("Pre Processing: %f\n", Timer::toc());
 	totTime += Timer::toc();
 
 	// copy Data - Not adding to tot time for now
 	Timer::tic();
 	thrust::device_vector<float> dev_vec = h_vec;
-	std::cout << "Copy Time (not-included): " << Timer::toc() << std::endl;
+	printf("\e[0;33mCopy Time (not-included): %f\n\e[0m", Timer::toc());
 	//	time += Timer::toc();
 
 	// bin data
@@ -73,7 +73,7 @@ void GPU::compress(const longValue & numberOfFloats) {
 	// generate the tree
 	Timer::tic();
 	comp.initialize();
-	std::cout << "Tree creation: " << Timer::toc() << std::endl;
+	printf("Tree Creation: %f\n", Timer::toc());
 	totTime += Timer::toc();
 
 	// CPU copy data from map to new values
@@ -87,8 +87,8 @@ void GPU::compress(const longValue & numberOfFloats) {
 		comp.compress(&h_vec[0] + (i * numProcess), codes + (i * numProcess),
 				proc);
 	}
-	std::cout << "Swapping of values: " << Timer::toc() << std::endl;
+	printf("Swapping Values: %f\n", Timer::toc());
 	totTime += Timer::toc();
 
-	std::cout << "Total Time: " << totTime << std::endl;
+	printf("\e[1;32mTotal Time: %f\n\e[0m", totTime);
 }
