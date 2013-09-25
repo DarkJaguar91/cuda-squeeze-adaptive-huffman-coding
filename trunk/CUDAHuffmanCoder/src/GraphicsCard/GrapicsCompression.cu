@@ -9,6 +9,7 @@
 
 void GPU::binVector(thrust::device_vector<float> & dev_vec, frequencyValues & map,
 		double & time) {
+	std::cout << "Using: " << omp_get_max_threads() << " threads\n";
 	Timer::tic();
 
 	thrust::sort(dev_vec.begin(), dev_vec.end());

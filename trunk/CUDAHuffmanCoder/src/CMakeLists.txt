@@ -16,8 +16,9 @@ cuda_add_executable(cuda-huffmancoder CUDA-HuffmanGFX.cpp)
 install(TARGETS cuda-huffmancoder RUNTIME DESTINATION bin)
 
 add_subdirectory(GraphicsCard)
+add_subdirectory(CPU)
 add_subdirectory(Timer)
-
+target_link_libraries(cuda-huffmancoder cpuCode)
 target_link_libraries(cuda-huffmancoder gpuCode)
 target_link_libraries(cuda-huffmancoder timerLib)
 
@@ -33,4 +34,4 @@ target_link_libraries(cuda-huffmancoder gomp)
 
 
 set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CXX_FLAGS "-O3 -Wall -m64 -O3 -fopenmp -fno-stack-protector" )
+set(CMAKE_CXX_FLAGS "-O3 -Wall -m64 -fopenmp -fno-stack-protector" )

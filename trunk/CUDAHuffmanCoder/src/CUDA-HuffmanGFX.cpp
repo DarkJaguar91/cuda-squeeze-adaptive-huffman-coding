@@ -8,18 +8,33 @@
  * is strictly prohibited.
  */
 #include <iostream>
+#include <math.h>
 
 #include "GraphicsCard/GrapicsCompression.h"
+#include "CPU/CPUmain.h"
 
 int main()
 {
 	using namespace std;
 
-	longValue numFloats = 1024 * 1024 * 1024;
-	numFloats *= 1.3f;
-	numFloats /= sizeof(float);
+	size_t freeSize, totSize;
+	cudaMemGetInfo(&freeSize, &totSize);
+	
+	cout << "Free Memory: " << (freeSize / 1024 / 1024.0f) << " | " << " Total Memory: " << (totSize / 1024 / 1024.0f) << endl << endl;
 
-	cout << (numFloats * 4 / 1024 / 1024) << " MB\n";
+//	longValue numFloats = 1024 * 1024 * 1024;
+//	numFloats *= 0.5f;
+//	numFloats /= sizeof(float);
+
+	longValue numFloats = floor((freeSize) / 2.2f / sizeof(float));
+
+
+	cout << (numFloats * 4 / 1024 / 1024) << " MB\n\n";
+
+	cout << "CPU Version:" << endl;
+	CPUCode::compressCPU(numFloats);
+
+	cout << endl;
 
 	cout << "GPU Version:" << endl;
 	GPU::compress(numFloats);
