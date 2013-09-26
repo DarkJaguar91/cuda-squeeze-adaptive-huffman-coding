@@ -1,3 +1,4 @@
-/home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles/cuda-huffmancoder.dir
-/home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/GraphicsCard/CMakeFiles/gpuCode.dir
-/home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/Timer/CMakeFiles/timerLib.dir
+/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles/HuffmanCoder.dir
+/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CPU/CMakeFiles/cpuCode.dir
+/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/GraphicsCard/CMakeFiles/gpuCode.dir
+/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/Timer/CMakeFiles/timerLib.dir

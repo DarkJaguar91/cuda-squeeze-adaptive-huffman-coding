@@ -1,4 +1,4 @@
-# Install script for directory: /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Timer
+# Install script for directory: /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Timer
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-project(cuda-huffmancoder)
+project(HuffmanCoder)
 
 cmake_minimum_required(VERSION 2.8)
 
@@ -11,16 +11,16 @@ else(CUDA_FOUND)
     message("CUDA is not installed on this system.")
 endif()
 
-cuda_add_executable(cuda-huffmancoder CUDA-HuffmanGFX.cpp)
+cuda_add_executable(HuffmanCoder CUDA-HuffmanGFX.cpp)
 
-install(TARGETS cuda-huffmancoder RUNTIME DESTINATION bin)
+install(TARGETS HuffmanCoder RUNTIME DESTINATION bin)
 
 add_subdirectory(GraphicsCard)
 add_subdirectory(CPU)
 add_subdirectory(Timer)
-target_link_libraries(cuda-huffmancoder cpuCode)
-target_link_libraries(cuda-huffmancoder gpuCode)
-target_link_libraries(cuda-huffmancoder timerLib)
+target_link_libraries(HuffmanCoder cpuCode)
+target_link_libraries(HuffmanCoder gpuCode)
+target_link_libraries(HuffmanCoder timerLib)
 
 #find_package(rt)
 #target_link_libraries(cuda-huffman rt)
@@ -30,7 +30,7 @@ if (OPENMP_FOUND)
     set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
-target_link_libraries(cuda-huffmancoder gomp)
+target_link_libraries(HuffmanCoder gomp)
 
 
 set(CMAKE_BUILD_TYPE Release)

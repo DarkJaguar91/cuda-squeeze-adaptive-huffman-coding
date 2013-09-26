@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src
+CMAKE_SOURCE_DIR = /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release
+CMAKE_BINARY_DIR = /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -110,9 +110,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -140,17 +140,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named cuda-huffmancoder
+# Target rules for targets named HuffmanCoder
 
 # Build rule for target.
-cuda-huffmancoder: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cuda-huffmancoder
-.PHONY : cuda-huffmancoder
+HuffmanCoder: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 HuffmanCoder
+.PHONY : HuffmanCoder
 
 # fast build rule for target.
-cuda-huffmancoder/fast:
-	$(MAKE) -f CMakeFiles/cuda-huffmancoder.dir/build.make CMakeFiles/cuda-huffmancoder.dir/build
-.PHONY : cuda-huffmancoder/fast
+HuffmanCoder/fast:
+	$(MAKE) -f CMakeFiles/HuffmanCoder.dir/build.make CMakeFiles/HuffmanCoder.dir/build
+.PHONY : HuffmanCoder/fast
 
 #=============================================================================
 # Target rules for targets named gpuCode
@@ -164,6 +164,19 @@ gpuCode: cmake_check_build_system
 gpuCode/fast:
 	$(MAKE) -f GraphicsCard/CMakeFiles/gpuCode.dir/build.make GraphicsCard/CMakeFiles/gpuCode.dir/build
 .PHONY : gpuCode/fast
+
+#=============================================================================
+# Target rules for targets named cpuCode
+
+# Build rule for target.
+cpuCode: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cpuCode
+.PHONY : cpuCode
+
+# fast build rule for target.
+cpuCode/fast:
+	$(MAKE) -f CPU/CMakeFiles/cpuCode.dir/build.make CPU/CMakeFiles/cpuCode.dir/build
+.PHONY : cpuCode/fast
 
 #=============================================================================
 # Target rules for targets named timerLib
@@ -183,7 +196,7 @@ CUDA-HuffmanGFX.o: CUDA-HuffmanGFX.cpp.o
 
 # target to build an object file
 CUDA-HuffmanGFX.cpp.o:
-	$(MAKE) -f CMakeFiles/cuda-huffmancoder.dir/build.make CMakeFiles/cuda-huffmancoder.dir/CUDA-HuffmanGFX.cpp.o
+	$(MAKE) -f CMakeFiles/HuffmanCoder.dir/build.make CMakeFiles/HuffmanCoder.dir/CUDA-HuffmanGFX.cpp.o
 .PHONY : CUDA-HuffmanGFX.cpp.o
 
 CUDA-HuffmanGFX.i: CUDA-HuffmanGFX.cpp.i
@@ -191,7 +204,7 @@ CUDA-HuffmanGFX.i: CUDA-HuffmanGFX.cpp.i
 
 # target to preprocess a source file
 CUDA-HuffmanGFX.cpp.i:
-	$(MAKE) -f CMakeFiles/cuda-huffmancoder.dir/build.make CMakeFiles/cuda-huffmancoder.dir/CUDA-HuffmanGFX.cpp.i
+	$(MAKE) -f CMakeFiles/HuffmanCoder.dir/build.make CMakeFiles/HuffmanCoder.dir/CUDA-HuffmanGFX.cpp.i
 .PHONY : CUDA-HuffmanGFX.cpp.i
 
 CUDA-HuffmanGFX.s: CUDA-HuffmanGFX.cpp.s
@@ -199,7 +212,7 @@ CUDA-HuffmanGFX.s: CUDA-HuffmanGFX.cpp.s
 
 # target to generate assembly for a file
 CUDA-HuffmanGFX.cpp.s:
-	$(MAKE) -f CMakeFiles/cuda-huffmancoder.dir/build.make CMakeFiles/cuda-huffmancoder.dir/CUDA-HuffmanGFX.cpp.s
+	$(MAKE) -f CMakeFiles/HuffmanCoder.dir/build.make CMakeFiles/HuffmanCoder.dir/CUDA-HuffmanGFX.cpp.s
 .PHONY : CUDA-HuffmanGFX.cpp.s
 
 # Help Target
@@ -208,7 +221,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... cuda-huffmancoder"
+	@echo "... HuffmanCoder"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
@@ -216,6 +229,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... gpuCode"
+	@echo "... cpuCode"
 	@echo "... timerLib"
 	@echo "... CUDA-HuffmanGFX.o"
 	@echo "... CUDA-HuffmanGFX.i"
