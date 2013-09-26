@@ -47,45 +47,46 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src
+CMAKE_SOURCE_DIR = /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release
+CMAKE_BINARY_DIR = /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release
 
 #=============================================================================
-# Target rules for target CMakeFiles/cuda-huffmancoder.dir
+# Target rules for target CMakeFiles/HuffmanCoder.dir
 
 # All Build rule for target.
-CMakeFiles/cuda-huffmancoder.dir/all: GraphicsCard/CMakeFiles/gpuCode.dir/all
-CMakeFiles/cuda-huffmancoder.dir/all: Timer/CMakeFiles/timerLib.dir/all
-	$(MAKE) -f CMakeFiles/cuda-huffmancoder.dir/build.make CMakeFiles/cuda-huffmancoder.dir/depend
-	$(MAKE) -f CMakeFiles/cuda-huffmancoder.dir/build.make CMakeFiles/cuda-huffmancoder.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles  1
-	@echo "Built target cuda-huffmancoder"
-.PHONY : CMakeFiles/cuda-huffmancoder.dir/all
+CMakeFiles/HuffmanCoder.dir/all: Timer/CMakeFiles/timerLib.dir/all
+CMakeFiles/HuffmanCoder.dir/all: GraphicsCard/CMakeFiles/gpuCode.dir/all
+CMakeFiles/HuffmanCoder.dir/all: CPU/CMakeFiles/cpuCode.dir/all
+	$(MAKE) -f CMakeFiles/HuffmanCoder.dir/build.make CMakeFiles/HuffmanCoder.dir/depend
+	$(MAKE) -f CMakeFiles/HuffmanCoder.dir/build.make CMakeFiles/HuffmanCoder.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles  1
+	@echo "Built target HuffmanCoder"
+.PHONY : CMakeFiles/HuffmanCoder.dir/all
 
 # Include target in all.
-all: CMakeFiles/cuda-huffmancoder.dir/all
+all: CMakeFiles/HuffmanCoder.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cuda-huffmancoder.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cuda-huffmancoder.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles 0
-.PHONY : CMakeFiles/cuda-huffmancoder.dir/rule
+CMakeFiles/HuffmanCoder.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/HuffmanCoder.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 0
+.PHONY : CMakeFiles/HuffmanCoder.dir/rule
 
 # Convenience name for target.
-cuda-huffmancoder: CMakeFiles/cuda-huffmancoder.dir/rule
-.PHONY : cuda-huffmancoder
+HuffmanCoder: CMakeFiles/HuffmanCoder.dir/rule
+.PHONY : HuffmanCoder
 
 # clean rule for target.
-CMakeFiles/cuda-huffmancoder.dir/clean:
-	$(MAKE) -f CMakeFiles/cuda-huffmancoder.dir/build.make CMakeFiles/cuda-huffmancoder.dir/clean
-.PHONY : CMakeFiles/cuda-huffmancoder.dir/clean
+CMakeFiles/HuffmanCoder.dir/clean:
+	$(MAKE) -f CMakeFiles/HuffmanCoder.dir/build.make CMakeFiles/HuffmanCoder.dir/clean
+.PHONY : CMakeFiles/HuffmanCoder.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/cuda-huffmancoder.dir/clean
+clean: CMakeFiles/HuffmanCoder.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -110,7 +111,7 @@ GraphicsCard/preinstall:
 GraphicsCard/CMakeFiles/gpuCode.dir/all:
 	$(MAKE) -f GraphicsCard/CMakeFiles/gpuCode.dir/build.make GraphicsCard/CMakeFiles/gpuCode.dir/depend
 	$(MAKE) -f GraphicsCard/CMakeFiles/gpuCode.dir/build.make GraphicsCard/CMakeFiles/gpuCode.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles  3
 	@echo "Built target gpuCode"
 .PHONY : GraphicsCard/CMakeFiles/gpuCode.dir/all
 
@@ -120,9 +121,9 @@ all: GraphicsCard/CMakeFiles/gpuCode.dir/all
 
 # Build rule for subdir invocation for target.
 GraphicsCard/CMakeFiles/gpuCode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/CMakeFiles/gpuCode.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 0
 .PHONY : GraphicsCard/CMakeFiles/gpuCode.dir/rule
 
 # Convenience name for target.
@@ -136,6 +137,56 @@ GraphicsCard/CMakeFiles/gpuCode.dir/clean:
 
 # clean rule for target.
 clean: GraphicsCard/CMakeFiles/gpuCode.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory CPU
+
+# Convenience name for "all" pass in the directory.
+CPU/all: CPU/CMakeFiles/cpuCode.dir/all
+.PHONY : CPU/all
+
+# Convenience name for "clean" pass in the directory.
+CPU/clean: CPU/CMakeFiles/cpuCode.dir/clean
+.PHONY : CPU/clean
+
+# Convenience name for "preinstall" pass in the directory.
+CPU/preinstall:
+.PHONY : CPU/preinstall
+
+#=============================================================================
+# Target rules for target CPU/CMakeFiles/cpuCode.dir
+
+# All Build rule for target.
+CPU/CMakeFiles/cpuCode.dir/all:
+	$(MAKE) -f CPU/CMakeFiles/cpuCode.dir/build.make CPU/CMakeFiles/cpuCode.dir/depend
+	$(MAKE) -f CPU/CMakeFiles/cpuCode.dir/build.make CPU/CMakeFiles/cpuCode.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles  2
+	@echo "Built target cpuCode"
+.PHONY : CPU/CMakeFiles/cpuCode.dir/all
+
+# Include target in all.
+all: CPU/CMakeFiles/cpuCode.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CPU/CMakeFiles/cpuCode.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CPU/CMakeFiles/cpuCode.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 0
+.PHONY : CPU/CMakeFiles/cpuCode.dir/rule
+
+# Convenience name for target.
+cpuCode: CPU/CMakeFiles/cpuCode.dir/rule
+.PHONY : cpuCode
+
+# clean rule for target.
+CPU/CMakeFiles/cpuCode.dir/clean:
+	$(MAKE) -f CPU/CMakeFiles/cpuCode.dir/build.make CPU/CMakeFiles/cpuCode.dir/clean
+.PHONY : CPU/CMakeFiles/cpuCode.dir/clean
+
+# clean rule for target.
+clean: CPU/CMakeFiles/cpuCode.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -160,7 +211,7 @@ Timer/preinstall:
 Timer/CMakeFiles/timerLib.dir/all:
 	$(MAKE) -f Timer/CMakeFiles/timerLib.dir/build.make Timer/CMakeFiles/timerLib.dir/depend
 	$(MAKE) -f Timer/CMakeFiles/timerLib.dir/build.make Timer/CMakeFiles/timerLib.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles  4
 	@echo "Built target timerLib"
 .PHONY : Timer/CMakeFiles/timerLib.dir/all
 
@@ -170,9 +221,9 @@ all: Timer/CMakeFiles/timerLib.dir/all
 
 # Build rule for subdir invocation for target.
 Timer/CMakeFiles/timerLib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 Timer/CMakeFiles/timerLib.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/CUDAHuffmanCoder/src/Release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 0
 .PHONY : Timer/CMakeFiles/timerLib.dir/rule
 
 # Convenience name for target.
