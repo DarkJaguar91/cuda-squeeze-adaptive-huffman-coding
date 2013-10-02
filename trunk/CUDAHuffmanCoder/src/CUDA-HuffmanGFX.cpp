@@ -20,15 +20,16 @@ int main() {
 	size_t freeSize, totSize;
 	cudaMemGetInfo(&freeSize, &totSize);
 
-	printf("\e[1;31mFree Memory: %.2fMB | Total Memory: %.2fMB\n\n\e[0m", (freeSize / 1024 / 1024.0f), (totSize / 1024 / 1024.0f));
+	printf("\e[1;31mFree Memory: %.2fMB | Total Memory: %.2fMB\n\n\e[0m",
+			(freeSize / 1024 / 1024.0f), (totSize / 1024 / 1024.0f));
 
 //	longValue numFloats = 1024 * 1024 * 1024;
 //	numFloats *= 0.5f;
 //	numFloats /= sizeof(float);
 
-	longValue numFloats = floor((freeSize) / 2.2f / sizeof(float));
+	longValue numFloats = floor((freeSize) * 0.48f / sizeof(float));
 
-	printf("\e[1;31mAllocating %.2fMB of floats\n\n\e[0m", (numFloats*4.0f/1024.0f/1024.0f));
+	printf("\e[1;31mAllocating %.2fMB of floats\n\n\e[0m", (numFloats * 4.0f / 1024.0f / 1024.0f));
 
 	printf("\e[1;36mCPU Version\n\e[0m");
 	printf("\e[1;36m--------------------------------------------------------------\n\e[0m");

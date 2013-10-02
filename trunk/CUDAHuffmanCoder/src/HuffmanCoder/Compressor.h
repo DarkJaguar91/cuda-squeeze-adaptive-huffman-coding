@@ -18,6 +18,7 @@ class Compressor: public HTree {
 public:
 	Compressor(frequencyValues & values) :
 			HTree(values) {
+		totLength = 0;
 	}
 	;
 
@@ -46,6 +47,7 @@ public:
 
 		Node * root = createTree(leaves);
 
+		totLength = 0;
 		calcCodes(leaves);
 
 		delete (root);
@@ -60,8 +62,12 @@ public:
 		}
 	}
 
-private:
+	int getTotalCodeLength(){
+		return totLength;
+	}
 	HuffMap map;
+private:
+	int totLength;
 	
 	void binData(const float * values, const longValue & numValues) {
 		longValue i;
@@ -112,6 +118,7 @@ private:
 
 			std::reverse(code->begin(), code->end());
 
+			totLength += code->size();
 			map[*(*it)->data] = code;
 		}
 	}

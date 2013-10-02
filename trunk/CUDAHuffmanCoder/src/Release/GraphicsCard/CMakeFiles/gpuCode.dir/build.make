@@ -554,6 +554,7 @@ GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o:
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: /usr/local/cuda-5.5/include/thrust/system/cuda/detail/trivial_copy.h
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: /usr/local/cuda-5.5/include/thrust/system/cuda/detail/trivial_copy.inl
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: /usr/local/cuda-5.5/include/thrust/system/cuda/error.h
+GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: /usr/local/cuda-5.5/include/thrust/system/cuda/experimental/pinned_allocator.h
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: /usr/local/cuda-5.5/include/thrust/system/detail/adl/assign_value.h
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: /usr/local/cuda-5.5/include/thrust/system/detail/adl/copy.h
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: /usr/local/cuda-5.5/include/thrust/system/detail/adl/copy_if.h

@@ -505,6 +505,7 @@ SET(CUDA_NVCC_DEPEND
  "/usr/local/cuda-5.5/include/thrust/system/cuda/detail/trivial_copy.h"
  "/usr/local/cuda-5.5/include/thrust/system/cuda/detail/trivial_copy.inl"
  "/usr/local/cuda-5.5/include/thrust/system/cuda/error.h"
+ "/usr/local/cuda-5.5/include/thrust/system/cuda/experimental/pinned_allocator.h"
  "/usr/local/cuda-5.5/include/thrust/system/detail/adl/assign_value.h"
  "/usr/local/cuda-5.5/include/thrust/system/detail/adl/copy.h"
  "/usr/local/cuda-5.5/include/thrust/system/detail/adl/copy_if.h"
