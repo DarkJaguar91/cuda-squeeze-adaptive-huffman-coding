@@ -16,14 +16,21 @@
 #include <thrust/iterator/constant_iterator.h>
 #include <omp.h>
 #include <stdio.h>
+#include <thrust/system/cuda/experimental/pinned_allocator.h>
+
 
 #include "../Timer/Timer.h"
 #include "../HuffmanCoder/Compressor.h"
 
 namespace GPU {
-	void compress(const longValue & numberOfFloats);
-	void binVector(thrust::device_vector<float> & dev_vec, frequencyValues & map,
-			double & time);
+typedef thrust::system::cuda::experimental::pinned_allocator<float> allocator;
+typedef thrust::system::cuda::experimental::pinned_allocator<int> allocatorint;
+typedef thrust::host_vector<float> host_vec;
+typedef thrust::host_vector<int> host_vec_int;
+typedef thrust::device_vector<float> dev_vec;
+typedef thrust::device_vector<int> dev_vec_int;
+
+void compress(const longValue & numberOfFloats);
 }
 
 #endif /* GRAPICSCOMPRESSION_H_ */
