@@ -26,10 +26,10 @@
 namespace GPU {
 typedef thrust::system::cuda::experimental::pinned_allocator<float> allocator;
 typedef thrust::system::cuda::experimental::pinned_allocator<int> allocatorint;
-typedef thrust::host_vector<float> host_vec;
-typedef thrust::host_vector<int> host_vec_int;
-typedef thrust::device_vector<float> dev_vec;
-typedef thrust::device_vector<int> dev_vec_int;
+typedef thrust::host_vector<float, allocator> host_vec;
+typedef thrust::host_vector<int, allocatorint> host_vec_int;
+typedef thrust::device_vector<float, allocator> dev_vec;
+typedef thrust::device_vector<int, allocatorint> dev_vec_int;
 
 void compress(const longValue & numberOfFloats);
 void compress(char * inputFileName, char * outputFileName);

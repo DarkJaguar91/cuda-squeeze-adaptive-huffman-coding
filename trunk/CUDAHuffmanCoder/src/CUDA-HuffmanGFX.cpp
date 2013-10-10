@@ -27,7 +27,7 @@ int main() {
 //	numFloats *= 0.5f;
 //	numFloats /= sizeof(float);
 
-	longValue numFloats = floor((freeSize) * 0.48f / sizeof(float));
+	longValue numFloats = floor((freeSize) * 0.8f / sizeof(float));
 	printf("Allocating %.2fMB of floats\n\n", (numFloats * 4.0f / 1024.0f / 1024.0f));
 
 	// make file
@@ -36,7 +36,7 @@ int main() {
 	srand(time(NULL));
 	fwrite(&numFloats, sizeof(longValue), 1, out);
 	for (longValue i = 0; i < numFloats; ++i){
-		float f = rand() % 9000;
+		float f = rand() % 900;
 		fwrite(&f, sizeof(float), 1, out);
 	}
 	fclose(out);
