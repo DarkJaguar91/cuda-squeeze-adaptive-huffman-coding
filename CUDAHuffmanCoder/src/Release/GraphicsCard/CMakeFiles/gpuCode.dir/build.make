@@ -52,6 +52,7 @@ include GraphicsCard/CMakeFiles/gpuCode.dir/flags.make
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: ../GraphicsCard/GrapicsCompression.cu
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: ../GraphicsCard/GrapicsCompression.h
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: ../HuffmanCoder/Compressor.h
+GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: ../HuffmanCoder/Decompressor.h
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: ../HuffmanCoder/HTree.h
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: ../Timer/Timer.h
 GraphicsCard/CMakeFiles/gpuCode.dir/./gpuCode_generated_GrapicsCompression.cu.o: /usr/include/_G_config.h

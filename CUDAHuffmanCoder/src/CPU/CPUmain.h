@@ -12,5 +12,7 @@
 #include "../Timer/Timer.h"
 
 namespace CPUCode {
-  void compressCPU (longValue numFloats);
+void compressCPU (longValue numFloats);
+void compressCPU (char * inputFileName, char * outputFileName);
+void compressCPUData (std::vector<float> & floats, frequencyValues * map, std::vector<unsigned char> & charCodes, int & numThreads);
 }
