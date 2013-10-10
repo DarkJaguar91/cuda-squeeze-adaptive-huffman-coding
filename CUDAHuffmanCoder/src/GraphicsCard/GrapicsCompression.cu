@@ -193,8 +193,9 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 
 	Timer::tic();
 	///////////////////////////
-	longValue cnt = 0, cnt2 = 0;
-	cnt = 0;
+	longValue cnt = 0;
+	double size = 0;
+
 	unsigned char b = 0;
 	for (longValue i = 0; i < numberOfFloats; ++i) {
 		for (int z = 0; z < codes[i]->size(); ++z) {
@@ -202,19 +203,16 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 				b |= (1 << (7 - (cnt % 8)));
 			else
 				b &= ~(1 << (7 - (cnt % 8)));
-
-			++cnt;
-			if (cnt == 8){
-				b = 0;
-				cnt = 0;
+			cnt++;
+			if (cnt % 8 == 0)
+			{
 				charCodes.push_back(b);
+				b = 0;
 			}
-			++cnt2;
+			size++;
 		}
 	}
-
-	// size calc
-	double size = cnt2;
+	printf("%d  - -   %d\n", (size / 8), charCodes.size());
 	///////////////////////////////////////
 	///////////////////////////////////////
 //	longValue cnt = 0;
@@ -258,7 +256,7 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 
 	printf("Total Time for processing: %f\n", totTime);
 
-	size = ceil(size / 8.0f) * sizeof(char);
+	size = ceil(size / 8.0f) * sizeof(unsigned char);
 	size += map.size() * sizeof(float) + map.size() * sizeof(longValue) + sizeof(longValue) * 2;
 	double inputSize = float(numberOfFloats * sizeof(float) + sizeof(longValue));
 	printf("Size of output file: %f\n", size / 1024.0f / 1024.0f);
@@ -268,13 +266,22 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 	delete [] codes;
 
 	/// check
-//	Timer::tic();
-//	Decompressor decomp(map);
-//	decomp.initialize();
-//	std::vector<float> floats;
-//	decomp.decode(array, floats);
-//	printf("Timer to decompress: %f\n", Timer::toc());
-//
-//	bool test = floats.size() == host.size();
-//	std::cout << (test == 1 ? "Correct" : "failed") << std::endl;
+	Timer::tic();
+	Decompressor decomp(map);
+	decomp.initialize();
+	std::vector<float> floats;
+
+	HuffCode array;
+	for (int i = 0; i < charCodes.size(); ++i){
+		unsigned char c = charCodes.at(i);
+		for (long i = 0; i < 8; ++i) {
+			array.push_back(((c >> (7 - i)) & 1));
+		}
+	}
+	decomp.decode(array, floats);
+	printf("Timer to decompress: %f\n", Timer::toc());
+
+	for (int i = 0; i < floats.size(); ++i)
+		if (floats[i] != host[i])
+			printf("failed %d->   %f   <>   %f\n", i, floats[i], host[i]);
 }
