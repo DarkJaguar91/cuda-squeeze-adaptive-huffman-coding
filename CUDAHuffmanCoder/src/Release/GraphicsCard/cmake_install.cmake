@@ -1,4 +1,4 @@
-# Install script for directory: /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/GraphicsCard
+# Install script for directory: /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/GraphicsCard
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

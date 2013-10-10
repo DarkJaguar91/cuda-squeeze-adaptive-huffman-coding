@@ -190,15 +190,10 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 	printf("Swapping Values: %f\n", Timer::toc());
 	totTime += Timer::toc();
 
+
 	Timer::tic();
+	///////////////////////////
 	longValue cnt = 0, cnt2 = 0;
-//	for (longValue i = 0; i < numberOfFloats; ++i) {
-//		cnt += codes[i]->size();
-//	}
-
-
-
-//	HuffCode array;
 	cnt = 0;
 	unsigned char b = 0;
 	for (longValue i = 0; i < numberOfFloats; ++i) {
@@ -220,7 +215,18 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 
 	// size calc
 	double size = cnt2;
-
+	///////////////////////////////////////
+	///////////////////////////////////////
+//	longValue cnt = 0;
+//	for (longValue i = 0; i < numberOfFloats; ++i) {
+//		cnt += codes[i]->size();
+//	}
+//
+//	double size = cnt;
+//
+//	HuffCode array(cnt);
+//
+//
 //	cnt = 0;
 //	for (longValue i = 0; i < numberOfFloats; ++i) {
 //		for (int z = 0; z < codes[i]->size(); ++z) {
@@ -246,6 +252,7 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 //		}
 //		charCodes[i] = b;
 //	}
+	////////////////////////////////////////////////////////////////////
 	printf("Converting to char: %f\n", Timer::toc());
 	totTime += Timer::toc();
 

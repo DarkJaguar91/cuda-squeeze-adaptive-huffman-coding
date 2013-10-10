@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Timer/Timer.cpp
+/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Timer/Timer.cpp
 Timer.h
-/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Timer/Timer.h
+/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Timer/Timer.h
 
-/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Timer/Timer.h
+/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Timer/Timer.h
 time.h
 -
 

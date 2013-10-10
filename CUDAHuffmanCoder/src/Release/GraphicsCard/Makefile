@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src
+CMAKE_SOURCE_DIR = /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release
+CMAKE_BINARY_DIR = /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -110,14 +110,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/GraphicsCard/CMakeFiles/progress.marks
-	cd /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 0
+	cd /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/GraphicsCard/CMakeFiles/progress.marks
+	cd /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/clean
+	cd /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/clean
 .PHONY : clean
 
 # The main clean target
@@ -126,22 +126,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/preinstall
+	cd /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/preinstall
+	cd /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 GraphicsCard/CMakeFiles/gpuCode.dir/rule:
-	cd /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/CMakeFiles/gpuCode.dir/rule
+	cd /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f CMakeFiles/Makefile2 GraphicsCard/CMakeFiles/gpuCode.dir/rule
 .PHONY : GraphicsCard/CMakeFiles/gpuCode.dir/rule
 
 # Convenience name for target.
@@ -150,7 +150,7 @@ gpuCode: GraphicsCard/CMakeFiles/gpuCode.dir/rule
 
 # fast build rule for target.
 gpuCode/fast:
-	cd /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f GraphicsCard/CMakeFiles/gpuCode.dir/build.make GraphicsCard/CMakeFiles/gpuCode.dir/build
+	cd /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(MAKE) -f GraphicsCard/CMakeFiles/gpuCode.dir/build.make GraphicsCard/CMakeFiles/gpuCode.dir/build
 .PHONY : gpuCode/fast
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
