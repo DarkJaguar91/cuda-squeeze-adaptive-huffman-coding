@@ -1,4 +1,4 @@
-# Install script for directory: /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src
+# Install script for directory: /home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/HuffmanCoder"
          RPATH "")
   ENDIF()
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/HuffmanCoder")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/HuffmanCoder")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/HuffmanCoder" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/HuffmanCoder")
     FILE(RPATH_REMOVE
@@ -52,9 +52,9 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/GraphicsCard/cmake_install.cmake")
-  INCLUDE("/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CPU/cmake_install.cmake")
-  INCLUDE("/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/Timer/cmake_install.cmake")
+  INCLUDE("/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/GraphicsCard/cmake_install.cmake")
+  INCLUDE("/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CPU/cmake_install.cmake")
+  INCLUDE("/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/Timer/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -64,7 +64,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/bjtal/cuda-workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

@@ -191,40 +191,61 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 	totTime += Timer::toc();
 
 	Timer::tic();
-	longValue cnt = 0;
+	longValue cnt = 0, cnt2 = 0;
+//	for (longValue i = 0; i < numberOfFloats; ++i) {
+//		cnt += codes[i]->size();
+//	}
+
+
+
+//	HuffCode array;
+	cnt = 0;
+	unsigned char b = 0;
 	for (longValue i = 0; i < numberOfFloats; ++i) {
-		cnt += codes[i]->size();
+		for (int z = 0; z < codes[i]->size(); ++z) {
+			if (codes[i]->at(z) == 1)
+				b |= (1 << (7 - (cnt % 8)));
+			else
+				b &= ~(1 << (7 - (cnt % 8)));
+
+			++cnt;
+			if (cnt == 8){
+				b = 0;
+				cnt = 0;
+				charCodes.push_back(b);
+			}
+			++cnt2;
+		}
 	}
 
 	// size calc
-	double size = cnt;
+	double size = cnt2;
 
-
-	HuffCode array(cnt);
-	cnt = 0;
-	for (longValue i = 0; i < numberOfFloats; ++i) {
-		for (int z = 0; z < codes[i]->size(); ++z) {
-			array[cnt] = codes[i]->at(z);
-			cnt++;
-		}
-	}
-	printf("Flattening array: %f\n", Timer::toc());
-	totTime += Timer::toc();
-
-	Timer::tic();
-	int numChars = int(ceil(array.size() / 8.0f));
-	charCodes.resize(numChars);
-#pragma omp parallel for
-	for (int i = 0; i < numChars; ++i) {
-		unsigned char b = 0;
-		for (int z = 0; z < 8; ++z) {
-			if (array[i * 8 + z] == 1)
-				b |= (1 << (7 - (z % 8)));
-			else
-				b &= ~(1 << (7 - (z % 8)));
-		}
-		charCodes[i] = b;
-	}
+//	cnt = 0;
+//	for (longValue i = 0; i < numberOfFloats; ++i) {
+//		for (int z = 0; z < codes[i]->size(); ++z) {
+//			array[cnt] = codes[i]->at(z);
+//			cnt++;
+//		}
+//	}
+//	printf("Flattening array: %f\n", Timer::toc());
+//	totTime += Timer::toc();
+//
+//	Timer::tic();
+//	int numChars = int(ceil(array.size() / float(8)));
+//	charCodes.resize(numChars);
+//	int i = 0;
+//#pragma omp parallel for private(i) schedule(dynamic) shared(array)
+//	for (i = 0; i < numChars; ++i) {
+//		unsigned char b = 0;
+//		for (int z = 0; z < 8; ++z) {
+//			if (array[i * 8 + z] == 1)
+//				b |= (1 << (7 - (z % 8)));
+//			else
+//				b &= ~(1 << (7 - (z % 8)));
+//		}
+//		charCodes[i] = b;
+//	}
 	printf("Converting to char: %f\n", Timer::toc());
 	totTime += Timer::toc();
 
@@ -240,13 +261,13 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 	delete [] codes;
 
 	/// check
-	Timer::tic();
-	Decompressor decomp(map);
-	decomp.initialize();
-	std::vector<float> floats;
-	decomp.decode(array, floats);
-	printf("Timer to decompress: %f\n", Timer::toc());
-
-	bool test = floats.size() == host.size();
-	std::cout << (test == 1 ? "Correct" : "failed") << std::endl;
+//	Timer::tic();
+//	Decompressor decomp(map);
+//	decomp.initialize();
+//	std::vector<float> floats;
+//	decomp.decode(array, floats);
+//	printf("Timer to decompress: %f\n", Timer::toc());
+//
+//	bool test = floats.size() == host.size();
+//	std::cout << (test == 1 ? "Correct" : "failed") << std::endl;
 }
