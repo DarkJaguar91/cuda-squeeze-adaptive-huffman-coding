@@ -20,7 +20,7 @@ int main() {
 	size_t freeSize, totSize;
 	cudaMemGetInfo(&freeSize, &totSize);
 
-	printf("\e[1;31mFree Memory: %.2fMB | Total Memory: %.2fMB\n\n\e[0m",
+	printf("Free Memory: %.2fMB | Total Memory: %.2fMB\n\n",
 			(freeSize / 1024 / 1024.0f), (totSize / 1024 / 1024.0f));
 
 //	longValue numFloats = 1024 * 1024 * 1024;
@@ -28,18 +28,29 @@ int main() {
 //	numFloats /= sizeof(float);
 
 	longValue numFloats = floor((freeSize) * 0.48f / sizeof(float));
+	printf("Allocating %.2fMB of floats\n\n", (numFloats * 4.0f / 1024.0f / 1024.0f));
 
-	printf("\e[1;31mAllocating %.2fMB of floats\n\n\e[0m", (numFloats * 4.0f / 1024.0f / 1024.0f));
+	// make file
+	FILE * out;
+	out = fopen("input.values", "w");
+	srand(time(NULL));
+	fwrite(&numFloats, sizeof(longValue), 1, out);
+	for (longValue i = 0; i < numFloats; ++i){
+		float f = rand() % 9000;
+		fwrite(&f, sizeof(float), 1, out);
+	}
+	fclose(out);
+	printf("Created file\n\n");
 
-	printf("\e[1;36mCPU Version\n\e[0m");
-	printf("\e[1;36m--------------------------------------------------------------\n\e[0m");
+	printf("CPU Version\n");
+	printf("--------------------------------------------------------------\n");
 	CPUCode::compressCPU(numFloats);
-	printf("\e[1;36m--------------------------------------------------------------\n\e[0m\n");
+	printf("--------------------------------------------------------------\n\n");
 
-	printf("\e[1;36mGPU Version\n\e[0m");
-	printf("\e[1;36m--------------------------------------------------------------\n\e[0m");
-	GPU::compress(numFloats);
-	printf("\e[1;36m--------------------------------------------------------------\n\e[0m");
+	printf("GPU Version\n");
+	printf("--------------------------------------------------------------\n");
+	GPU::compress("input.values", "outputGPU.hc");
+	printf("--------------------------------------------------------------\n");
 
 	return 0;
 }

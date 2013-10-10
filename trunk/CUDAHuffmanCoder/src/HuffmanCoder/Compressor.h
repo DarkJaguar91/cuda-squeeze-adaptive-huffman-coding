@@ -18,7 +18,6 @@ class Compressor: public HTree {
 public:
 	Compressor(frequencyValues & values) :
 			HTree(values) {
-		totLength = 0;
 	}
 	;
 
@@ -46,8 +45,6 @@ public:
 		std::vector<Node *> leaves;
 
 		Node * root = createTree(leaves);
-
-		totLength = 0;
 		calcCodes(leaves);
 
 		delete (root);
@@ -62,13 +59,8 @@ public:
 		}
 	}
 
-	int getTotalCodeLength(){
-		return totLength;
-	}
 	HuffMap map;
 private:
-	int totLength;
-	
 	void binData(const float * values, const longValue & numValues) {
 		longValue i;
 #pragma omp parallel for private(i) schedule(dynamic)
@@ -118,7 +110,6 @@ private:
 
 			std::reverse(code->begin(), code->end());
 
-			totLength += code->size();
 			map[*(*it)->data] = code;
 		}
 	}
