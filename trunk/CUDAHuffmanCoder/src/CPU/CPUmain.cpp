@@ -37,7 +37,7 @@ void CPUCode::compressCPUData(std::vector<float> & floats,
 		longValue proc = min(numFloats - (i * numProcess), numProcess);
 
 		comp.initialize(&floats[0] + (i * numProcess), proc);
-		comp.compress(&floats[0] + (i * numProcess), codes + (i * numProcess),
+		comp.compress(&floats[0] + (i * numProcess), &codes[0] + (i * numProcess),
 				proc);
 	}
 
@@ -45,6 +45,7 @@ void CPUCode::compressCPUData(std::vector<float> & floats,
 	for (longValue i = 0; i < numFloats; ++i) {
 		cnt += codes[i]->size();
 	}
+	printf("%f\n", float(codes[0]->size()));
 
 	double size = ceil(cnt / 8.0f) * sizeof(unsigned char);
 	for (int i = 0; i < numThreads; ++i)

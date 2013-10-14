@@ -190,6 +190,7 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 	printf("Swapping Values: %f\n", Timer::toc());
 	totTime += Timer::toc();
 
+	printf("Process before char creation: %f\n", totTime);
 
 	Timer::tic();
 	///////////////////////////
@@ -212,7 +213,6 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 			size++;
 		}
 	}
-	printf("%d  - -   %d\n", (size / 8), charCodes.size());
 	///////////////////////////////////////
 	///////////////////////////////////////
 //	longValue cnt = 0;

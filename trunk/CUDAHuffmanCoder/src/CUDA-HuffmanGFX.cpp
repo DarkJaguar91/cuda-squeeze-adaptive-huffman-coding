@@ -23,11 +23,11 @@ int main() {
 	printf("Free Memory: %.2fMB | Total Memory: %.2fMB\n\n",
 			(freeSize / 1024 / 1024.0f), (totSize / 1024 / 1024.0f));
 
-//	longValue numFloats = 1024 * 1024 * 1024;
-//	numFloats *= 0.5f;
-//	numFloats /= sizeof(float);
+	longValue numFloats = 1024 * 1024 * 1024;
+	numFloats *= 0.5f;
+	numFloats /= sizeof(float);
 
-	longValue numFloats = floor((freeSize) * 0.8f / sizeof(float));
+//	longValue numFloats = floor((freeSize) * 0.8f / sizeof(float));
 	printf("Allocating %.2fMB of floats\n\n", (numFloats * 4.0f / 1024.0f / 1024.0f));
 
 	// make file
@@ -36,16 +36,16 @@ int main() {
 	srand(time(NULL));
 	fwrite(&numFloats, sizeof(longValue), 1, out);
 	for (longValue i = 0; i < numFloats; ++i){
-		float f = rand() % 900;
+		float f = rand() % 9000;
 		fwrite(&f, sizeof(float), 1, out);
 	}
 	fclose(out);
 	printf("Created file\n\n");
 
-	printf("CPU Version\n");
-	printf("--------------------------------------------------------------\n");
-	CPUCode::compressCPU(numFloats);
-	printf("--------------------------------------------------------------\n\n");
+//	printf("CPU Version\n");
+//	printf("--------------------------------------------------------------\n");
+//	CPUCode::compressCPU(numFloats);
+//	printf("--------------------------------------------------------------\n\n");
 
 	printf("GPU Version\n");
 	printf("--------------------------------------------------------------\n");
