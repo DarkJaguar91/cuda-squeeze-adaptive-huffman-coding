@@ -52,9 +52,7 @@ public:
 
 	void compress(const float * values, HuffCode ** code,
 			const longValue & numFloats) {
-		longValue i;
-
-		for (i = 0; i < numFloats; ++i) {
+		for (longValue i = 0; i < numFloats; ++i) {
 			code[i] = map[values[i]];
 		}
 	}
@@ -63,21 +61,21 @@ public:
 private:
 	void binData(const float * values, const longValue & numValues) {
 		longValue i;
-#pragma omp parallel for private(i) schedule(dynamic)
+//#pragma omp parallel for private(i) schedule(dynamic)
 		for (i = 0; i < numValues; ++i) {
 			float val = values[i];
 
 			if (frequencyMap.count(val) <= 0) {
-#pragma omp critical
+//#pragma omp critical
 				{
-					if (frequencyMap.count(val) <= 0)
+//					if (frequencyMap.count(val) <= 0)
 						frequencyMap[val] = new longValue(1);
-					else
-						++(*frequencyMap[val]);
+//					else
+//						++(*frequencyMap[val]);
 				}
-#pragma omp flush
+//#pragma omp flush
 			} else {
-#pragma omp atomic
+//#pragma omp atomic
 				++(*frequencyMap[val]);
 			}
 		}
