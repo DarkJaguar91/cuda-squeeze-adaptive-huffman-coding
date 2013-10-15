@@ -194,25 +194,25 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 
 	Timer::tic();
 	///////////////////////////
-	longValue cnt = 0;
-	double size = 0;
-
-	unsigned char b = 0;
-	for (longValue i = 0; i < numberOfFloats; ++i) {
-		for (int z = 0; z < codes[i]->size(); ++z) {
-			if (codes[i]->at(z) == 1)
-				b |= (1 << (7 - (cnt % 8)));
-			else
-				b &= ~(1 << (7 - (cnt % 8)));
-			cnt++;
-			if (cnt % 8 == 0)
-			{
-				charCodes.push_back(b);
-				b = 0;
-			}
-			size++;
-		}
-	}
+//	longValue cnt = 0;
+//	double size = 0;
+//
+//	unsigned char b = 0;
+//	for (longValue i = 0; i < numberOfFloats; ++i) {
+//		for (int z = 0; z < codes[i]->size(); ++z) {
+//			if (codes[i]->at(z) == 1)
+//				b |= (1 << (7 - (cnt % 8)));
+//			else
+//				b &= ~(1 << (7 - (cnt % 8)));
+//			cnt++;
+//			if (cnt % 8 == 0)
+//			{
+//				charCodes.push_back(b);
+//				b = 0;
+//			}
+//			size++;
+//		}
+//	}
 	///////////////////////////////////////
 	///////////////////////////////////////
 //	longValue cnt = 0;
@@ -251,6 +251,62 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 //		charCodes[i] = b;
 //	}
 	////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////////////////
+	// Prefix option
+	// prefix sum
+//	std::vector<longValue> codeStartPoses(numberOfFloats + 1);
+//
+//	longValue sum = 0;
+//	codeStartPoses[0] = sum;
+//
+//	for (longValue i = 0; i < numberOfFloats; ++i){
+//		sum += codes[i]->size();
+//		codeStartPoses[i+1] = sum;
+//	}
+//	double size = codeStartPoses[numberOfFloats];
+
+	thrust::host_vector<longValue> codeStartPoses(numberOfFloats);
+#pragma omp parallel for
+	for (longValue i = 0; i < numberOfFloats; ++i)
+		codeStartPoses[i] = codes[i]->size();
+
+	thrust::device_vector<longValue> codeStartPoses_Dev = codeStartPoses;
+	thrust::exclusive_scan(codeStartPoses_Dev.begin(), codeStartPoses_Dev.end(), codeStartPoses_Dev.begin());
+	codeStartPoses = codeStartPoses_Dev;
+	codeStartPoses_Dev.clear();
+	codeStartPoses_Dev.shrink_to_fit();
+	double size = codeStartPoses[numberOfFloats - 1] + codes[numberOfFloats - 1]->size();
+
+	printf("prefix done\n");
+
+
+	// flattening array
+	HuffCode array(ceil(size / 8.0f) * 8);
+
+#pragma omp parallel for
+	for (longValue i = 0; i < numberOfFloats; ++i){
+		longValue start = codeStartPoses[i];
+
+		std::copy(codes[i]->begin(), codes[i]->end(), array.begin() + start);
+	}
+
+	printf("flatening done\n");
+
+	// char conversion
+	longValue numChars = ceil(size / 8.0f);
+	charCodes.resize(numChars);
+#pragma omp parallel for
+	for (longValue i = 0; i < numChars; ++i){
+		unsigned char b = 0;
+		for (int z = 0; z < 8; ++z) {
+			if (array.at(i * 8 + z) == 1)
+				b |= (1 << (7 - (z % 8)));
+			else
+				b &= ~(1 << (7 - (z % 8)));
+		}
+		charCodes[i] = b;
+	}
+	////////////////////////////////////
 	printf("Converting to char: %f\n", Timer::toc());
 	totTime += Timer::toc();
 
@@ -271,14 +327,14 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 	decomp.initialize();
 	std::vector<float> floats;
 
-	HuffCode array;
+	HuffCode array2;
 	for (int i = 0; i < charCodes.size(); ++i){
 		unsigned char c = charCodes.at(i);
 		for (long i = 0; i < 8; ++i) {
-			array.push_back(((c >> (7 - i)) & 1));
+			array2.push_back(((c >> (7 - i)) & 1));
 		}
 	}
-	decomp.decode(array, floats);
+	decomp.decode(array2, floats);
 	printf("Timer to decompress: %f\n", Timer::toc());
 
 	for (int i = 0; i < floats.size(); ++i)
