@@ -24,7 +24,7 @@ int main() {
 			(freeSize / 1024 / 1024.0f), (totSize / 1024 / 1024.0f));
 
 	longValue numFloats = 1024 * 1024 * 1024;
-	numFloats *= 0.5f;
+	numFloats *= 0.1f;
 	numFloats /= sizeof(float);
 
 //	longValue numFloats = floor((freeSize) * 0.8f / sizeof(float));
