@@ -57,8 +57,8 @@ CMAKE_BINARY_DIR = /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CU
 
 # All Build rule for target.
 CMakeFiles/HuffmanCoder.dir/all: GraphicsCard/CMakeFiles/gpuCode.dir/all
-CMakeFiles/HuffmanCoder.dir/all: Timer/CMakeFiles/timerLib.dir/all
 CMakeFiles/HuffmanCoder.dir/all: CPU/CMakeFiles/cpuCode.dir/all
+CMakeFiles/HuffmanCoder.dir/all: Timer/CMakeFiles/timerLib.dir/all
 	$(MAKE) -f CMakeFiles/HuffmanCoder.dir/build.make CMakeFiles/HuffmanCoder.dir/depend
 	$(MAKE) -f CMakeFiles/HuffmanCoder.dir/build.make CMakeFiles/HuffmanCoder.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/bjtal/workspace/cuda-squeeze-adaptive-huffman-coding/CUDAHuffmanCoder/src/Release/CMakeFiles  1

@@ -327,11 +327,12 @@ void GPU::compressData(host_vec & host, frequencyValues & map, std::vector<unsig
 	decomp.initialize();
 	std::vector<float> floats;
 
-	HuffCode array2;
-	for (int i = 0; i < charCodes.size(); ++i){
+	HuffCode array2(charCodes.size() * 8);
+#pragma omp parallel for
+	for (longValue i = 0; i < charCodes.size(); ++i){
 		unsigned char c = charCodes.at(i);
-		for (long i = 0; i < 8; ++i) {
-			array2.push_back(((c >> (7 - i)) & 1));
+		for (longValue z = 0; z < 8; ++z) {
+			array2[i * 8 + z] = (((c >> (7 - z)) & 1));
 		}
 	}
 	decomp.decode(array2, floats);
