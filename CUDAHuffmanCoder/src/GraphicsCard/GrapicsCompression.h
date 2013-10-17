@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <thrust/system/cuda/experimental/pinned_allocator.h>
 
+#include <fstream>
 
 #include "../Timer/Timer.h"
 #include "../HuffmanCoder/Compressor.h"
