@@ -1,0 +1,1 @@
+SKA South Africa require a compression algorithm that can compress their radio telescope dish data in real time.
